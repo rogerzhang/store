@@ -1,0 +1,652 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2290A92C1D608FBF0085BD49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2290A92B1D608FBF0085BD49 /* Assets.xcassets */; };
+		2290A9351D60B74D0085BD49 /* TDMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2290A9331D60B74D0085BD49 /* TDMainViewController.m */; };
+		2290A9361D60B74D0085BD49 /* TDMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2290A9341D60B74D0085BD49 /* TDMainViewController.xib */; };
+		22D0A1271D54826800D27A6A /* TDZbarReaderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D0A1261D54826800D27A6A /* TDZbarReaderManager.m */; };
+		22DCDDAF1D4EF0010068983C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DCDDAE1D4EF0010068983C /* main.m */; };
+		22DCDDB21D4EF0010068983C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DCDDB11D4EF0010068983C /* AppDelegate.m */; };
+		22DCDDB51D4EF0010068983C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DCDDB41D4EF0010068983C /* ViewController.m */; };
+		22DCDDB81D4EF0010068983C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22DCDDB61D4EF0010068983C /* Main.storyboard */; };
+		22DCDDBD1D4EF0010068983C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22DCDDBB1D4EF0010068983C /* LaunchScreen.storyboard */; };
+		22DCDDC81D4EF0010068983C /* TDDMZTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DCDDC71D4EF0010068983C /* TDDMZTests.m */; };
+		22DCDDD31D4EF0010068983C /* TDDMZUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DCDDD21D4EF0010068983C /* TDDMZUITests.m */; };
+		A689D7F43E1E6ED534C201C3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DF8B3C16C4047201BCCC8DA /* libPods.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		22DCDDC41D4EF0010068983C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 22DCDDA21D4EF0010068983C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 22DCDDA91D4EF0010068983C;
+			remoteInfo = TDDMZ;
+		};
+		22DCDDCF1D4EF0010068983C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 22DCDDA21D4EF0010068983C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 22DCDDA91D4EF0010068983C;
+			remoteInfo = TDDMZ;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2290A92B1D608FBF0085BD49 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2290A9321D60B74D0085BD49 /* TDMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDMainViewController.h; sourceTree = "<group>"; };
+		2290A9331D60B74D0085BD49 /* TDMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDMainViewController.m; sourceTree = "<group>"; };
+		2290A9341D60B74D0085BD49 /* TDMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDMainViewController.xib; sourceTree = "<group>"; };
+		22D0A1251D54826800D27A6A /* TDZbarReaderManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDZbarReaderManager.h; sourceTree = "<group>"; };
+		22D0A1261D54826800D27A6A /* TDZbarReaderManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDZbarReaderManager.m; sourceTree = "<group>"; };
+		22D0A1281D548B1200D27A6A /* TDDMZ-prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TDDMZ-prefix.pch"; sourceTree = "<group>"; };
+		22DCDDAA1D4EF0010068983C /* TDDMZ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TDDMZ.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		22DCDDAE1D4EF0010068983C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		22DCDDB01D4EF0010068983C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		22DCDDB11D4EF0010068983C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		22DCDDB31D4EF0010068983C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		22DCDDB41D4EF0010068983C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		22DCDDB71D4EF0010068983C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		22DCDDBC1D4EF0010068983C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		22DCDDBE1D4EF0010068983C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22DCDDC31D4EF0010068983C /* TDDMZTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TDDMZTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		22DCDDC71D4EF0010068983C /* TDDMZTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TDDMZTests.m; sourceTree = "<group>"; };
+		22DCDDC91D4EF0010068983C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22DCDDCE1D4EF0010068983C /* TDDMZUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TDDMZUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		22DCDDD21D4EF0010068983C /* TDDMZUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TDDMZUITests.m; sourceTree = "<group>"; };
+		22DCDDD41D4EF0010068983C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8DF8B3C16C4047201BCCC8DA /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C495F91967DBD12A9BE3E16A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		C701B8FF8DB232AA352E17A9 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		22DCDDA71D4EF0010068983C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A689D7F43E1E6ED534C201C3 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22DCDDC01D4EF0010068983C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22DCDDCB1D4EF0010068983C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		082D8958152A1A95ED910493 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8DF8B3C16C4047201BCCC8DA /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		22D0A1231D54820300D27A6A /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
+		22D0A1241D54820C00D27A6A /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				22DCDDB31D4EF0010068983C /* ViewController.h */,
+				22DCDDB41D4EF0010068983C /* ViewController.m */,
+				22DCDDB61D4EF0010068983C /* Main.storyboard */,
+				22D0A1251D54826800D27A6A /* TDZbarReaderManager.h */,
+				22D0A1261D54826800D27A6A /* TDZbarReaderManager.m */,
+				2290A9321D60B74D0085BD49 /* TDMainViewController.h */,
+				2290A9331D60B74D0085BD49 /* TDMainViewController.m */,
+				2290A9341D60B74D0085BD49 /* TDMainViewController.xib */,
+			);
+			name = UIKit;
+			sourceTree = "<group>";
+		};
+		22DCDDA11D4EF0010068983C = {
+			isa = PBXGroup;
+			children = (
+				22DCDDAC1D4EF0010068983C /* TDDMZ */,
+				22DCDDC61D4EF0010068983C /* TDDMZTests */,
+				22DCDDD11D4EF0010068983C /* TDDMZUITests */,
+				22DCDDAB1D4EF0010068983C /* Products */,
+				E89AC573BE2AB1C12571528E /* Pods */,
+				082D8958152A1A95ED910493 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		22DCDDAB1D4EF0010068983C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				22DCDDAA1D4EF0010068983C /* TDDMZ.app */,
+				22DCDDC31D4EF0010068983C /* TDDMZTests.xctest */,
+				22DCDDCE1D4EF0010068983C /* TDDMZUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		22DCDDAC1D4EF0010068983C /* TDDMZ */ = {
+			isa = PBXGroup;
+			children = (
+				22D0A1241D54820C00D27A6A /* UIKit */,
+				22D0A1231D54820300D27A6A /* Networking */,
+				22DCDDB01D4EF0010068983C /* AppDelegate.h */,
+				22DCDDB11D4EF0010068983C /* AppDelegate.m */,
+				22DCDDAD1D4EF0010068983C /* Supporting Files */,
+			);
+			path = TDDMZ;
+			sourceTree = "<group>";
+		};
+		22DCDDAD1D4EF0010068983C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				22D0A1281D548B1200D27A6A /* TDDMZ-prefix.pch */,
+				2290A92B1D608FBF0085BD49 /* Assets.xcassets */,
+				22DCDDAE1D4EF0010068983C /* main.m */,
+				22DCDDBB1D4EF0010068983C /* LaunchScreen.storyboard */,
+				22DCDDBE1D4EF0010068983C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		22DCDDC61D4EF0010068983C /* TDDMZTests */ = {
+			isa = PBXGroup;
+			children = (
+				22DCDDC71D4EF0010068983C /* TDDMZTests.m */,
+				22DCDDC91D4EF0010068983C /* Info.plist */,
+			);
+			path = TDDMZTests;
+			sourceTree = "<group>";
+		};
+		22DCDDD11D4EF0010068983C /* TDDMZUITests */ = {
+			isa = PBXGroup;
+			children = (
+				22DCDDD21D4EF0010068983C /* TDDMZUITests.m */,
+				22DCDDD41D4EF0010068983C /* Info.plist */,
+			);
+			path = TDDMZUITests;
+			sourceTree = "<group>";
+		};
+		E89AC573BE2AB1C12571528E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C495F91967DBD12A9BE3E16A /* Pods.debug.xcconfig */,
+				C701B8FF8DB232AA352E17A9 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		22DCDDA91D4EF0010068983C /* TDDMZ */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 22DCDDD71D4EF0010068983C /* Build configuration list for PBXNativeTarget "TDDMZ" */;
+			buildPhases = (
+				199111C2EFCD15D891A75A97 /* Check Pods Manifest.lock */,
+				22DCDDA61D4EF0010068983C /* Sources */,
+				22DCDDA71D4EF0010068983C /* Frameworks */,
+				22DCDDA81D4EF0010068983C /* Resources */,
+				DC86CFA50803B2C524A08C75 /* Embed Pods Frameworks */,
+				40D91210F62D625186275D53 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TDDMZ;
+			productName = TDDMZ;
+			productReference = 22DCDDAA1D4EF0010068983C /* TDDMZ.app */;
+			productType = "com.apple.product-type.application";
+		};
+		22DCDDC21D4EF0010068983C /* TDDMZTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 22DCDDDA1D4EF0010068983C /* Build configuration list for PBXNativeTarget "TDDMZTests" */;
+			buildPhases = (
+				22DCDDBF1D4EF0010068983C /* Sources */,
+				22DCDDC01D4EF0010068983C /* Frameworks */,
+				22DCDDC11D4EF0010068983C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				22DCDDC51D4EF0010068983C /* PBXTargetDependency */,
+			);
+			name = TDDMZTests;
+			productName = TDDMZTests;
+			productReference = 22DCDDC31D4EF0010068983C /* TDDMZTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		22DCDDCD1D4EF0010068983C /* TDDMZUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 22DCDDDD1D4EF0010068983C /* Build configuration list for PBXNativeTarget "TDDMZUITests" */;
+			buildPhases = (
+				22DCDDCA1D4EF0010068983C /* Sources */,
+				22DCDDCB1D4EF0010068983C /* Frameworks */,
+				22DCDDCC1D4EF0010068983C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				22DCDDD01D4EF0010068983C /* PBXTargetDependency */,
+			);
+			name = TDDMZUITests;
+			productName = TDDMZUITests;
+			productReference = 22DCDDCE1D4EF0010068983C /* TDDMZUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		22DCDDA21D4EF0010068983C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Roger (Wei) Zhang";
+				TargetAttributes = {
+					22DCDDA91D4EF0010068983C = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = M932RC5J66;
+					};
+					22DCDDC21D4EF0010068983C = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 22DCDDA91D4EF0010068983C;
+					};
+					22DCDDCD1D4EF0010068983C = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 22DCDDA91D4EF0010068983C;
+					};
+				};
+			};
+			buildConfigurationList = 22DCDDA51D4EF0010068983C /* Build configuration list for PBXProject "TDDMZ" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 22DCDDA11D4EF0010068983C;
+			productRefGroup = 22DCDDAB1D4EF0010068983C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				22DCDDA91D4EF0010068983C /* TDDMZ */,
+				22DCDDC21D4EF0010068983C /* TDDMZTests */,
+				22DCDDCD1D4EF0010068983C /* TDDMZUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		22DCDDA81D4EF0010068983C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22DCDDBD1D4EF0010068983C /* LaunchScreen.storyboard in Resources */,
+				2290A9361D60B74D0085BD49 /* TDMainViewController.xib in Resources */,
+				2290A92C1D608FBF0085BD49 /* Assets.xcassets in Resources */,
+				22DCDDB81D4EF0010068983C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22DCDDC11D4EF0010068983C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22DCDDCC1D4EF0010068983C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		199111C2EFCD15D891A75A97 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		40D91210F62D625186275D53 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DC86CFA50803B2C524A08C75 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		22DCDDA61D4EF0010068983C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22DCDDB51D4EF0010068983C /* ViewController.m in Sources */,
+				22D0A1271D54826800D27A6A /* TDZbarReaderManager.m in Sources */,
+				22DCDDB21D4EF0010068983C /* AppDelegate.m in Sources */,
+				2290A9351D60B74D0085BD49 /* TDMainViewController.m in Sources */,
+				22DCDDAF1D4EF0010068983C /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22DCDDBF1D4EF0010068983C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22DCDDC81D4EF0010068983C /* TDDMZTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22DCDDCA1D4EF0010068983C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22DCDDD31D4EF0010068983C /* TDDMZUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		22DCDDC51D4EF0010068983C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 22DCDDA91D4EF0010068983C /* TDDMZ */;
+			targetProxy = 22DCDDC41D4EF0010068983C /* PBXContainerItemProxy */;
+		};
+		22DCDDD01D4EF0010068983C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 22DCDDA91D4EF0010068983C /* TDDMZ */;
+			targetProxy = 22DCDDCF1D4EF0010068983C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		22DCDDB61D4EF0010068983C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22DCDDB71D4EF0010068983C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		22DCDDBB1D4EF0010068983C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22DCDDBC1D4EF0010068983C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		22DCDDD51D4EF0010068983C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		22DCDDD61D4EF0010068983C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		22DCDDD81D4EF0010068983C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C495F91967DBD12A9BE3E16A /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "${SRCROOT}/TDDMZ/TDDMZ-prefix.pch";
+				INFOPLIST_FILE = TDDMZ/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ringcentral.TDDMZ;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		22DCDDD91D4EF0010068983C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C701B8FF8DB232AA352E17A9 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "${SRCROOT}/TDDMZ/TDDMZ-prefix.pch";
+				INFOPLIST_FILE = TDDMZ/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ringcentral.TDDMZ;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+		22DCDDDB1D4EF0010068983C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TDDMZTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ringcentral.TDDMZTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TDDMZ.app/TDDMZ";
+			};
+			name = Debug;
+		};
+		22DCDDDC1D4EF0010068983C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TDDMZTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ringcentral.TDDMZTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TDDMZ.app/TDDMZ";
+			};
+			name = Release;
+		};
+		22DCDDDE1D4EF0010068983C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TDDMZUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ringcentral.TDDMZUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = TDDMZ;
+			};
+			name = Debug;
+		};
+		22DCDDDF1D4EF0010068983C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TDDMZUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ringcentral.TDDMZUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = TDDMZ;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		22DCDDA51D4EF0010068983C /* Build configuration list for PBXProject "TDDMZ" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22DCDDD51D4EF0010068983C /* Debug */,
+				22DCDDD61D4EF0010068983C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		22DCDDD71D4EF0010068983C /* Build configuration list for PBXNativeTarget "TDDMZ" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22DCDDD81D4EF0010068983C /* Debug */,
+				22DCDDD91D4EF0010068983C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		22DCDDDA1D4EF0010068983C /* Build configuration list for PBXNativeTarget "TDDMZTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22DCDDDB1D4EF0010068983C /* Debug */,
+				22DCDDDC1D4EF0010068983C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		22DCDDDD1D4EF0010068983C /* Build configuration list for PBXNativeTarget "TDDMZUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22DCDDDE1D4EF0010068983C /* Debug */,
+				22DCDDDF1D4EF0010068983C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 22DCDDA21D4EF0010068983C /* Project object */;
+}
