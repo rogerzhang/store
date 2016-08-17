@@ -16,8 +16,10 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-    
+    UIImage *image = [UIImage imageNamed:@"flexible"];
+    image = [image stretchableImageWithLeftCapWidth:5 topCapHeight:5];
+    [[UINavigationBar appearance] setBackgroundImage: image forBarMetrics: UIBarMetricsDefault];
+    [[UINavigationBar appearance] setTintColor: [UIColor whiteColor]];
     return YES;
 }
 
