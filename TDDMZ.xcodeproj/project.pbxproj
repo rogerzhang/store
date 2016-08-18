@@ -17,6 +17,7 @@
 		2290B1C61D6200360085BD49 /* TDScanView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2290B1C51D6200360085BD49 /* TDScanView.m */; };
 		2290B1C81D6200540085BD49 /* TDScanView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2290B1C71D6200540085BD49 /* TDScanView.xib */; };
 		22D0A1271D54826800D27A6A /* TDZbarReaderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D0A1261D54826800D27A6A /* TDZbarReaderManager.m */; };
+		22D9BE991D65F13900E06184 /* TDItemsBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D9BE981D65F13900E06184 /* TDItemsBar.m */; };
 		22DCDDAF1D4EF0010068983C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DCDDAE1D4EF0010068983C /* main.m */; };
 		22DCDDB21D4EF0010068983C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DCDDB11D4EF0010068983C /* AppDelegate.m */; };
 		22DCDDB51D4EF0010068983C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DCDDB41D4EF0010068983C /* ViewController.m */; };
@@ -61,6 +62,8 @@
 		22D0A1251D54826800D27A6A /* TDZbarReaderManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDZbarReaderManager.h; sourceTree = "<group>"; };
 		22D0A1261D54826800D27A6A /* TDZbarReaderManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDZbarReaderManager.m; sourceTree = "<group>"; };
 		22D0A1281D548B1200D27A6A /* TDDMZ-prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TDDMZ-prefix.pch"; sourceTree = "<group>"; };
+		22D9BE971D65F13900E06184 /* TDItemsBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDItemsBar.h; sourceTree = "<group>"; };
+		22D9BE981D65F13900E06184 /* TDItemsBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDItemsBar.m; sourceTree = "<group>"; };
 		22DCDDAA1D4EF0010068983C /* TDDMZ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TDDMZ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22DCDDAE1D4EF0010068983C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		22DCDDB01D4EF0010068983C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -121,6 +124,8 @@
 				2290B1C41D6200360085BD49 /* TDScanView.h */,
 				2290B1C51D6200360085BD49 /* TDScanView.m */,
 				2290B1C71D6200540085BD49 /* TDScanView.xib */,
+				22D9BE971D65F13900E06184 /* TDItemsBar.h */,
+				22D9BE981D65F13900E06184 /* TDItemsBar.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -420,6 +425,7 @@
 				2290A9351D60B74D0085BD49 /* TDMainViewController.m in Sources */,
 				22DCDDAF1D4EF0010068983C /* main.m in Sources */,
 				2290B1C21D61FDE50085BD49 /* TDSearchGoodViewController.m in Sources */,
+				22D9BE991D65F13900E06184 /* TDItemsBar.m in Sources */,
 				2221A8F01D64AFC900D30775 /* TDVerifyViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
