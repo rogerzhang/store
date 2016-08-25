@@ -16,6 +16,11 @@
 		2215B0AB1D6C953900616107 /* TDSearchChooseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2215B0A91D6C953900616107 /* TDSearchChooseViewController.m */; };
 		2215B0AC1D6C953900616107 /* TDSearchChooseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2215B0AA1D6C953900616107 /* TDSearchChooseViewController.xib */; };
 		2215B0F01D6C9C6800616107 /* TDSaveBanner.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2215B0EF1D6C9C6800616107 /* TDSaveBanner.xib */; };
+		2215B3341D6F304500616107 /* TDCountingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2215B3321D6F304500616107 /* TDCountingViewController.m */; };
+		2215B3351D6F304500616107 /* TDCountingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2215B3331D6F304500616107 /* TDCountingViewController.xib */; };
+		2215B3421D6F30E700616107 /* TDBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2215B3411D6F30E700616107 /* TDBaseViewController.m */; };
+		2215B3461D6F32A400616107 /* TDDeliverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2215B3441D6F32A400616107 /* TDDeliverViewController.m */; };
+		2215B3471D6F32A400616107 /* TDDeliverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2215B3451D6F32A400616107 /* TDDeliverViewController.xib */; };
 		2221A8F01D64AFC900D30775 /* TDVerifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2221A8EE1D64AFC900D30775 /* TDVerifyViewController.m */; };
 		2221A8F11D64AFC900D30775 /* TDVerifyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2221A8EF1D64AFC900D30775 /* TDVerifyViewController.xib */; };
 		2290A92C1D608FBF0085BD49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2290A92B1D608FBF0085BD49 /* Assets.xcassets */; };
@@ -69,6 +74,14 @@
 		2215B0A91D6C953900616107 /* TDSearchChooseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDSearchChooseViewController.m; sourceTree = "<group>"; };
 		2215B0AA1D6C953900616107 /* TDSearchChooseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDSearchChooseViewController.xib; sourceTree = "<group>"; };
 		2215B0EF1D6C9C6800616107 /* TDSaveBanner.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDSaveBanner.xib; sourceTree = "<group>"; };
+		2215B3311D6F304500616107 /* TDCountingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDCountingViewController.h; sourceTree = "<group>"; };
+		2215B3321D6F304500616107 /* TDCountingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDCountingViewController.m; sourceTree = "<group>"; };
+		2215B3331D6F304500616107 /* TDCountingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDCountingViewController.xib; sourceTree = "<group>"; };
+		2215B3401D6F30E700616107 /* TDBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDBaseViewController.h; sourceTree = "<group>"; };
+		2215B3411D6F30E700616107 /* TDBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDBaseViewController.m; sourceTree = "<group>"; };
+		2215B3431D6F32A400616107 /* TDDeliverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDDeliverViewController.h; sourceTree = "<group>"; };
+		2215B3441D6F32A400616107 /* TDDeliverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDDeliverViewController.m; sourceTree = "<group>"; };
+		2215B3451D6F32A400616107 /* TDDeliverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDDeliverViewController.xib; sourceTree = "<group>"; };
 		2221A8ED1D64AFC900D30775 /* TDVerifyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDVerifyViewController.h; sourceTree = "<group>"; };
 		2221A8EE1D64AFC900D30775 /* TDVerifyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDVerifyViewController.m; sourceTree = "<group>"; };
 		2221A8EF1D64AFC900D30775 /* TDVerifyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDVerifyViewController.xib; sourceTree = "<group>"; };
@@ -144,6 +157,9 @@
 		2215B32C1D6F2F1D00616107 /* Counting */ = {
 			isa = PBXGroup;
 			children = (
+				2215B3311D6F304500616107 /* TDCountingViewController.h */,
+				2215B3321D6F304500616107 /* TDCountingViewController.m */,
+				2215B3331D6F304500616107 /* TDCountingViewController.xib */,
 			);
 			name = Counting;
 			sourceTree = "<group>";
@@ -151,6 +167,9 @@
 		2215B32D1D6F2F5000616107 /* Delivering */ = {
 			isa = PBXGroup;
 			children = (
+				2215B3431D6F32A400616107 /* TDDeliverViewController.h */,
+				2215B3441D6F32A400616107 /* TDDeliverViewController.m */,
+				2215B3451D6F32A400616107 /* TDDeliverViewController.xib */,
 			);
 			name = Delivering;
 			sourceTree = "<group>";
@@ -232,6 +251,8 @@
 				2290A9321D60B74D0085BD49 /* TDMainViewController.h */,
 				2290A9331D60B74D0085BD49 /* TDMainViewController.m */,
 				2290A9341D60B74D0085BD49 /* TDMainViewController.xib */,
+				2215B3401D6F30E700616107 /* TDBaseViewController.h */,
+				2215B3411D6F30E700616107 /* TDBaseViewController.m */,
 			);
 			name = UIKit;
 			sourceTree = "<group>";
@@ -419,10 +440,12 @@
 				2215B09C1D6C903C00616107 /* TDProductPreviewTableViewCell.xib in Resources */,
 				2215B0F01D6C9C6800616107 /* TDSaveBanner.xib in Resources */,
 				2221A8F11D64AFC900D30775 /* TDVerifyViewController.xib in Resources */,
+				2215B3351D6F304500616107 /* TDCountingViewController.xib in Resources */,
 				2215B0AC1D6C953900616107 /* TDSearchChooseViewController.xib in Resources */,
 				22DCDDBD1D4EF0010068983C /* LaunchScreen.storyboard in Resources */,
 				2290B1C81D6200540085BD49 /* TDScanView.xib in Resources */,
 				2290A9361D60B74D0085BD49 /* TDMainViewController.xib in Resources */,
+				2215B3471D6F32A400616107 /* TDDeliverViewController.xib in Resources */,
 				2290B1C31D61FDE50085BD49 /* TDSearchGoodViewController.xib in Resources */,
 				2290A92C1D608FBF0085BD49 /* Assets.xcassets in Resources */,
 				2215B0A71D6C930600616107 /* TDSearchScanViewController.xib in Resources */,
@@ -502,7 +525,9 @@
 				22DCDDB51D4EF0010068983C /* ViewController.m in Sources */,
 				2215B0A61D6C930600616107 /* TDSearchScanViewController.m in Sources */,
 				22D0A1271D54826800D27A6A /* TDZbarReaderManager.m in Sources */,
+				2215B3421D6F30E700616107 /* TDBaseViewController.m in Sources */,
 				2215B09B1D6C903C00616107 /* TDProductPreviewTableViewCell.m in Sources */,
+				2215B3461D6F32A400616107 /* TDDeliverViewController.m in Sources */,
 				2290B1C61D6200360085BD49 /* TDScanView.m in Sources */,
 				22DCDDB21D4EF0010068983C /* AppDelegate.m in Sources */,
 				2215B0A21D6C915100616107 /* TDCashierBanner.m in Sources */,
@@ -511,6 +536,7 @@
 				2290A9351D60B74D0085BD49 /* TDMainViewController.m in Sources */,
 				22DCDDAF1D4EF0010068983C /* main.m in Sources */,
 				2290B1C21D61FDE50085BD49 /* TDSearchGoodViewController.m in Sources */,
+				2215B3341D6F304500616107 /* TDCountingViewController.m in Sources */,
 				22D9BE991D65F13900E06184 /* TDItemsBar.m in Sources */,
 				2221A8F01D64AFC900D30775 /* TDVerifyViewController.m in Sources */,
 			);

@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "TDScanView.h"
 
-@interface TDSearchGoodViewController : UIViewController
+@interface TDSearchGoodViewController : TDBaseViewController
 
 @end

@@ -43,6 +43,17 @@
     return self;
 }
 
+- (void) layoutSubviews;
+{
+    [super layoutSubviews];
+    
+    CGRect bounds = self.bounds;
+    
+    self.chooseGoodButton.frame = CGRectMake(0, 0, bounds.size.width / 2, bounds.size.height);
+    CGFloat dx = bounds.size.width / 2;
+    self.chooseScanerButton.frame = CGRectMake(dx, 0, bounds.size.width / 2, bounds.size.height);
+}
+
 - (IBAction) tapChooseGoodAction: (id)sender;
 {
     [self chooseButton: sender];

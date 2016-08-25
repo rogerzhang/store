@@ -9,6 +9,8 @@
 #import "TDMainViewController.h"
 #import "TDSearchGoodViewController.h"
 #import "TDVerifyViewController.h"
+#import "TDCountingViewController.h"
+#import "TDDeliverViewController.h"
 
 @interface TDMainViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *currentStoreLabel;
@@ -18,6 +20,9 @@
 
 @property (nonatomic, strong) TDSearchGoodViewController *searchGoodViewController;
 @property (nonatomic, strong) TDVerifyViewController *verifyViewController;
+@property (nonatomic, strong) TDCountingViewController *countingViewController;
+@property (nonatomic, strong) TDDeliverViewController *deliverViewController;
+
 
 @end
 
@@ -30,6 +35,8 @@
     
     self.searchGoodViewController = [[TDSearchGoodViewController alloc] initWithNibName:@"TDSearchGoodViewController" bundle:nil];
     self.verifyViewController = [[TDVerifyViewController alloc] initWithNibName: @"TDVerifyViewController" bundle: nil];
+    self.countingViewController = [[TDCountingViewController alloc] initWithNibName: @"TDCountingViewController" bundle: nil];
+    self.deliverViewController = [[TDDeliverViewController alloc] initWithNibName: @"TDDeliverViewController" bundle: nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated;
@@ -70,10 +77,14 @@
     [self.navigationController pushViewController: self.searchGoodViewController animated: YES];
 }
 
-- (IBAction)deliverGoodAction:(id)sender {
+- (IBAction)deliverGoodAction:(id)sender
+{
+    [self.navigationController pushViewController: self.deliverViewController animated: YES];
 }
 
-- (IBAction)coutingAction:(id)sender {
+- (IBAction)coutingAction:(id)sender
+{
+    [self.navigationController pushViewController: self.countingViewController animated: YES];
 }
 
 - (IBAction)verifyAction:(id)sender
