@@ -7,6 +7,8 @@
 //
 
 #import "TDDeliverViewController.h"
+#import "TDDeliverChooseViewController.h"
+#import "TDDeliverScanViewController.h"
 
 @interface TDDeliverViewController ()
 
@@ -18,6 +20,9 @@
 {
     [super viewDidLoad];
     self.title = @"调 拨";
+    
+    self.scanViewController = [[TDDeliverScanViewController alloc] initWithNibName: @"TDDeliverScanViewController" bundle: nil];
+    self.chooseViewController = [[TDDeliverChooseViewController alloc] initWithNibName: @"TDDeliverChooseViewController" bundle: nil];
 }
 
 - (void)didReceiveMemoryWarning
