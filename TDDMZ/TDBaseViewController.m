@@ -31,6 +31,11 @@
 {
     [super viewWillAppear:animated];
     self.navigationController.navigationBar.hidden = NO;
+    
+    UIColor * color = [UIColor whiteColor];
+    NSDictionary * dict=[NSDictionary dictionaryWithObject:color forKey:NSForegroundColorAttributeName];
+    self.navigationController.navigationBar.titleTextAttributes = dict;
+    
     self.navigationItem.leftBarButtonItem = [self backButton];
 }
 

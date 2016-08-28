@@ -35,22 +35,21 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="vOB-P4-TDB">
-                        <rect key="frame" x="311" y="49" width="30" height="30"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="vOB-P4-TDB">
+                        <rect key="frame" x="302" y="44" width="49" height="40"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <state key="normal" title="-"/>
+                        <state key="normal" image="8"/>
                         <connections>
                             <action selector="reduceAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="I67-PM-SpM"/>
                         </connections>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ZiZ-wC-zNQ">
-                        <rect key="frame" x="430" y="49" width="30" height="30"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Hva-5g-0KC">
+                        <rect key="frame" x="362" y="53" width="42" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <state key="normal" title="+"/>
-                        <connections>
-                            <action selector="addAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="NY0-Hu-YsY"/>
-                        </connections>
-                    </button>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CbU-Ic-csx">
                         <rect key="frame" x="206" y="11" width="42" height="33.5"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -76,13 +75,14 @@
                         <rect key="frame" x="16" y="15" width="82" height="113"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Hva-5g-0KC">
-                        <rect key="frame" x="362" y="53" width="42" height="21"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ZiZ-wC-zNQ">
+                        <rect key="frame" x="419" y="44" width="52" height="40"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                        <state key="normal" image="7"/>
+                        <connections>
+                            <action selector="addAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="NY0-Hu-YsY"/>
+                        </connections>
+                    </button>
                 </subviews>
             </tableViewCellContentView>
             <connections>
@@ -95,4 +95,8 @@
             <point key="canvasLocation" x="338.5" y="246"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="7" width="40" height="40"/>
+        <image name="8" width="40" height="40"/>
+    </resources>
 </document>

@@ -64,6 +64,7 @@
 {
     TDCountPreviewTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: CountPreviewCellIdentifier];
 
+    cell.backgroundColor = [indexPath row] % 2 ? [UIColor whiteColor] : RGBColor(235, 235, 235);
     cell.label1.text = [NSString stringWithFormat:@"%ld", [indexPath row]];
     return cell;
 }
@@ -76,7 +77,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
 {
-    return 146;
+    return 44;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section;
