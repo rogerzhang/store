@@ -10,10 +10,6 @@
 
 @interface TDBaseViewController ()<TDItemsBarDelegate>
 
-@property (strong, nonatomic) TDScanView *scanView;
-@property (strong, nonatomic) TDItemsBar *itemsBar;
-@property (strong, nonatomic) TDSaveBanner *saveBanner;
-
 @end
 
 @implementation TDBaseViewController
@@ -28,7 +24,7 @@
     
     self.saveBanner = [[[NSBundle mainBundle] loadNibNamed:@"TDSaveBanner" owner:self options:nil] objectAtIndex:0];
     [self.view addSubview: self.saveBanner];
-    self.saveBanner.backgroundColor = [UIColor grayColor];
+    self.saveBanner.backgroundColor = RGBColor(247, 247, 247);
 }
 
 - (void)viewWillAppear:(BOOL)animated;
@@ -49,6 +45,12 @@
     CGFloat height = TDBANNER_HEIGHT;
     frame = CGRectMake(0, bounds.size.height - height, bounds.size.width, height);
     self.saveBanner.frame = frame;
+}
+
+-(void) viewDidAppear:(BOOL)animated;
+{
+    [super viewDidAppear:animated];
+    [self.itemsBar setDefaultActionButton: self.itemsBar.chooseScanerButton];
 }
 
 - (void)didReceiveMemoryWarning

@@ -10,4 +10,11 @@
 
 @interface TDSaveBanner : UIView
 
+@property (weak, nonatomic) IBOutlet UILabel *key1Label;
+@property (weak, nonatomic) IBOutlet UILabel *value1Label;
+@property (weak, nonatomic) IBOutlet UILabel *key2Label;
+@property (weak, nonatomic) IBOutlet UILabel *value2Label;
+@property (weak, nonatomic) IBOutlet UIButton *saveButton;
+
+- (void) showLabel: (BOOL)show;
 @end

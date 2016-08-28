@@ -10,6 +10,9 @@
 
 @interface TDBaseViewController : UIViewController
 
+@property (strong, nonatomic) TDScanView *scanView;
+@property (strong, nonatomic) TDItemsBar *itemsBar;
+@property (strong, nonatomic) TDSaveBanner *saveBanner;
 @property (nonatomic, strong) UIViewController *scanViewController;
 @property (nonatomic, strong) UIViewController *chooseViewController;
 

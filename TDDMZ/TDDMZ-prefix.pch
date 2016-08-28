@@ -9,19 +9,31 @@
 #ifndef TDDMZ_prefix_pch
 #define TDDMZ_prefix_pch
 
+#import "TDHelper.h"
 #import "TDZbarReaderManager.h"
 #import "TDScanView.h"
 #import "TDItemsBar.h"
 #import "TDSaveBanner.h"
 #import "TDBaseViewController.h"
 #import "TDOptionsBanner.h"
-// Include any system framework and library headers here that should be included in all compilation units.
-// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#import "TDInfoView.h"
+#import "TDProductPreviewTableViewCell.h"
+#import "TDCountPreviewTableViewCell.h"
+#import "TDCountHeader.h"
+#import "TDOrderCollectionViewCell.h"
+#import "TDOrderLayout.h"
+#import "TDOrderPreviewCell.h"
+#import "AFNetworking.h"
+#import "TDClient.h"
 
 #define RGBColor(r, g, b) [UIColor colorWithRed:((r) / 255.0f) green:((g) / 255.0f) blue:((b) / 255.0f) alpha:1.0f]
 #define TDBANNER_HEIGHT 86
 #define TDITEMBAR_HEIGHT 34
 #define TDSCANVIEW_HEIGHT 175
 #define TDOPTIONSBANNER_HEIGHT 92
+
+#define PreviewCellIdentifier @"PreviewTableViewCell"
+#define CountPreviewCellIdentifier @"CountPreviewCellIdentifier"
+#define CountHeaderCellIdentifier @"CountHeaderCellIdentifier"
 
 #endif /* TDDMZ_prefix_pch */

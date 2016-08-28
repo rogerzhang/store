@@ -20,10 +20,31 @@
 {
     [super viewDidLoad];
     self.title = @"调 拨";
-    
+    [self.saveBanner showLabel: YES];
+    self.saveBanner.key1Label.text = @"总件数：";
+    self.saveBanner.key2Label.text = @"总金额：";
+    self.saveBanner.value1Label.text = @"";
+    self.saveBanner.value2Label.text = @"";
     self.scanViewController = [[TDDeliverScanViewController alloc] initWithNibName: @"TDDeliverScanViewController" bundle: nil];
     self.chooseViewController = [[TDDeliverChooseViewController alloc] initWithNibName: @"TDDeliverChooseViewController" bundle: nil];
 }
+
+- (UIBarButtonItem *)rightButtoItem;
+{
+    UIBarButtonItem *rightButtoItem = [[UIBarButtonItem alloc] initWithTitle:@"未审核" style:UIBarButtonItemStylePlain target:self action:@selector(rightButtonAction)];
+    
+    return rightButtoItem;
+}
+
+- (void) rightButtonAction;
+{}
+
+- (void)viewWillAppear:(BOOL)animated;
+{
+    [super viewWillAppear:animated];
+    self.navigationItem.rightBarButtonItem = [self rightButtoItem];
+}
+
 
 - (void)didReceiveMemoryWarning
 {

@@ -1,14 +1,14 @@
 //
-//  TDProductPreviewTableViewCell.m
+//  TDCountPreviewTableViewCell.m
 //  TDDMZ
 //
-//  Created by Roger (Wei) Zhang on 8/23/16.
+//  Created by Roger (Wei) Zhang on 8/28/16.
 //  Copyright © 2016 Roger (Wei) Zhang. All rights reserved.
 //
 
-#import "TDProductPreviewTableViewCell.h"
+#import "TDCountPreviewTableViewCell.h"
 
-@implementation TDProductPreviewTableViewCell
+@implementation TDCountPreviewTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -21,9 +21,4 @@
     // Configure the view for the selected state
 }
 
-- (IBAction)addAction:(id)sender {
-}
-
-- (IBAction)reduceAction:(id)sender {
-}
 @end

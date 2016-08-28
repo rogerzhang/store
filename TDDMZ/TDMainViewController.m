@@ -11,8 +11,11 @@
 #import "TDVerifyViewController.h"
 #import "TDCountingViewController.h"
 #import "TDDeliverViewController.h"
+#import "TDOrderCollectionViewController.h"
+#import "TDGetOrderCollectionViewController.h"
 
 @interface TDMainViewController ()
+
 @property (weak, nonatomic) IBOutlet UILabel *currentStoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
 @property (weak, nonatomic) IBOutlet UIButton *logoutButton;
@@ -22,7 +25,8 @@
 @property (nonatomic, strong) TDVerifyViewController *verifyViewController;
 @property (nonatomic, strong) TDCountingViewController *countingViewController;
 @property (nonatomic, strong) TDDeliverViewController *deliverViewController;
-
+@property (nonatomic, strong) TDOrderCollectionViewController *orderViewController;
+@property (nonatomic, strong) TDGetOrderCollectionViewController *getOrderViewController;
 
 @end
 
@@ -37,6 +41,10 @@
     self.verifyViewController = [[TDVerifyViewController alloc] initWithNibName: @"TDVerifyViewController" bundle: nil];
     self.countingViewController = [[TDCountingViewController alloc] initWithNibName: @"TDCountingViewController" bundle: nil];
     self.deliverViewController = [[TDDeliverViewController alloc] initWithNibName: @"TDDeliverViewController" bundle: nil];
+    
+    TDOrderLayout *flowLayout = [[TDOrderLayout alloc] init];
+    self.orderViewController = [[TDOrderCollectionViewController alloc] initWithCollectionViewLayout: flowLayout];
+    self.getOrderViewController = [[TDGetOrderCollectionViewController alloc] initWithCollectionViewLayout:flowLayout];
 }
 
 - (void)viewWillAppear:(BOOL)animated;
@@ -52,10 +60,14 @@
 
 - (IBAction)logoutAction:(id)sender
 {
+    [[TDClient sharedInstance] logoutWithCompletionHandler: ^(BOOL success, NSError *error){
+        [self dismissViewControllerAnimated: YES completion: NULL];
+    }];
 }
 
 - (IBAction)getListAction:(id)sender
 {
+    [self.navigationController pushViewController: self.getOrderViewController animated: YES];
 }
 
 - (IBAction)scanAction:(id)sender
@@ -70,6 +82,7 @@
 
 - (IBAction)orderConfirmAction:(id)sender
 {
+    [self.navigationController pushViewController: self.orderViewController animated: YES];
 }
 
 - (IBAction)searchGoods:(id)sender
@@ -91,15 +104,5 @@
 {
     [self.navigationController pushViewController: self.verifyViewController animated: YES];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

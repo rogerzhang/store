@@ -7,6 +7,8 @@
 //
 
 #import "TDCountingViewController.h"
+#import "TDCountScanViewController.h"
+#import "TDCountChooseViewController.h"
 
 @interface TDCountingViewController ()
 
@@ -18,6 +20,9 @@
 {
     [super viewDidLoad];
     self.title = @"盘 点";
+    
+    self.scanViewController = [[TDCountScanViewController alloc] initWithNibName: @"TDCountScanViewController" bundle: nil];
+    self.chooseViewController = [[TDCountChooseViewController alloc] initWithNibName: @"TDCountChooseViewController" bundle: nil];
 }
 
 - (void)didReceiveMemoryWarning

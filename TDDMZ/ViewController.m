@@ -29,20 +29,25 @@
 }
 - (IBAction)loginAction:(id)sender
 {
+//    TDClient *client = [TDClient sharedInstance];
+//    [client loginWithAccount: @"13606057867" password:@"123456" completionHandler:^(BOOL success, NSError *error){
+//        if (success) {
+//            TDMainViewController *mv = [[TDMainViewController alloc] initWithNibName: @"TDMainViewController" bundle: nil];
+//            UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController: mv];
+//            
+//            [self presentViewController: nav animated: YES completion: NULL];
+//        }
+//        else
+//        {
+//            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle: @"登录失败" message:error.localizedDescription delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+//            [alertView show];
+//        }
+//    }];
+    
     TDMainViewController *mv = [[TDMainViewController alloc] initWithNibName: @"TDMainViewController" bundle: nil];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController: mv];
     
     [self presentViewController: nav animated: YES completion: NULL];
-}
-
-- (IBAction) scanButtonTapped
-{
-    [[TDZbarReaderManager sharedInstance] startToScanBarcodeOnViewController: self withCompletionHandler: ^(BOOL success, id result){
-        if (success)
-        {
-            NSLog(@"%@", result);
-        }
-    }];
 }
 
 @end

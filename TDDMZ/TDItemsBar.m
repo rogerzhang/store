@@ -54,6 +54,11 @@
     self.chooseScanerButton.frame = CGRectMake(dx, 0, bounds.size.width / 2, bounds.size.height);
 }
 
+- (void)setDefaultActionButton: (UIButton *)button;
+{
+    [self tapChooseScanerAction: button];
+}
+
 - (IBAction) tapChooseGoodAction: (id)sender;
 {
     [self chooseButton: sender];

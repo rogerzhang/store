@@ -20,6 +20,35 @@
     image = [image stretchableImageWithLeftCapWidth:5 topCapHeight:5];
     [[UINavigationBar appearance] setBackgroundImage: image forBarMetrics: UIBarMetricsDefault];
     [[UINavigationBar appearance] setTintColor: [UIColor whiteColor]];
+    
+    AFNetworkReachabilityManager *afNetworkReachabilityManager = [AFNetworkReachabilityManager sharedManager];
+    [afNetworkReachabilityManager startMonitoring];
+    
+    [afNetworkReachabilityManager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        
+        NSString *errorMessage = nil;
+        switch (status) {
+            case AFNetworkReachabilityStatusNotReachable:{
+                errorMessage = @"网络不通";
+                break;
+            }
+            case AFNetworkReachabilityStatusReachableViaWiFi:{
+                break;
+            }
+                
+            case AFNetworkReachabilityStatusReachableViaWWAN:{
+                break;
+            }
+            default:
+                break;
+        }
+        
+        if (errorMessage) {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle: nil message:errorMessage delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            [alertView show];
+        }
+    }];
+     
     return YES;
 }
 

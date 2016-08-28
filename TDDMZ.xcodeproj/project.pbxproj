@@ -36,6 +36,28 @@
 		2290B1C31D61FDE50085BD49 /* TDSearchGoodViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2290B1C11D61FDE50085BD49 /* TDSearchGoodViewController.xib */; };
 		2290B1C61D6200360085BD49 /* TDScanView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2290B1C51D6200360085BD49 /* TDScanView.m */; };
 		2290B1C81D6200540085BD49 /* TDScanView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2290B1C71D6200540085BD49 /* TDScanView.xib */; };
+		22CC03B01D719DC50081AB16 /* TDCountScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC03AE1D719DC50081AB16 /* TDCountScanViewController.m */; };
+		22CC03B11D719DC50081AB16 /* TDCountScanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22CC03AF1D719DC50081AB16 /* TDCountScanViewController.xib */; };
+		22CC03B51D719DDC0081AB16 /* TDCountChooseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC03B31D719DDC0081AB16 /* TDCountChooseViewController.m */; };
+		22CC03B61D719DDC0081AB16 /* TDCountChooseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22CC03B41D719DDC0081AB16 /* TDCountChooseViewController.xib */; };
+		22CC03B91D719E310081AB16 /* TDInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC03B81D719E310081AB16 /* TDInfoView.m */; };
+		22CC03BB1D719E400081AB16 /* TDInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22CC03BA1D719E400081AB16 /* TDInfoView.xib */; };
+		22CC03BF1D719FC60081AB16 /* TDHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC03BE1D719FC60081AB16 /* TDHelper.m */; };
+		22CC03C11D71A89A0081AB16 /* test.png in Resources */ = {isa = PBXBuildFile; fileRef = 22CC03C01D71A89A0081AB16 /* test.png */; };
+		22CC03C51D726BA00081AB16 /* TDCountPreviewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC03C31D726BA00081AB16 /* TDCountPreviewTableViewCell.m */; };
+		22CC03C61D726BA00081AB16 /* TDCountPreviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22CC03C41D726BA00081AB16 /* TDCountPreviewTableViewCell.xib */; };
+		22CC03C91D726C470081AB16 /* TDCountHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC03C81D726C470081AB16 /* TDCountHeader.m */; };
+		22CC03CB1D726C580081AB16 /* TDCountHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22CC03CA1D726C580081AB16 /* TDCountHeader.xib */; };
+		22CC04221D727AE50081AB16 /* TDOrderCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC04201D727AE50081AB16 /* TDOrderCollectionViewController.m */; };
+		22CC04231D727AE50081AB16 /* TDOrderCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22CC04211D727AE50081AB16 /* TDOrderCollectionViewController.xib */; };
+		22CC04271D727BE50081AB16 /* TDOrderCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC04251D727BE50081AB16 /* TDOrderCollectionViewCell.m */; };
+		22CC04281D727BE50081AB16 /* TDOrderCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22CC04261D727BE50081AB16 /* TDOrderCollectionViewCell.xib */; };
+		22CC042B1D727D600081AB16 /* TDOrderLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC042A1D727D600081AB16 /* TDOrderLayout.m */; };
+		22CC04351D728F9F0081AB16 /* TDOrderPreviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC04331D728F9F0081AB16 /* TDOrderPreviewCell.m */; };
+		22CC04361D728F9F0081AB16 /* TDOrderPreviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22CC04341D728F9F0081AB16 /* TDOrderPreviewCell.xib */; };
+		22CC043A1D72907D0081AB16 /* TDGetOrderCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC04381D72907D0081AB16 /* TDGetOrderCollectionViewController.m */; };
+		22CC043B1D72907D0081AB16 /* TDGetOrderCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22CC04391D72907D0081AB16 /* TDGetOrderCollectionViewController.xib */; };
+		22CC043E1D7294A70081AB16 /* TDClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC043D1D7294A70081AB16 /* TDClient.m */; };
 		22D0A1271D54826800D27A6A /* TDZbarReaderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D0A1261D54826800D27A6A /* TDZbarReaderManager.m */; };
 		22D9BE991D65F13900E06184 /* TDItemsBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D9BE981D65F13900E06184 /* TDItemsBar.m */; };
 		22DCDDAF1D4EF0010068983C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DCDDAE1D4EF0010068983C /* main.m */; };
@@ -110,6 +132,40 @@
 		2290B1C41D6200360085BD49 /* TDScanView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDScanView.h; sourceTree = "<group>"; };
 		2290B1C51D6200360085BD49 /* TDScanView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDScanView.m; sourceTree = "<group>"; };
 		2290B1C71D6200540085BD49 /* TDScanView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDScanView.xib; sourceTree = "<group>"; };
+		22CC03AD1D719DC50081AB16 /* TDCountScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDCountScanViewController.h; sourceTree = "<group>"; };
+		22CC03AE1D719DC50081AB16 /* TDCountScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDCountScanViewController.m; sourceTree = "<group>"; };
+		22CC03AF1D719DC50081AB16 /* TDCountScanViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDCountScanViewController.xib; sourceTree = "<group>"; };
+		22CC03B21D719DDC0081AB16 /* TDCountChooseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDCountChooseViewController.h; sourceTree = "<group>"; };
+		22CC03B31D719DDC0081AB16 /* TDCountChooseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDCountChooseViewController.m; sourceTree = "<group>"; };
+		22CC03B41D719DDC0081AB16 /* TDCountChooseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDCountChooseViewController.xib; sourceTree = "<group>"; };
+		22CC03B71D719E310081AB16 /* TDInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDInfoView.h; sourceTree = "<group>"; };
+		22CC03B81D719E310081AB16 /* TDInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDInfoView.m; sourceTree = "<group>"; };
+		22CC03BA1D719E400081AB16 /* TDInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDInfoView.xib; sourceTree = "<group>"; };
+		22CC03BD1D719FC60081AB16 /* TDHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDHelper.h; sourceTree = "<group>"; };
+		22CC03BE1D719FC60081AB16 /* TDHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDHelper.m; sourceTree = "<group>"; };
+		22CC03C01D71A89A0081AB16 /* test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test.png; sourceTree = "<group>"; };
+		22CC03C21D726BA00081AB16 /* TDCountPreviewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDCountPreviewTableViewCell.h; sourceTree = "<group>"; };
+		22CC03C31D726BA00081AB16 /* TDCountPreviewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDCountPreviewTableViewCell.m; sourceTree = "<group>"; };
+		22CC03C41D726BA00081AB16 /* TDCountPreviewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDCountPreviewTableViewCell.xib; sourceTree = "<group>"; };
+		22CC03C71D726C470081AB16 /* TDCountHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDCountHeader.h; sourceTree = "<group>"; };
+		22CC03C81D726C470081AB16 /* TDCountHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDCountHeader.m; sourceTree = "<group>"; };
+		22CC03CA1D726C580081AB16 /* TDCountHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDCountHeader.xib; sourceTree = "<group>"; };
+		22CC041F1D727AE50081AB16 /* TDOrderCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDOrderCollectionViewController.h; sourceTree = "<group>"; };
+		22CC04201D727AE50081AB16 /* TDOrderCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDOrderCollectionViewController.m; sourceTree = "<group>"; };
+		22CC04211D727AE50081AB16 /* TDOrderCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDOrderCollectionViewController.xib; sourceTree = "<group>"; };
+		22CC04241D727BE50081AB16 /* TDOrderCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDOrderCollectionViewCell.h; sourceTree = "<group>"; };
+		22CC04251D727BE50081AB16 /* TDOrderCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDOrderCollectionViewCell.m; sourceTree = "<group>"; };
+		22CC04261D727BE50081AB16 /* TDOrderCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDOrderCollectionViewCell.xib; sourceTree = "<group>"; };
+		22CC04291D727D600081AB16 /* TDOrderLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDOrderLayout.h; sourceTree = "<group>"; };
+		22CC042A1D727D600081AB16 /* TDOrderLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDOrderLayout.m; sourceTree = "<group>"; };
+		22CC04321D728F9F0081AB16 /* TDOrderPreviewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDOrderPreviewCell.h; sourceTree = "<group>"; };
+		22CC04331D728F9F0081AB16 /* TDOrderPreviewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDOrderPreviewCell.m; sourceTree = "<group>"; };
+		22CC04341D728F9F0081AB16 /* TDOrderPreviewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDOrderPreviewCell.xib; sourceTree = "<group>"; };
+		22CC04371D72907D0081AB16 /* TDGetOrderCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDGetOrderCollectionViewController.h; sourceTree = "<group>"; };
+		22CC04381D72907D0081AB16 /* TDGetOrderCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDGetOrderCollectionViewController.m; sourceTree = "<group>"; };
+		22CC04391D72907D0081AB16 /* TDGetOrderCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDGetOrderCollectionViewController.xib; sourceTree = "<group>"; };
+		22CC043C1D7294A70081AB16 /* TDClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDClient.h; sourceTree = "<group>"; };
+		22CC043D1D7294A70081AB16 /* TDClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDClient.m; sourceTree = "<group>"; };
 		22D0A1251D54826800D27A6A /* TDZbarReaderManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDZbarReaderManager.h; sourceTree = "<group>"; };
 		22D0A1261D54826800D27A6A /* TDZbarReaderManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDZbarReaderManager.m; sourceTree = "<group>"; };
 		22D0A1281D548B1200D27A6A /* TDDMZ-prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TDDMZ-prefix.pch"; sourceTree = "<group>"; };
@@ -175,6 +231,12 @@
 				2215B3311D6F304500616107 /* TDCountingViewController.h */,
 				2215B3321D6F304500616107 /* TDCountingViewController.m */,
 				2215B3331D6F304500616107 /* TDCountingViewController.xib */,
+				22CC03AD1D719DC50081AB16 /* TDCountScanViewController.h */,
+				22CC03AE1D719DC50081AB16 /* TDCountScanViewController.m */,
+				22CC03AF1D719DC50081AB16 /* TDCountScanViewController.xib */,
+				22CC03B21D719DDC0081AB16 /* TDCountChooseViewController.h */,
+				22CC03B31D719DDC0081AB16 /* TDCountChooseViewController.m */,
+				22CC03B41D719DDC0081AB16 /* TDCountChooseViewController.xib */,
 			);
 			name = Counting;
 			sourceTree = "<group>";
@@ -198,6 +260,11 @@
 		2215B32E1D6F2F7B00616107 /* OrderConfirm */ = {
 			isa = PBXGroup;
 			children = (
+				22CC041F1D727AE50081AB16 /* TDOrderCollectionViewController.h */,
+				22CC04201D727AE50081AB16 /* TDOrderCollectionViewController.m */,
+				22CC04211D727AE50081AB16 /* TDOrderCollectionViewController.xib */,
+				22CC04291D727D600081AB16 /* TDOrderLayout.h */,
+				22CC042A1D727D600081AB16 /* TDOrderLayout.m */,
 			);
 			name = OrderConfirm;
 			sourceTree = "<group>";
@@ -239,6 +306,12 @@
 				2215B0981D6C903C00616107 /* TDProductPreviewTableViewCell.h */,
 				2215B0991D6C903C00616107 /* TDProductPreviewTableViewCell.m */,
 				2215B09A1D6C903C00616107 /* TDProductPreviewTableViewCell.xib */,
+				22CC03C21D726BA00081AB16 /* TDCountPreviewTableViewCell.h */,
+				22CC03C31D726BA00081AB16 /* TDCountPreviewTableViewCell.m */,
+				22CC03C41D726BA00081AB16 /* TDCountPreviewTableViewCell.xib */,
+				22CC04241D727BE50081AB16 /* TDOrderCollectionViewCell.h */,
+				22CC04251D727BE50081AB16 /* TDOrderCollectionViewCell.m */,
+				22CC04261D727BE50081AB16 /* TDOrderCollectionViewCell.xib */,
 				2215B09D1D6C90D400616107 /* TDSaveBanner.h */,
 				2215B09E1D6C90D400616107 /* TDSaveBanner.m */,
 				2215B0EF1D6C9C6800616107 /* TDSaveBanner.xib */,
@@ -247,13 +320,43 @@
 				2215B34D1D6F391700616107 /* TDOptionsBanner.h */,
 				2215B34E1D6F391700616107 /* TDOptionsBanner.m */,
 				2215B3501D6F394B00616107 /* TDOptionsBanner.xib */,
+				22CC03B71D719E310081AB16 /* TDInfoView.h */,
+				22CC03B81D719E310081AB16 /* TDInfoView.m */,
+				22CC03BA1D719E400081AB16 /* TDInfoView.xib */,
+				22CC03C71D726C470081AB16 /* TDCountHeader.h */,
+				22CC03C81D726C470081AB16 /* TDCountHeader.m */,
+				22CC03CA1D726C580081AB16 /* TDCountHeader.xib */,
+				22CC04321D728F9F0081AB16 /* TDOrderPreviewCell.h */,
+				22CC04331D728F9F0081AB16 /* TDOrderPreviewCell.m */,
+				22CC04341D728F9F0081AB16 /* TDOrderPreviewCell.xib */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		22CC03BC1D719FAA0081AB16 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				22CC03BD1D719FC60081AB16 /* TDHelper.h */,
+				22CC03BE1D719FC60081AB16 /* TDHelper.m */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
+		22CC042C1D728F2E0081AB16 /* GetOrder */ = {
+			isa = PBXGroup;
+			children = (
+				22CC04371D72907D0081AB16 /* TDGetOrderCollectionViewController.h */,
+				22CC04381D72907D0081AB16 /* TDGetOrderCollectionViewController.m */,
+				22CC04391D72907D0081AB16 /* TDGetOrderCollectionViewController.xib */,
+			);
+			name = GetOrder;
 			sourceTree = "<group>";
 		};
 		22D0A1231D54820300D27A6A /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				22CC043C1D7294A70081AB16 /* TDClient.h */,
+				22CC043D1D7294A70081AB16 /* TDClient.m */,
 			);
 			name = Networking;
 			sourceTree = "<group>";
@@ -261,6 +364,9 @@
 		22D0A1241D54820C00D27A6A /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				22CC042C1D728F2E0081AB16 /* GetOrder */,
+				22CC03C01D71A89A0081AB16 /* test.png */,
+				22CC03BC1D719FAA0081AB16 /* Helper */,
 				2215B3301D6F2FB700616107 /* Verification */,
 				2215B32F1D6F2F8800616107 /* SearchGoods */,
 				2215B32E1D6F2F7B00616107 /* OrderConfirm */,
@@ -461,15 +567,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22CC03CB1D726C580081AB16 /* TDCountHeader.xib in Resources */,
+				22CC04281D727BE50081AB16 /* TDOrderCollectionViewCell.xib in Resources */,
 				2215B3511D6F394B00616107 /* TDOptionsBanner.xib in Resources */,
+				22CC04231D727AE50081AB16 /* TDOrderCollectionViewController.xib in Resources */,
 				2215B09C1D6C903C00616107 /* TDProductPreviewTableViewCell.xib in Resources */,
 				2215B0F01D6C9C6800616107 /* TDSaveBanner.xib in Resources */,
 				2221A8F11D64AFC900D30775 /* TDVerifyViewController.xib in Resources */,
 				2215B3351D6F304500616107 /* TDCountingViewController.xib in Resources */,
 				2215B0AC1D6C953900616107 /* TDSearchChooseViewController.xib in Resources */,
 				2215B34C1D6F372600616107 /* TDDeliverScanViewController.xib in Resources */,
+				22CC04361D728F9F0081AB16 /* TDOrderPreviewCell.xib in Resources */,
 				22DCDDBD1D4EF0010068983C /* LaunchScreen.storyboard in Resources */,
 				2290B1C81D6200540085BD49 /* TDScanView.xib in Resources */,
+				22CC03BB1D719E400081AB16 /* TDInfoView.xib in Resources */,
+				22CC03B61D719DDC0081AB16 /* TDCountChooseViewController.xib in Resources */,
+				22CC03C11D71A89A0081AB16 /* test.png in Resources */,
+				22CC043B1D72907D0081AB16 /* TDGetOrderCollectionViewController.xib in Resources */,
+				22CC03C61D726BA00081AB16 /* TDCountPreviewTableViewCell.xib in Resources */,
+				22CC03B11D719DC50081AB16 /* TDCountScanViewController.xib in Resources */,
 				2290A9361D60B74D0085BD49 /* TDMainViewController.xib in Resources */,
 				2215B3471D6F32A400616107 /* TDDeliverViewController.xib in Resources */,
 				2290B1C31D61FDE50085BD49 /* TDSearchGoodViewController.xib in Resources */,
@@ -550,9 +666,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				22DCDDB51D4EF0010068983C /* ViewController.m in Sources */,
+				22CC04271D727BE50081AB16 /* TDOrderCollectionViewCell.m in Sources */,
+				22CC04351D728F9F0081AB16 /* TDOrderPreviewCell.m in Sources */,
 				2215B0A61D6C930600616107 /* TDSearchScanViewController.m in Sources */,
+				22CC043A1D72907D0081AB16 /* TDGetOrderCollectionViewController.m in Sources */,
 				22D0A1271D54826800D27A6A /* TDZbarReaderManager.m in Sources */,
 				2215B3421D6F30E700616107 /* TDBaseViewController.m in Sources */,
+				22CC03B91D719E310081AB16 /* TDInfoView.m in Sources */,
+				22CC042B1D727D600081AB16 /* TDOrderLayout.m in Sources */,
+				22CC03BF1D719FC60081AB16 /* TDHelper.m in Sources */,
+				22CC04221D727AE50081AB16 /* TDOrderCollectionViewController.m in Sources */,
 				2215B09B1D6C903C00616107 /* TDProductPreviewTableViewCell.m in Sources */,
 				2215B3551D6F3CED00616107 /* TDDeliverChooseViewController.m in Sources */,
 				2215B3461D6F32A400616107 /* TDDeliverViewController.m in Sources */,
@@ -560,15 +683,20 @@
 				22DCDDB21D4EF0010068983C /* AppDelegate.m in Sources */,
 				2215B0A21D6C915100616107 /* TDCashierBanner.m in Sources */,
 				2215B0AB1D6C953900616107 /* TDSearchChooseViewController.m in Sources */,
+				22CC03B51D719DDC0081AB16 /* TDCountChooseViewController.m in Sources */,
 				2215B09F1D6C90D400616107 /* TDSaveBanner.m in Sources */,
 				2290A9351D60B74D0085BD49 /* TDMainViewController.m in Sources */,
+				22CC03C91D726C470081AB16 /* TDCountHeader.m in Sources */,
 				22DCDDAF1D4EF0010068983C /* main.m in Sources */,
 				2215B34B1D6F372600616107 /* TDDeliverScanViewController.m in Sources */,
 				2290B1C21D61FDE50085BD49 /* TDSearchGoodViewController.m in Sources */,
 				2215B3341D6F304500616107 /* TDCountingViewController.m in Sources */,
 				22D9BE991D65F13900E06184 /* TDItemsBar.m in Sources */,
 				2221A8F01D64AFC900D30775 /* TDVerifyViewController.m in Sources */,
+				22CC043E1D7294A70081AB16 /* TDClient.m in Sources */,
+				22CC03B01D719DC50081AB16 /* TDCountScanViewController.m in Sources */,
 				2215B34F1D6F391700616107 /* TDOptionsBanner.m in Sources */,
+				22CC03C51D726BA00081AB16 /* TDCountPreviewTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
