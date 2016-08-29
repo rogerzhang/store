@@ -51,6 +51,9 @@
 {
     [super viewWillAppear:animated];
     self.navigationController.navigationBar.hidden = YES;
+    
+    self.currentStoreLabel.text = [NSString stringWithFormat:@"当前店铺：%@", [TDClient sharedInstance].storeName];
+    self.userNameLabel.text = [NSString stringWithFormat:@"收银员：%@", [TDClient sharedInstance].userName];
 }
 
 - (void)didReceiveMemoryWarning

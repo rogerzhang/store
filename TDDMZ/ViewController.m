@@ -27,27 +27,28 @@
 {
     [super didReceiveMemoryWarning];
 }
+
 - (IBAction)loginAction:(id)sender
 {
-//    TDClient *client = [TDClient sharedInstance];
-//    [client loginWithAccount: @"13606057867" password:@"123456" completionHandler:^(BOOL success, NSError *error){
-//        if (success) {
-//            TDMainViewController *mv = [[TDMainViewController alloc] initWithNibName: @"TDMainViewController" bundle: nil];
-//            UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController: mv];
-//            
-//            [self presentViewController: nav animated: YES completion: NULL];
-//        }
-//        else
-//        {
-//            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle: @"登录失败" message:error.localizedDescription delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-//            [alertView show];
-//        }
-//    }];
+    NSString *account = [self.userTextField.text stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
+    NSString *password = [self.psTextField.text stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
     
-    TDMainViewController *mv = [[TDMainViewController alloc] initWithNibName: @"TDMainViewController" bundle: nil];
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController: mv];
+    NSLog(@"%@  %@", account, password);
     
-    [self presentViewController: nav animated: YES completion: NULL];
+    TDClient *client = [TDClient sharedInstance];
+    [client loginWithAccount: @"13606057867" password:@"123456" completionHandler:^(BOOL success, NSError *error){
+        if (success) {
+            TDMainViewController *mv = [[TDMainViewController alloc] initWithNibName: @"TDMainViewController" bundle: nil];
+            UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController: mv];
+            
+            [self presentViewController: nav animated: YES completion: NULL];
+        }
+        else
+        {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle: @"登录失败" message:error.localizedDescription delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+            [alertView show];
+        }
+    }];
 }
 
 @end

@@ -41,9 +41,10 @@
     [params setValue:account forKey:@"user"];
     [params setValue:password forKey:@"pwd"];
     
+    NSString *jsonString = [params jsonStringWithPrettyPrint: NO];
     [self.manager
         POST:@"login"
-        parameters:params
+        parameters:@{@"code":jsonString}
         progress:^(NSProgress *uploadProgress){}
         success:^(NSURLSessionDataTask *task, id _Nullable responseObject){
             NSLog(@"%@", responseObject);

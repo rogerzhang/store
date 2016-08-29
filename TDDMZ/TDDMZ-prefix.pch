@@ -20,6 +20,7 @@
 #import "TDProductPreviewTableViewCell.h"
 #import "TDCountPreviewTableViewCell.h"
 #import "TDCountHeader.h"
+#import "NSDictionary+TDConvertToJson.h"
 #import "TDOrderCollectionViewCell.h"
 #import "TDOrderLayout.h"
 #import "TDOrderPreviewCell.h"
