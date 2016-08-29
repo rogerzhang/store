@@ -16,6 +16,7 @@
 #import "TDSaveBanner.h"
 #import "TDBaseViewController.h"
 #import "TDOptionsBanner.h"
+#import "TDCashierBanner.h"
 #import "TDInfoView.h"
 #import "TDProductPreviewTableViewCell.h"
 #import "TDCountPreviewTableViewCell.h"
@@ -36,5 +37,13 @@
 #define PreviewCellIdentifier @"PreviewTableViewCell"
 #define CountPreviewCellIdentifier @"CountPreviewCellIdentifier"
 #define CountHeaderCellIdentifier @"CountHeaderCellIdentifier"
+
+#define TD_LOG(...) {\
+NSLog( \
+@"%@ at %d (%s): %@", \
+[[NSString stringWithUTF8String: __FILE__] lastPathComponent], \
+__LINE__, \
+__func__, \
+[NSString stringWithFormat: __VA_ARGS__]); }\
 
 #endif /* TDDMZ_prefix_pch */

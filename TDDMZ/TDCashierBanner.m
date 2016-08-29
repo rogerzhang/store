@@ -10,12 +10,26 @@
 
 @implementation TDCashierBanner
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
+- (void) layoutSubviews;
+{
+    [super layoutSubviews];
+    
+    CGRect bounds = self.bounds;
+    CGPoint center = self.label.center;
+    center.y = bounds.size.height / 2.0f;
 
+    self.label.center = center;
+    
+    center = self.gdButton.center;
+    center.y = bounds.size.height / 2.0f;
+    self.gdButton.center = center;
+    
+    center = self.jsButton.center;
+    center.y = bounds.size.height / 2.0f;
+    self.jsButton.center = center;
+    
+    center = self.dsButton.center;
+    center.y = bounds.size.height / 2.0f;
+    self.dsButton.center = center;
+}
 @end

@@ -13,6 +13,7 @@
 #import "TDDeliverViewController.h"
 #import "TDOrderCollectionViewController.h"
 #import "TDGetOrderCollectionViewController.h"
+#import "TDCashierViewController.h"
 
 @interface TDMainViewController ()
 
@@ -27,6 +28,7 @@
 @property (nonatomic, strong) TDDeliverViewController *deliverViewController;
 @property (nonatomic, strong) TDOrderCollectionViewController *orderViewController;
 @property (nonatomic, strong) TDGetOrderCollectionViewController *getOrderViewController;
+@property (nonatomic, strong) TDCashierViewController *cashierViewController;
 
 @end
 
@@ -37,6 +39,7 @@
     [super viewDidLoad];
     self.navigationController.navigationBar.hidden = YES;
     
+    self.cashierViewController = [[TDCashierViewController alloc] initWithNibName: @"TDCashierViewController" bundle: nil];
     self.searchGoodViewController = [[TDSearchGoodViewController alloc] initWithNibName:@"TDSearchGoodViewController" bundle:nil];
     self.verifyViewController = [[TDVerifyViewController alloc] initWithNibName: @"TDVerifyViewController" bundle: nil];
     self.countingViewController = [[TDCountingViewController alloc] initWithNibName: @"TDCountingViewController" bundle: nil];
@@ -63,7 +66,7 @@
 
 - (IBAction)logoutAction:(id)sender
 {
-    [[TDClient sharedInstance] logoutWithCompletionHandler: ^(BOOL success, NSError *error){
+    [[TDClient sharedInstance] logoutWithCompletionHandler: ^(BOOL success, NSError *error, id userInfo){
         [self dismissViewControllerAnimated: YES completion: NULL];
     }];
 }
@@ -75,12 +78,13 @@
 
 - (IBAction)scanAction:(id)sender
 {
-    [[TDZbarReaderManager sharedInstance] startToScanBarcodeOnViewController: self withCompletionHandler: ^(BOOL success, id result){
-        if (success)
-        {
-            NSLog(@"%@", result);
-        }
-    }];
+//    [[TDZbarReaderManager sharedInstance] startToScanBarcodeOnViewController: self withCompletionHandler: ^(BOOL success, id result){
+//        if (success)
+//        {
+//            TD_LOG(@"%@", result);
+//        }
+//    }];
+    [self.navigationController pushViewController: self.cashierViewController animated: YES];
 }
 
 - (IBAction)orderConfirmAction:(id)sender

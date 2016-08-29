@@ -89,14 +89,14 @@ static NSString * const reuseIdentifier = @"Cell";
 {
     NSIndexPath *indexPath = [self.collectionView indexPathForCell: cell];
     
-    NSLog(@"indexPath is %ld", [indexPath row]);
+    TD_LOG(@"indexPath is %ld", [indexPath row]);
 }
 
 - (void) orderOKAction: (TDOrderCollectionViewCell*)cell;
 {
     NSIndexPath *indexPath = [self.collectionView indexPathForCell: cell];
     
-    NSLog(@"indexPath is %ld", [indexPath row]);
+    TD_LOG(@"indexPath is %ld", [indexPath row]);
 }
 
 @end

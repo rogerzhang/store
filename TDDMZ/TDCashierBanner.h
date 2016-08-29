@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface TDCashierBanner : UIView
+@property (weak, nonatomic) IBOutlet UILabel *label;
+@property (weak, nonatomic) IBOutlet UIButton *gdButton;
+@property (weak, nonatomic) IBOutlet UIButton *jsButton;
+@property (weak, nonatomic) IBOutlet UIButton *dsButton;
 
 @end

@@ -57,7 +57,7 @@
 
 - (void) imagePickerController: (UIImagePickerController *)picker didFinishPickingMediaWithInfo: (NSDictionary<NSString *,id> *)info;
 {
-    NSLog(@"Barcode info=%@",info);
+    TD_LOG(@"Barcode info=%@",info);
 
     id<NSFastEnumeration> results = [info objectForKey: ZBarReaderControllerResults];
     
@@ -70,7 +70,7 @@
     
     if (result && image)
     {
-        NSLog(@"%@", result);
+        TD_LOG(@"%@", result);
     }
     
     assert(result);

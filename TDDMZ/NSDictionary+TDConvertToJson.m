@@ -21,7 +21,7 @@
     
     if (! jsonData)
     {
-        NSLog(@"bv_jsonStringWithPrettyPrint: error: %@", error.localizedDescription);
+        TD_LOG(@"bv_jsonStringWithPrettyPrint: error: %@", error.localizedDescription);
         return @"{}";
     } else {
         return [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];

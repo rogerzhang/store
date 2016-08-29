@@ -29,6 +29,13 @@
 		2215B3561D6F3CED00616107 /* TDDeliverChooseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2215B3541D6F3CED00616107 /* TDDeliverChooseViewController.xib */; };
 		2221A8F01D64AFC900D30775 /* TDVerifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2221A8EE1D64AFC900D30775 /* TDVerifyViewController.m */; };
 		2221A8F11D64AFC900D30775 /* TDVerifyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2221A8EF1D64AFC900D30775 /* TDVerifyViewController.xib */; };
+		22409DBA1D745EA1004FF14C /* TDCashierViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22409DB81D745EA1004FF14C /* TDCashierViewController.m */; };
+		22409DBB1D745EA1004FF14C /* TDCashierViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22409DB91D745EA1004FF14C /* TDCashierViewController.xib */; };
+		22409DBF1D745EC2004FF14C /* TDCashierScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22409DBD1D745EC2004FF14C /* TDCashierScanViewController.m */; };
+		22409DC01D745EC2004FF14C /* TDCashierScanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22409DBE1D745EC2004FF14C /* TDCashierScanViewController.xib */; };
+		22409DC41D745ED8004FF14C /* TDCashierChooseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22409DC21D745ED8004FF14C /* TDCashierChooseViewController.m */; };
+		22409DC51D745ED8004FF14C /* TDCashierChooseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22409DC31D745ED8004FF14C /* TDCashierChooseViewController.xib */; };
+		22409DC71D746208004FF14C /* TDCashierBanner.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22409DC61D746208004FF14C /* TDCashierBanner.xib */; };
 		2290A92C1D608FBF0085BD49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2290A92B1D608FBF0085BD49 /* Assets.xcassets */; };
 		2290A9351D60B74D0085BD49 /* TDMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2290A9331D60B74D0085BD49 /* TDMainViewController.m */; };
 		2290A9361D60B74D0085BD49 /* TDMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2290A9341D60B74D0085BD49 /* TDMainViewController.xib */; };
@@ -123,9 +130,19 @@
 		2221A8ED1D64AFC900D30775 /* TDVerifyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDVerifyViewController.h; sourceTree = "<group>"; };
 		2221A8EE1D64AFC900D30775 /* TDVerifyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDVerifyViewController.m; sourceTree = "<group>"; };
 		2221A8EF1D64AFC900D30775 /* TDVerifyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDVerifyViewController.xib; sourceTree = "<group>"; };
+		22409DB71D745EA1004FF14C /* TDCashierViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDCashierViewController.h; sourceTree = "<group>"; };
+		22409DB81D745EA1004FF14C /* TDCashierViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDCashierViewController.m; sourceTree = "<group>"; };
+		22409DB91D745EA1004FF14C /* TDCashierViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDCashierViewController.xib; sourceTree = "<group>"; };
+		22409DBC1D745EC2004FF14C /* TDCashierScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDCashierScanViewController.h; sourceTree = "<group>"; };
+		22409DBD1D745EC2004FF14C /* TDCashierScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDCashierScanViewController.m; sourceTree = "<group>"; };
+		22409DBE1D745EC2004FF14C /* TDCashierScanViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDCashierScanViewController.xib; sourceTree = "<group>"; };
+		22409DC11D745ED8004FF14C /* TDCashierChooseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDCashierChooseViewController.h; sourceTree = "<group>"; };
+		22409DC21D745ED8004FF14C /* TDCashierChooseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDCashierChooseViewController.m; sourceTree = "<group>"; };
+		22409DC31D745ED8004FF14C /* TDCashierChooseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDCashierChooseViewController.xib; sourceTree = "<group>"; };
+		22409DC61D746208004FF14C /* TDCashierBanner.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDCashierBanner.xib; sourceTree = "<group>"; };
 		2290A92B1D608FBF0085BD49 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2290A9321D60B74D0085BD49 /* TDMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDMainViewController.h; sourceTree = "<group>"; };
-		2290A9331D60B74D0085BD49 /* TDMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDMainViewController.m; sourceTree = "<group>"; };
+		2290A9331D60B74D0085BD49 /* TDMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = TDMainViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		2290A9341D60B74D0085BD49 /* TDMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDMainViewController.xib; sourceTree = "<group>"; };
 		2290B1BF1D61FDE50085BD49 /* TDSearchGoodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDSearchGoodViewController.h; sourceTree = "<group>"; };
 		2290B1C01D61FDE50085BD49 /* TDSearchGoodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDSearchGoodViewController.m; sourceTree = "<group>"; };
@@ -152,7 +169,7 @@
 		22CC03C81D726C470081AB16 /* TDCountHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDCountHeader.m; sourceTree = "<group>"; };
 		22CC03CA1D726C580081AB16 /* TDCountHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDCountHeader.xib; sourceTree = "<group>"; };
 		22CC041F1D727AE50081AB16 /* TDOrderCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDOrderCollectionViewController.h; sourceTree = "<group>"; };
-		22CC04201D727AE50081AB16 /* TDOrderCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDOrderCollectionViewController.m; sourceTree = "<group>"; };
+		22CC04201D727AE50081AB16 /* TDOrderCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = TDOrderCollectionViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		22CC04211D727AE50081AB16 /* TDOrderCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDOrderCollectionViewController.xib; sourceTree = "<group>"; };
 		22CC04241D727BE50081AB16 /* TDOrderCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDOrderCollectionViewCell.h; sourceTree = "<group>"; };
 		22CC04251D727BE50081AB16 /* TDOrderCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDOrderCollectionViewCell.m; sourceTree = "<group>"; };
@@ -166,12 +183,12 @@
 		22CC04381D72907D0081AB16 /* TDGetOrderCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDGetOrderCollectionViewController.m; sourceTree = "<group>"; };
 		22CC04391D72907D0081AB16 /* TDGetOrderCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDGetOrderCollectionViewController.xib; sourceTree = "<group>"; };
 		22CC043C1D7294A70081AB16 /* TDClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDClient.h; sourceTree = "<group>"; };
-		22CC043D1D7294A70081AB16 /* TDClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDClient.m; sourceTree = "<group>"; };
+		22CC043D1D7294A70081AB16 /* TDClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = TDClient.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		22CC04421D73B7130081AB16 /* NSDictionary+TDConvertToJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+TDConvertToJson.h"; sourceTree = "<group>"; };
-		22CC04431D73B7130081AB16 /* NSDictionary+TDConvertToJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+TDConvertToJson.m"; sourceTree = "<group>"; };
+		22CC04431D73B7130081AB16 /* NSDictionary+TDConvertToJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = "NSDictionary+TDConvertToJson.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		22D0A1251D54826800D27A6A /* TDZbarReaderManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDZbarReaderManager.h; sourceTree = "<group>"; };
-		22D0A1261D54826800D27A6A /* TDZbarReaderManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDZbarReaderManager.m; sourceTree = "<group>"; };
-		22D0A1281D548B1200D27A6A /* TDDMZ-prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TDDMZ-prefix.pch"; sourceTree = "<group>"; };
+		22D0A1261D54826800D27A6A /* TDZbarReaderManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = TDZbarReaderManager.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		22D0A1281D548B1200D27A6A /* TDDMZ-prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "TDDMZ-prefix.pch"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		22D9BE971D65F13900E06184 /* TDItemsBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDItemsBar.h; sourceTree = "<group>"; };
 		22D9BE981D65F13900E06184 /* TDItemsBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDItemsBar.m; sourceTree = "<group>"; };
 		22DCDDAA1D4EF0010068983C /* TDDMZ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TDDMZ.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -298,6 +315,22 @@
 			name = Verification;
 			sourceTree = "<group>";
 		};
+		22409DB61D745E51004FF14C /* Cashier */ = {
+			isa = PBXGroup;
+			children = (
+				22409DB71D745EA1004FF14C /* TDCashierViewController.h */,
+				22409DB81D745EA1004FF14C /* TDCashierViewController.m */,
+				22409DB91D745EA1004FF14C /* TDCashierViewController.xib */,
+				22409DBC1D745EC2004FF14C /* TDCashierScanViewController.h */,
+				22409DBD1D745EC2004FF14C /* TDCashierScanViewController.m */,
+				22409DBE1D745EC2004FF14C /* TDCashierScanViewController.xib */,
+				22409DC11D745ED8004FF14C /* TDCashierChooseViewController.h */,
+				22409DC21D745ED8004FF14C /* TDCashierChooseViewController.m */,
+				22409DC31D745ED8004FF14C /* TDCashierChooseViewController.xib */,
+			);
+			name = Cashier;
+			sourceTree = "<group>";
+		};
 		2290B1C91D620C050085BD49 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -320,6 +353,7 @@
 				2215B0EF1D6C9C6800616107 /* TDSaveBanner.xib */,
 				2215B0A01D6C915100616107 /* TDCashierBanner.h */,
 				2215B0A11D6C915100616107 /* TDCashierBanner.m */,
+				22409DC61D746208004FF14C /* TDCashierBanner.xib */,
 				2215B34D1D6F391700616107 /* TDOptionsBanner.h */,
 				2215B34E1D6F391700616107 /* TDOptionsBanner.m */,
 				2215B3501D6F394B00616107 /* TDOptionsBanner.xib */,
@@ -369,6 +403,7 @@
 		22D0A1241D54820C00D27A6A /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				22409DB61D745E51004FF14C /* Cashier */,
 				22CC042C1D728F2E0081AB16 /* GetOrder */,
 				22CC03C01D71A89A0081AB16 /* test.png */,
 				22CC03BC1D719FAA0081AB16 /* Helper */,
@@ -579,13 +614,16 @@
 				2215B09C1D6C903C00616107 /* TDProductPreviewTableViewCell.xib in Resources */,
 				2215B0F01D6C9C6800616107 /* TDSaveBanner.xib in Resources */,
 				2221A8F11D64AFC900D30775 /* TDVerifyViewController.xib in Resources */,
+				22409DC01D745EC2004FF14C /* TDCashierScanViewController.xib in Resources */,
 				2215B3351D6F304500616107 /* TDCountingViewController.xib in Resources */,
 				2215B0AC1D6C953900616107 /* TDSearchChooseViewController.xib in Resources */,
 				2215B34C1D6F372600616107 /* TDDeliverScanViewController.xib in Resources */,
 				22CC04361D728F9F0081AB16 /* TDOrderPreviewCell.xib in Resources */,
 				22DCDDBD1D4EF0010068983C /* LaunchScreen.storyboard in Resources */,
+				22409DC71D746208004FF14C /* TDCashierBanner.xib in Resources */,
 				2290B1C81D6200540085BD49 /* TDScanView.xib in Resources */,
 				22CC03BB1D719E400081AB16 /* TDInfoView.xib in Resources */,
+				22409DBB1D745EA1004FF14C /* TDCashierViewController.xib in Resources */,
 				22CC03B61D719DDC0081AB16 /* TDCountChooseViewController.xib in Resources */,
 				22CC03C11D71A89A0081AB16 /* test.png in Resources */,
 				22CC043B1D72907D0081AB16 /* TDGetOrderCollectionViewController.xib in Resources */,
@@ -595,6 +633,7 @@
 				2215B3471D6F32A400616107 /* TDDeliverViewController.xib in Resources */,
 				2290B1C31D61FDE50085BD49 /* TDSearchGoodViewController.xib in Resources */,
 				2290A92C1D608FBF0085BD49 /* Assets.xcassets in Resources */,
+				22409DC51D745ED8004FF14C /* TDCashierChooseViewController.xib in Resources */,
 				2215B0A71D6C930600616107 /* TDSearchScanViewController.xib in Resources */,
 				22DCDDB81D4EF0010068983C /* Main.storyboard in Resources */,
 				2215B3561D6F3CED00616107 /* TDDeliverChooseViewController.xib in Resources */,
@@ -672,6 +711,7 @@
 			files = (
 				22DCDDB51D4EF0010068983C /* ViewController.m in Sources */,
 				22CC04271D727BE50081AB16 /* TDOrderCollectionViewCell.m in Sources */,
+				22409DBA1D745EA1004FF14C /* TDCashierViewController.m in Sources */,
 				22CC04351D728F9F0081AB16 /* TDOrderPreviewCell.m in Sources */,
 				2215B0A61D6C930600616107 /* TDSearchScanViewController.m in Sources */,
 				22CC043A1D72907D0081AB16 /* TDGetOrderCollectionViewController.m in Sources */,
@@ -685,6 +725,7 @@
 				2215B3551D6F3CED00616107 /* TDDeliverChooseViewController.m in Sources */,
 				2215B3461D6F32A400616107 /* TDDeliverViewController.m in Sources */,
 				22CC04441D73B7130081AB16 /* NSDictionary+TDConvertToJson.m in Sources */,
+				22409DBF1D745EC2004FF14C /* TDCashierScanViewController.m in Sources */,
 				2290B1C61D6200360085BD49 /* TDScanView.m in Sources */,
 				22DCDDB21D4EF0010068983C /* AppDelegate.m in Sources */,
 				2215B0A21D6C915100616107 /* TDCashierBanner.m in Sources */,
@@ -693,6 +734,7 @@
 				2215B09F1D6C90D400616107 /* TDSaveBanner.m in Sources */,
 				2290A9351D60B74D0085BD49 /* TDMainViewController.m in Sources */,
 				22CC03C91D726C470081AB16 /* TDCountHeader.m in Sources */,
+				22409DC41D745ED8004FF14C /* TDCashierChooseViewController.m in Sources */,
 				22DCDDAF1D4EF0010068983C /* main.m in Sources */,
 				2215B34B1D6F372600616107 /* TDDeliverScanViewController.m in Sources */,
 				2290B1C21D61FDE50085BD49 /* TDSearchGoodViewController.m in Sources */,

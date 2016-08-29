@@ -33,10 +33,10 @@
     NSString *account = [self.userTextField.text stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
     NSString *password = [self.psTextField.text stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
     
-    NSLog(@"%@  %@", account, password);
+    TD_LOG(@"%@  %@", account, password);
     
     TDClient *client = [TDClient sharedInstance];
-    [client loginWithAccount: @"13606057867" password:@"123456" completionHandler:^(BOOL success, NSError *error){
+    [client loginWithAccount: @"13606057867" password:@"123456" completionHandler:^(BOOL success, NSError *error, id userInfo){
         if (success) {
             TDMainViewController *mv = [[TDMainViewController alloc] initWithNibName: @"TDMainViewController" bundle: nil];
             UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController: mv];
