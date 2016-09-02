@@ -9,9 +9,10 @@
 #import "TDCashierViewController.h"
 #import "TDCashierScanViewController.h"
 #import "TDCashierChooseViewController.h"
+#import "TDSettlementViewController.h"
 
-@interface TDCashierViewController ()
-
+@interface TDCashierViewController ()<TDCashierBannerDelegate>
+@property (nonatomic, strong) TDSettlementViewController *settlementViewController;
 @end
 
 @implementation TDCashierViewController
@@ -25,22 +26,16 @@
     self.cashierBanner = [[[NSBundle mainBundle] loadNibNamed:@"TDCashierBanner" owner:self options:nil] objectAtIndex:0];
     [self.view addSubview: self.cashierBanner];
     self.cashierBanner.backgroundColor = RGBColor(247, 247, 247);
+    self.cashierBanner.delegate = self;
 
     self.scanViewController = [[TDCashierScanViewController alloc] initWithNibName: @"TDCashierScanViewController" bundle: nil];
     self.chooseViewController = [[TDCashierChooseViewController alloc] initWithNibName: @"TDCashierChooseViewController" bundle: nil];
+    self.settlementViewController = [[TDSettlementViewController alloc] initWithNibName:@"TDSettlementViewController" bundle:nil];
 }
 
 - (void) viewWillLayoutSubviews;
 {
     [super viewWillLayoutSubviews];
-    
-//    CGRect bounds = self.view.bounds;
-    
-//    CGRect frame = CGRectMake(0, 0, bounds.size.width, TDITEMBAR_HEIGHT);
-//    self.itemsBar.frame = frame;
-//    CGFloat height = TDBANNER_HEIGHT;
-//    frame = CGRectMake(0, bounds.size.height - height, bounds.size.width, height);
-//    self.saveBanner.frame = frame;
     
     self.cashierBanner.frame = self.saveBanner.frame;
 }
@@ -48,6 +43,19 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+}
+
+- (void) holdListAction:(TDCashierBanner *)cashierBanner;
+{}
+
+- (void) customerSettlementAction:(TDCashierBanner *)cashierBanner;
+{
+    [self.navigationController pushViewController:self.settlementViewController animated:YES];
+}
+
+- (void) userSettlementAction:(TDCashierBanner *)cashierBanner;
+{
+    [self.navigationController pushViewController:self.settlementViewController animated:YES];
 }
 
 @end

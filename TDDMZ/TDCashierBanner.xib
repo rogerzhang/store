@@ -22,16 +22,25 @@
                     <rect key="frame" x="411" y="24" width="30" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="挂单"/>
+                    <connections>
+                        <action selector="hold:" destination="iN0-l3-epB" eventType="touchUpInside" id="TSb-1r-Dn8"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Ciu-Zc-9sG">
                     <rect key="frame" x="657" y="24" width="60" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="导购结算"/>
+                    <connections>
+                        <action selector="userSettlementAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="EkG-K5-yHU"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6wQ-PP-5cg">
                     <rect key="frame" x="525" y="24" width="60" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="顾客结算"/>
+                    <connections>
+                        <action selector="customerSettlementAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="aoI-oe-hki"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -42,7 +51,7 @@
                 <outlet property="jsButton" destination="6wQ-PP-5cg" id="AGb-GO-BsW"/>
                 <outlet property="label" destination="8ab-Xr-LCI" id="KGO-FQ-YLl"/>
             </connections>
-            <point key="canvasLocation" x="452" y="239"/>
+            <point key="canvasLocation" x="331" y="213"/>
         </view>
     </objects>
 </document>

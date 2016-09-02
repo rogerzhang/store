@@ -80,6 +80,8 @@
 		22E0A0131D786B6800786749 /* TDCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E0A0121D786B6800786749 /* TDCategory.m */; };
 		22E0A0161D786EA600786749 /* TDParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E0A0151D786EA600786749 /* TDParser.m */; };
 		22FA3C181D79C93D00B27328 /* TDScanBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FA3C171D79C93D00B27328 /* TDScanBaseViewController.m */; };
+		22FA3C1D1D79D7E400B27328 /* TDSettlementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FA3C1B1D79D7E400B27328 /* TDSettlementViewController.m */; };
+		22FA3C1E1D79D7E400B27328 /* TDSettlementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22FA3C1C1D79D7E400B27328 /* TDSettlementViewController.xib */; };
 		A689D7F43E1E6ED534C201C3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DF8B3C16C4047201BCCC8DA /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -221,6 +223,9 @@
 		22E0A0151D786EA600786749 /* TDParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDParser.m; sourceTree = "<group>"; };
 		22FA3C161D79C93D00B27328 /* TDScanBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDScanBaseViewController.h; sourceTree = "<group>"; };
 		22FA3C171D79C93D00B27328 /* TDScanBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDScanBaseViewController.m; sourceTree = "<group>"; };
+		22FA3C1A1D79D7E400B27328 /* TDSettlementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDSettlementViewController.h; sourceTree = "<group>"; };
+		22FA3C1B1D79D7E400B27328 /* TDSettlementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDSettlementViewController.m; sourceTree = "<group>"; };
+		22FA3C1C1D79D7E400B27328 /* TDSettlementViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDSettlementViewController.xib; sourceTree = "<group>"; };
 		8DF8B3C16C4047201BCCC8DA /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C495F91967DBD12A9BE3E16A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C701B8FF8DB232AA352E17A9 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -420,6 +425,7 @@
 		22D0A1241D54820C00D27A6A /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				22FA3C191D79D7B800B27328 /*  Settlement */,
 				22409DB61D745E51004FF14C /* Cashier */,
 				22CC042C1D728F2E0081AB16 /* GetOrder */,
 				22CC03C01D71A89A0081AB16 /* test.png */,
@@ -522,6 +528,16 @@
 				22E0A0121D786B6800786749 /* TDCategory.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		22FA3C191D79D7B800B27328 /*  Settlement */ = {
+			isa = PBXGroup;
+			children = (
+				22FA3C1A1D79D7E400B27328 /* TDSettlementViewController.h */,
+				22FA3C1B1D79D7E400B27328 /* TDSettlementViewController.m */,
+				22FA3C1C1D79D7E400B27328 /* TDSettlementViewController.xib */,
+			);
+			name = " Settlement";
 			sourceTree = "<group>";
 		};
 		E89AC573BE2AB1C12571528E /* Pods */ = {
@@ -652,6 +668,7 @@
 				2215B0AC1D6C953900616107 /* TDSearchChooseViewController.xib in Resources */,
 				2215B34C1D6F372600616107 /* TDDeliverScanViewController.xib in Resources */,
 				22CC04361D728F9F0081AB16 /* TDOrderPreviewCell.xib in Resources */,
+				22FA3C1E1D79D7E400B27328 /* TDSettlementViewController.xib in Resources */,
 				22DCDDBD1D4EF0010068983C /* LaunchScreen.storyboard in Resources */,
 				22409DC71D746208004FF14C /* TDCashierBanner.xib in Resources */,
 				2290B1C81D6200540085BD49 /* TDScanView.xib in Resources */,
@@ -745,6 +762,7 @@
 				22DCDDB51D4EF0010068983C /* ViewController.m in Sources */,
 				22CC04271D727BE50081AB16 /* TDOrderCollectionViewCell.m in Sources */,
 				22FA3C181D79C93D00B27328 /* TDScanBaseViewController.m in Sources */,
+				22FA3C1D1D79D7E400B27328 /* TDSettlementViewController.m in Sources */,
 				22409DBA1D745EA1004FF14C /* TDCashierViewController.m in Sources */,
 				22CC04351D728F9F0081AB16 /* TDOrderPreviewCell.m in Sources */,
 				2215B0A61D6C930600616107 /* TDSearchScanViewController.m in Sources */,

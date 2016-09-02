@@ -32,4 +32,26 @@
     center.y = bounds.size.height / 2.0f;
     self.dsButton.center = center;
 }
+
+- (IBAction)hold:(id)sender
+{
+    if ([self.delegate respondsToSelector:@selector(holdListAction:)]) {
+        [self.delegate holdListAction:self];
+    }
+}
+
+- (IBAction)customerSettlementAction:(id)sender
+{
+    if ([self.delegate respondsToSelector:@selector(customerSettlementAction:)]) {
+        [self.delegate customerSettlementAction:self];
+    }
+}
+
+- (IBAction)userSettlementAction:(id)sender
+{
+    if ([self.delegate respondsToSelector:@selector(userSettlementAction:)]) {
+        [self.delegate userSettlementAction:self];
+    }
+}
+
 @end
