@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TDSearchScanViewController : UIViewController
+@interface TDSearchScanViewController : TDScanBaseViewController
 
 @end

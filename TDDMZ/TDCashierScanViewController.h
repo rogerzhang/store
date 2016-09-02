@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TDCashierScanViewController : UIViewController
+@interface TDCashierScanViewController : TDScanBaseViewController
 
 @end

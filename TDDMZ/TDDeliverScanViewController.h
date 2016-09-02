@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TDDeliverScanViewController : UIViewController
+@interface TDDeliverScanViewController : TDScanBaseViewController
 
 @end

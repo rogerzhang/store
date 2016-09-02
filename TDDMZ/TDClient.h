@@ -28,7 +28,7 @@ typedef void (^TDCompletionHandler) (BOOL success, NSError *error, id userInfo);
 - (void) loginWithAccount: (NSString *)account password: (NSString *)password completionHandler: (TDCompletionHandler)completionHandler;
 - (void) logoutWithCompletionHandler: (TDCompletionHandler)completionHandler;
 - (void) getIndexNumWithCompletionHandler: (TDCompletionHandler)completionHandler;
-- (void) getCategoryListWithCompletionHandler: (TDCompletionHandler)completionHandler;
+- (void) getCategoryListWithCategoryId: (NSString *)cat_id completionHandler: (TDCompletionHandler)completionHandler;
 - (void) getCategorygoodsWithId: (NSString *)categoryId withCompletionHandler: (TDCompletionHandler)completionHandler;
 - (void) getGoodInfo: (NSString *)goodId withCompletionHandler: (TDCompletionHandler) completionHandler;
 - (void) submitorderGoods: (NSArray *)Goods orderMoney: (NSString *)ordermoney withCompletionHandler: (TDCompletionHandler)completionHandler;

@@ -13,6 +13,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *typeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *colorLabel;
 @property (weak, nonatomic) IBOutlet UILabel *sizeLabel;
-@property (weak, nonatomic) IBOutlet UILabel *count;
-
+@property (weak, nonatomic) IBOutlet UILabel *countLabel;
+@property (assign, nonatomic) NSInteger count;
 @end

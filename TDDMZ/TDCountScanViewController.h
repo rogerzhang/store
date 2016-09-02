@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TDCountScanViewController : UIViewController
+@interface TDCountScanViewController : TDScanBaseViewController
 
 @end

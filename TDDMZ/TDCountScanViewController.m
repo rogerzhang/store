@@ -8,13 +8,11 @@
 
 #import "TDCountScanViewController.h"
 
-@interface TDCountScanViewController ()<UITableViewDelegate, UITableViewDataSource>
+@interface TDCountScanViewController ()<UITableViewDelegate, UITableViewDataSource,TDScanViewDelegate>
 
-@property (nonatomic, strong) TDScanView *scanView;
 @property (nonatomic, strong) TDInfoView *infoView;
 @property (nonatomic, strong) NSTimer *timer;
 @property (nonatomic, strong) NSDateFormatter *outputFormatter;
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @end
 
 @implementation TDCountScanViewController
@@ -24,6 +22,7 @@
     [super viewDidLoad];
     self.scanView = [[[NSBundle mainBundle] loadNibNamed:@"TDScanView" owner:self options:nil] objectAtIndex:0];
     [self.view addSubview: self.scanView];
+    self.scanView.delegate = self;
     
     self.infoView = [[[NSBundle mainBundle] loadNibNamed:@"TDInfoView" owner:self options:nil] objectAtIndex:0];
     [self.view addSubview: self.infoView];
@@ -55,17 +54,16 @@
 
 #pragma mark-<UITableViewDelegate, UITableViewDataSource>
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
-{
-    return 10;
-}
-
 - (__kindof UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 {
     TDCountPreviewTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: CountPreviewCellIdentifier];
 
     cell.backgroundColor = [indexPath row] % 2 ? [UIColor whiteColor] : RGBColor(235, 235, 235);
-    cell.label1.text = [NSString stringWithFormat:@"%ld", [indexPath row]];
+    
+    TDGood *good = self.datasource[indexPath.row];
+    cell.label2.text = good.goods_name;
+    cell.label1.text = [NSString stringWithFormat:@"%ld", (long)[indexPath row]];
+    
     return cell;
 }
 

@@ -8,13 +8,17 @@
 
 #ifndef TDDMZ_prefix_pch
 #define TDDMZ_prefix_pch
-
+#import "TDParser.h"
+#import "TDGood.h"
+#import "TDStore.h"
+#import "TDCategory.h"
 #import "TDHelper.h"
 #import "TDZbarReaderManager.h"
 #import "TDScanView.h"
 #import "TDItemsBar.h"
 #import "TDSaveBanner.h"
 #import "TDBaseViewController.h"
+#import "TDScanBaseViewController.h"
 #import "TDOptionsBanner.h"
 #import "TDCashierBanner.h"
 #import "TDInfoView.h"

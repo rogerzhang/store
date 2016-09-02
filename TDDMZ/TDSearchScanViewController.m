@@ -8,9 +8,7 @@
 
 #import "TDSearchScanViewController.h"
 
-@interface TDSearchScanViewController ()<UITableViewDelegate,UITableViewDataSource>
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (nonatomic, strong) TDScanView *scanView;
+@interface TDSearchScanViewController ()
 
 @end
 
@@ -22,6 +20,10 @@
     
     self.scanView = [[[NSBundle mainBundle] loadNibNamed:@"TDScanView" owner:self options:nil] objectAtIndex:0];
     [self.view addSubview: self.scanView];
+    self.scanView.delegate = self;
+    
+    UINib *cellNib = [UINib nibWithNibName:@"TDProductPreviewTableViewCell" bundle:nil];
+    [self.tableView registerNib:cellNib forCellReuseIdentifier:PreviewCellIdentifier];
 }
 
 - (void)viewWillLayoutSubviews;
@@ -37,17 +39,6 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-}
-
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
-{
-    return 0;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
-{
-    return nil;
 }
 
 @end

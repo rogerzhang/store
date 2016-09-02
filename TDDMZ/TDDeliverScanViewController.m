@@ -8,11 +8,9 @@
 
 #import "TDDeliverScanViewController.h"
 
-@interface TDDeliverScanViewController ()<UITableViewDelegate, UITableViewDataSource>
-@property (nonatomic, strong) TDScanView *scanView;
+@interface TDDeliverScanViewController ()<UITableViewDelegate, UITableViewDataSource,TDScanViewDelegate>
 @property (nonatomic, strong) TDOptionsBanner *optionBanner;
 @property (nonatomic, strong) NSTimer *timer;
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @end
 
 @implementation TDDeliverScanViewController
@@ -22,6 +20,7 @@
     [super viewDidLoad];
     self.scanView = [[[NSBundle mainBundle] loadNibNamed:@"TDScanView" owner:self options:nil] objectAtIndex:0];
     [self.view addSubview: self.scanView];
+    self.scanView.delegate = self;
     
     self.optionBanner = [[[NSBundle mainBundle] loadNibNamed:@"TDOptionsBanner" owner:self options:nil] objectAtIndex:0];
     [self.view addSubview: self.optionBanner];
@@ -51,27 +50,6 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-}
-
-#pragma mark-<UITableViewDelegate, UITableViewDataSource>
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
-{
-    return 10;
-}
-
-- (__kindof UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
-{
-    TDProductPreviewTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: PreviewCellIdentifier];
-    
-    UIImage *image = [UIImage imageNamed:@"test"];
-    cell.previewImageView.image = image;
-    return cell;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
-{
-    return 146;
 }
 
 @end

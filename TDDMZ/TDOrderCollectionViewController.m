@@ -81,7 +81,7 @@ static NSString * const reuseIdentifier = @"Cell";
     TDOrderCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
 
     cell.delegate = self;
-    cell.label1.text = [NSString stringWithFormat:@"%ld", [indexPath row]];
+    cell.label1.text = [NSString stringWithFormat:@"%ld", (long)[indexPath row]];
     return cell;
 }
 
@@ -89,14 +89,14 @@ static NSString * const reuseIdentifier = @"Cell";
 {
     NSIndexPath *indexPath = [self.collectionView indexPathForCell: cell];
     
-    TD_LOG(@"indexPath is %ld", [indexPath row]);
+    TD_LOG(@"indexPath is %ld", (long)[indexPath row]);
 }
 
 - (void) orderOKAction: (TDOrderCollectionViewCell*)cell;
 {
     NSIndexPath *indexPath = [self.collectionView indexPathForCell: cell];
     
-    TD_LOG(@"indexPath is %ld", [indexPath row]);
+    TD_LOG(@"indexPath is %ld", (long)[indexPath row]);
 }
 
 @end

@@ -8,10 +8,8 @@
 
 #import "TDCashierScanViewController.h"
 
-@interface TDCashierScanViewController ()<TDScanViewDelegate>
+@interface TDCashierScanViewController ()
 
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (nonatomic, strong) TDScanView *scanView;
 @end
 
 @implementation TDCashierScanViewController
@@ -43,36 +41,4 @@
     [super didReceiveMemoryWarning];
 }
 
-#pragma mark-<UITableViewDelegate, UITableViewDataSource>
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
-{
-    return 10;
-}
-
-- (__kindof UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
-{
-    TDProductPreviewTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: PreviewCellIdentifier];
-    
-    UIImage *image = [UIImage imageNamed:@"test"];
-    cell.previewImageView.image = image;
-    return cell;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
-{
-    return 146;
-}
-
-- (void) scanAction: (TDScanView *)scanView;
-{}
-
-- (void) okAction: (TDScanView *)scanView;
-{
-    [[TDClient sharedInstance] getGoodInfo:@"45348271" withCompletionHandler:^(BOOL success, NSError *error, id userInfo){
-        if (userInfo) {
-            //
-        }
-    }];
-}
 @end

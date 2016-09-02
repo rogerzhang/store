@@ -141,10 +141,11 @@
          }];
 }
 
-- (void) getCategoryListWithCompletionHandler: (TDCompletionHandler)completionHandler;
+- (void) getCategoryListWithCategoryId: (NSString *)cat_id completionHandler: (TDCompletionHandler)completionHandler;
 {
     NSMutableDictionary *params = [[NSMutableDictionary alloc]init];
     [params setValue:self.userId forKey:@"userid"];
+    [params setValue:cat_id forKey:@"cat_id"];
     
     NSString *jsonString = [params jsonStringWithPrettyPrint: NO];
     

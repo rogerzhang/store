@@ -10,20 +10,45 @@
 
 @implementation TDProductPreviewTableViewCell
 
-- (void)awakeFromNib {
+- (void)prepareForReuse;
+{
+    [super prepareForReuse];
+    self.count = 1;
+}
+
+- (void)awakeFromNib
+{
     [super awakeFromNib];
-    // Initialization code
+    self.count = 1;
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+- (void)setCount:(NSInteger)count;
+{
+    _count = count;
+    [self update];
+}
+
+- (void)update;
+{
+    self.countLabel.text = [NSString stringWithFormat:@"%ld", self.count];
+}
+
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated
+{
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
 
-- (IBAction)addAction:(id)sender {
+- (IBAction)addAction:(id)sender
+{
+    self.count++;
 }
 
-- (IBAction)reduceAction:(id)sender {
+- (IBAction)reduceAction:(id)sender
+{
+    if (self.count < 0) {
+        return;
+    }
+    self.count--;
 }
+
 @end

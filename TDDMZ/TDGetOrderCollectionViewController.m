@@ -81,7 +81,7 @@ static NSString * const reuseIdentifier = @"Cell";
 {
     TDOrderPreviewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
-    cell.label1.text = [NSString stringWithFormat:@"%ld", [indexPath row]];
+    cell.label1.text = [NSString stringWithFormat:@"%ld", (long)[indexPath row]];
     return cell;
 }
 
