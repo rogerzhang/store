@@ -19,6 +19,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>RATreeView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>ZBarSDK.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,17 +32,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>7B333CBF4D415B1329B33F8CCD345039</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>8FA7AC858B66CD745DA0C97A90A1509D</key>
+		<key>8D3728C7163EC181CECE71CBA9956A35</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>928353533005A4198EBDA5B700D37B64</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AB0C8B566A217874ADEEBB48FC9295CA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AE69488F7928EEB499B4B606BB539086</key>
 		<dict>
 			<key>primary</key>
 			<true/>
