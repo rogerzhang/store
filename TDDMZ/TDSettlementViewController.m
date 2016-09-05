@@ -27,7 +27,7 @@
 
 - (UIBarButtonItem *)backButton;
 {
-    UIImage *image = [UIImage imageNamed:@"Arrows-Back-icon"];
+    UIImage *image = [UIImage imageNamed:@"arrow"];
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithImage: image style: UIBarButtonItemStylePlain target: self action: @selector(backAction)];
     
     return backButton;

@@ -18,28 +18,28 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="aFD-NJ-MHp">
-                    <rect key="frame" x="411" y="24" width="30" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Ciu-Zc-9sG">
+                    <rect key="frame" x="726" y="15" width="110" height="56"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="挂单"/>
-                    <connections>
-                        <action selector="hold:" destination="iN0-l3-epB" eventType="touchUpInside" id="TSb-1r-Dn8"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Ciu-Zc-9sG">
-                    <rect key="frame" x="657" y="24" width="60" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="导购结算"/>
+                    <state key="normal" title="导购结算" backgroundImage="横jie3"/>
                     <connections>
                         <action selector="userSettlementAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="EkG-K5-yHU"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6wQ-PP-5cg">
-                    <rect key="frame" x="525" y="24" width="60" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="6wQ-PP-5cg">
+                    <rect key="frame" x="595" y="15" width="110" height="56"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="顾客结算"/>
+                    <state key="normal" title="顾客结算" backgroundImage="按钮"/>
                     <connections>
                         <action selector="customerSettlementAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="aoI-oe-hki"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="aFD-NJ-MHp">
+                    <rect key="frame" x="457" y="15" width="110" height="56"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="挂单" backgroundImage="横jie2"/>
+                    <connections>
+                        <action selector="hold:" destination="iN0-l3-epB" eventType="touchUpInside" id="TSb-1r-Dn8"/>
                     </connections>
                 </button>
             </subviews>
@@ -54,4 +54,9 @@
             <point key="canvasLocation" x="331" y="213"/>
         </view>
     </objects>
+    <resources>
+        <image name="按钮" width="111" height="60"/>
+        <image name="横jie2" width="111" height="60"/>
+        <image name="横jie3" width="111" height="60"/>
+    </resources>
 </document>

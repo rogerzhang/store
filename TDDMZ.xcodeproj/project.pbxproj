@@ -43,6 +43,9 @@
 		2290B1C31D61FDE50085BD49 /* TDSearchGoodViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2290B1C11D61FDE50085BD49 /* TDSearchGoodViewController.xib */; };
 		2290B1C61D6200360085BD49 /* TDScanView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2290B1C51D6200360085BD49 /* TDScanView.m */; };
 		2290B1C81D6200540085BD49 /* TDScanView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2290B1C71D6200540085BD49 /* TDScanView.xib */; };
+		22A1E0C91D7BE437007A6905 /* RATableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A1E0C71D7BE437007A6905 /* RATableViewCell.m */; };
+		22A1E0CA1D7BE437007A6905 /* RATableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22A1E0C81D7BE437007A6905 /* RATableViewCell.xib */; };
+		22A1E0CD1D7BE4B2007A6905 /* RADataObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A1E0CC1D7BE4B2007A6905 /* RADataObject.m */; };
 		22CC03B01D719DC50081AB16 /* TDCountScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC03AE1D719DC50081AB16 /* TDCountScanViewController.m */; };
 		22CC03B11D719DC50081AB16 /* TDCountScanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22CC03AF1D719DC50081AB16 /* TDCountScanViewController.xib */; };
 		22CC03B51D719DDC0081AB16 /* TDCountChooseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC03B31D719DDC0081AB16 /* TDCountChooseViewController.m */; };
@@ -157,6 +160,11 @@
 		2290B1C41D6200360085BD49 /* TDScanView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDScanView.h; sourceTree = "<group>"; };
 		2290B1C51D6200360085BD49 /* TDScanView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDScanView.m; sourceTree = "<group>"; };
 		2290B1C71D6200540085BD49 /* TDScanView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDScanView.xib; sourceTree = "<group>"; };
+		22A1E0C61D7BE437007A6905 /* RATableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RATableViewCell.h; sourceTree = "<group>"; };
+		22A1E0C71D7BE437007A6905 /* RATableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RATableViewCell.m; sourceTree = "<group>"; };
+		22A1E0C81D7BE437007A6905 /* RATableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RATableViewCell.xib; sourceTree = "<group>"; };
+		22A1E0CB1D7BE4B2007A6905 /* RADataObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RADataObject.h; sourceTree = "<group>"; };
+		22A1E0CC1D7BE4B2007A6905 /* RADataObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RADataObject.m; sourceTree = "<group>"; };
 		22CC03AD1D719DC50081AB16 /* TDCountScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDCountScanViewController.h; sourceTree = "<group>"; };
 		22CC03AE1D719DC50081AB16 /* TDCountScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDCountScanViewController.m; sourceTree = "<group>"; };
 		22CC03AF1D719DC50081AB16 /* TDCountScanViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDCountScanViewController.xib; sourceTree = "<group>"; };
@@ -338,6 +346,11 @@
 		22409DB61D745E51004FF14C /* Cashier */ = {
 			isa = PBXGroup;
 			children = (
+				22A1E0CB1D7BE4B2007A6905 /* RADataObject.h */,
+				22A1E0CC1D7BE4B2007A6905 /* RADataObject.m */,
+				22A1E0C61D7BE437007A6905 /* RATableViewCell.h */,
+				22A1E0C71D7BE437007A6905 /* RATableViewCell.m */,
+				22A1E0C81D7BE437007A6905 /* RATableViewCell.xib */,
 				22409DB71D745EA1004FF14C /* TDCashierViewController.h */,
 				22409DB81D745EA1004FF14C /* TDCashierViewController.m */,
 				22409DB91D745EA1004FF14C /* TDCashierViewController.xib */,
@@ -682,6 +695,7 @@
 				2290A9361D60B74D0085BD49 /* TDMainViewController.xib in Resources */,
 				2215B3471D6F32A400616107 /* TDDeliverViewController.xib in Resources */,
 				2290B1C31D61FDE50085BD49 /* TDSearchGoodViewController.xib in Resources */,
+				22A1E0CA1D7BE437007A6905 /* RATableViewCell.xib in Resources */,
 				2290A92C1D608FBF0085BD49 /* Assets.xcassets in Resources */,
 				22409DC51D745ED8004FF14C /* TDCashierChooseViewController.xib in Resources */,
 				2215B0A71D6C930600616107 /* TDSearchScanViewController.xib in Resources */,
@@ -768,6 +782,7 @@
 				2215B0A61D6C930600616107 /* TDSearchScanViewController.m in Sources */,
 				22CC043A1D72907D0081AB16 /* TDGetOrderCollectionViewController.m in Sources */,
 				22D0A1271D54826800D27A6A /* TDZbarReaderManager.m in Sources */,
+				22A1E0CD1D7BE4B2007A6905 /* RADataObject.m in Sources */,
 				2215B3421D6F30E700616107 /* TDBaseViewController.m in Sources */,
 				22CC03B91D719E310081AB16 /* TDInfoView.m in Sources */,
 				22E0A0101D786AB200786749 /* TDStore.m in Sources */,
@@ -780,6 +795,7 @@
 				2215B3461D6F32A400616107 /* TDDeliverViewController.m in Sources */,
 				22CC04441D73B7130081AB16 /* NSDictionary+TDConvertToJson.m in Sources */,
 				22409DBF1D745EC2004FF14C /* TDCashierScanViewController.m in Sources */,
+				22A1E0C91D7BE437007A6905 /* RATableViewCell.m in Sources */,
 				2290B1C61D6200360085BD49 /* TDScanView.m in Sources */,
 				22DCDDB21D4EF0010068983C /* AppDelegate.m in Sources */,
 				2215B0A21D6C915100616107 /* TDCashierBanner.m in Sources */,
