@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TDCashierChooseViewController : UIViewController
+@interface TDCashierChooseViewController : TDChooseBaseViewController
 
 @end

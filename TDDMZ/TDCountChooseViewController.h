@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TDCountChooseViewController : UIViewController
+@interface TDCountChooseViewController : TDChooseBaseViewController
 
 @end

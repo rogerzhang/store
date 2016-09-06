@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TDCashierChooseViewController.h"
 
-@interface TDSearchChooseViewController : UIViewController
+@interface TDSearchChooseViewController : TDChooseBaseViewController
 
 @end
