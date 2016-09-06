@@ -103,7 +103,7 @@
     NSString *jsonString = [params jsonStringWithPrettyPrint: NO];
     
     [self.manager
-         POST:@"goodsinfo"
+         POST:@"indexnum"
          parameters:@{@"code":jsonString}
          progress:^(NSProgress *uploadProgress){}
          success:^(NSURLSessionDataTask *task, id _Nullable responseObject){

@@ -30,7 +30,7 @@
 
 - (void)update;
 {
-    self.countLabel.text = [NSString stringWithFormat:@"%ld", self.count];
+    self.countLabel.text = [NSString stringWithFormat:@"%ld", (long)self.count];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated

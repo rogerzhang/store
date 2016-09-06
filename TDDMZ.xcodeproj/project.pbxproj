@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22013D1C1D7F0CCE001AD2E0 /* TDCustomerSettlementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22013D1A1D7F0CCE001AD2E0 /* TDCustomerSettlementViewController.m */; };
+		22013D1D1D7F0CCE001AD2E0 /* TDCustomerSettlementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22013D1B1D7F0CCE001AD2E0 /* TDCustomerSettlementViewController.xib */; };
 		2215B09B1D6C903C00616107 /* TDProductPreviewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2215B0991D6C903C00616107 /* TDProductPreviewTableViewCell.m */; };
 		2215B09C1D6C903C00616107 /* TDProductPreviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2215B09A1D6C903C00616107 /* TDProductPreviewTableViewCell.xib */; };
 		2215B09F1D6C90D400616107 /* TDSaveBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 2215B09E1D6C90D400616107 /* TDSaveBanner.m */; };
@@ -54,7 +56,6 @@
 		22CC03B91D719E310081AB16 /* TDInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC03B81D719E310081AB16 /* TDInfoView.m */; };
 		22CC03BB1D719E400081AB16 /* TDInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22CC03BA1D719E400081AB16 /* TDInfoView.xib */; };
 		22CC03BF1D719FC60081AB16 /* TDHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC03BE1D719FC60081AB16 /* TDHelper.m */; };
-		22CC03C11D71A89A0081AB16 /* test.png in Resources */ = {isa = PBXBuildFile; fileRef = 22CC03C01D71A89A0081AB16 /* test.png */; };
 		22CC03C51D726BA00081AB16 /* TDCountPreviewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC03C31D726BA00081AB16 /* TDCountPreviewTableViewCell.m */; };
 		22CC03C61D726BA00081AB16 /* TDCountPreviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22CC03C41D726BA00081AB16 /* TDCountPreviewTableViewCell.xib */; };
 		22CC03C91D726C470081AB16 /* TDCountHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC03C81D726C470081AB16 /* TDCountHeader.m */; };
@@ -107,6 +108,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		22013D191D7F0CCE001AD2E0 /* TDCustomerSettlementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDCustomerSettlementViewController.h; sourceTree = "<group>"; };
+		22013D1A1D7F0CCE001AD2E0 /* TDCustomerSettlementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDCustomerSettlementViewController.m; sourceTree = "<group>"; };
+		22013D1B1D7F0CCE001AD2E0 /* TDCustomerSettlementViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDCustomerSettlementViewController.xib; sourceTree = "<group>"; };
 		2215B0981D6C903C00616107 /* TDProductPreviewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDProductPreviewTableViewCell.h; sourceTree = "<group>"; };
 		2215B0991D6C903C00616107 /* TDProductPreviewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDProductPreviewTableViewCell.m; sourceTree = "<group>"; };
 		2215B09A1D6C903C00616107 /* TDProductPreviewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDProductPreviewTableViewCell.xib; sourceTree = "<group>"; };
@@ -179,7 +183,6 @@
 		22CC03BA1D719E400081AB16 /* TDInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDInfoView.xib; sourceTree = "<group>"; };
 		22CC03BD1D719FC60081AB16 /* TDHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDHelper.h; sourceTree = "<group>"; };
 		22CC03BE1D719FC60081AB16 /* TDHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDHelper.m; sourceTree = "<group>"; };
-		22CC03C01D71A89A0081AB16 /* test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test.png; sourceTree = "<group>"; };
 		22CC03C21D726BA00081AB16 /* TDCountPreviewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDCountPreviewTableViewCell.h; sourceTree = "<group>"; };
 		22CC03C31D726BA00081AB16 /* TDCountPreviewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDCountPreviewTableViewCell.m; sourceTree = "<group>"; };
 		22CC03C41D726BA00081AB16 /* TDCountPreviewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDCountPreviewTableViewCell.xib; sourceTree = "<group>"; };
@@ -442,7 +445,6 @@
 				22FA3C191D79D7B800B27328 /*  Settlement */,
 				22409DB61D745E51004FF14C /* Cashier */,
 				22CC042C1D728F2E0081AB16 /* GetOrder */,
-				22CC03C01D71A89A0081AB16 /* test.png */,
 				22CC03BC1D719FAA0081AB16 /* Helper */,
 				2215B3301D6F2FB700616107 /* Verification */,
 				2215B32F1D6F2F8800616107 /* SearchGoods */,
@@ -554,6 +556,9 @@
 				22FA3C1A1D79D7E400B27328 /* TDSettlementViewController.h */,
 				22FA3C1B1D79D7E400B27328 /* TDSettlementViewController.m */,
 				22FA3C1C1D79D7E400B27328 /* TDSettlementViewController.xib */,
+				22013D191D7F0CCE001AD2E0 /* TDCustomerSettlementViewController.h */,
+				22013D1A1D7F0CCE001AD2E0 /* TDCustomerSettlementViewController.m */,
+				22013D1B1D7F0CCE001AD2E0 /* TDCustomerSettlementViewController.xib */,
 			);
 			name = " Settlement";
 			sourceTree = "<group>";
@@ -679,6 +684,7 @@
 				2215B3511D6F394B00616107 /* TDOptionsBanner.xib in Resources */,
 				22CC04231D727AE50081AB16 /* TDOrderCollectionViewController.xib in Resources */,
 				2215B09C1D6C903C00616107 /* TDProductPreviewTableViewCell.xib in Resources */,
+				22013D1D1D7F0CCE001AD2E0 /* TDCustomerSettlementViewController.xib in Resources */,
 				2215B0F01D6C9C6800616107 /* TDSaveBanner.xib in Resources */,
 				2221A8F11D64AFC900D30775 /* TDVerifyViewController.xib in Resources */,
 				22409DC01D745EC2004FF14C /* TDCashierScanViewController.xib in Resources */,
@@ -693,7 +699,6 @@
 				22CC03BB1D719E400081AB16 /* TDInfoView.xib in Resources */,
 				22409DBB1D745EA1004FF14C /* TDCashierViewController.xib in Resources */,
 				22CC03B61D719DDC0081AB16 /* TDCountChooseViewController.xib in Resources */,
-				22CC03C11D71A89A0081AB16 /* test.png in Resources */,
 				22CC043B1D72907D0081AB16 /* TDGetOrderCollectionViewController.xib in Resources */,
 				22CC03C61D726BA00081AB16 /* TDCountPreviewTableViewCell.xib in Resources */,
 				22CC03B11D719DC50081AB16 /* TDCountScanViewController.xib in Resources */,
@@ -779,6 +784,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				22DCDDB51D4EF0010068983C /* ViewController.m in Sources */,
+				22013D1C1D7F0CCE001AD2E0 /* TDCustomerSettlementViewController.m in Sources */,
 				22CC04271D727BE50081AB16 /* TDOrderCollectionViewCell.m in Sources */,
 				22FA3C181D79C93D00B27328 /* TDScanBaseViewController.m in Sources */,
 				22FA3C1D1D79D7E400B27328 /* TDSettlementViewController.m in Sources */,

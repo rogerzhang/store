@@ -21,6 +21,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
 @property (weak, nonatomic) IBOutlet UIButton *logoutButton;
 @property (weak, nonatomic) IBOutlet UIButton *getListButton;
+@property (weak, nonatomic) IBOutlet UILabel *orderCountLabel;
+@property (weak, nonatomic) IBOutlet UILabel *deliverCountLabel;
+@property (weak, nonatomic) IBOutlet UILabel *pdCountLabel;
 
 @property (nonatomic, strong) TDSearchGoodViewController *searchGoodViewController;
 @property (nonatomic, strong) TDVerifyViewController *verifyViewController;
@@ -38,6 +41,9 @@
 {
     [super viewDidLoad];
     self.navigationController.navigationBar.hidden = YES;
+    self.orderCountLabel.text = nil;
+    self.deliverCountLabel.text = nil;
+    self.pdCountLabel.text = nil;
     
     self.cashierViewController = [[TDCashierViewController alloc] initWithNibName: @"TDCashierViewController" bundle: nil];
     self.searchGoodViewController = [[TDSearchGoodViewController alloc] initWithNibName:@"TDSearchGoodViewController" bundle:nil];
@@ -57,11 +63,25 @@
     
     self.currentStoreLabel.text = [NSString stringWithFormat:@"当前店铺：%@", [TDClient sharedInstance].storeName];
     self.userNameLabel.text = [NSString stringWithFormat:@"收银员：%@", [TDClient sharedInstance].userName];
+    
+    [self refreshUnreadCount];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+}
+
+- (void) refreshUnreadCount;
+{
+    [[TDClient sharedInstance] getIndexNumWithCompletionHandler:^(BOOL success, NSError *error, id userInfo){
+        if (userInfo) {
+            NSDictionary *result = userInfo;
+            self.orderCountLabel.text = [[result objectForKey:@"order"] integerValue] ? [[result objectForKey:@"order"] stringValue] : nil;
+            self.deliverCountLabel.text = [[result objectForKey:@"db"] integerValue] ? [[result objectForKey:@"db"] stringValue] : nil;
+            self.pdCountLabel.text = [[result objectForKey:@"pd"] integerValue] ? [[result objectForKey:@"pd"] stringValue] : nil;
+        }
+    }];
 }
 
 - (IBAction)logoutAction:(id)sender
@@ -78,12 +98,6 @@
 
 - (IBAction)scanAction:(id)sender
 {
-//    [[TDZbarReaderManager sharedInstance] startToScanBarcodeOnViewController: self withCompletionHandler: ^(BOOL success, id result){
-//        if (success)
-//        {
-//            TD_LOG(@"%@", result);
-//        }
-//    }];
     [self.navigationController pushViewController: self.cashierViewController animated: YES];
 }
 

@@ -10,9 +10,11 @@
 #import "TDCashierScanViewController.h"
 #import "TDCashierChooseViewController.h"
 #import "TDSettlementViewController.h"
+#import "TDCustomerSettlementViewController.h"
 
 @interface TDCashierViewController ()<TDCashierBannerDelegate>
 @property (nonatomic, strong) TDSettlementViewController *settlementViewController;
+@property (nonatomic, strong) TDCustomerSettlementViewController *customerSettlementViewController;
 @end
 
 @implementation TDCashierViewController
@@ -31,6 +33,7 @@
     self.scanViewController = [[TDCashierScanViewController alloc] initWithNibName: @"TDCashierScanViewController" bundle: nil];
     self.chooseViewController = [[TDCashierChooseViewController alloc] initWithNibName: @"TDCashierChooseViewController" bundle: nil];
     self.settlementViewController = [[TDSettlementViewController alloc] initWithNibName:@"TDSettlementViewController" bundle:nil];
+    self.customerSettlementViewController = [[TDCustomerSettlementViewController alloc] initWithNibName:@"TDCustomerSettlementViewController" bundle:nil];
 }
 
 - (void) viewWillLayoutSubviews;
@@ -50,7 +53,7 @@
 
 - (void) customerSettlementAction:(TDCashierBanner *)cashierBanner;
 {
-    [self.navigationController pushViewController:self.settlementViewController animated:YES];
+    [self.navigationController pushViewController:self.customerSettlementViewController animated:YES];
 }
 
 - (void) userSettlementAction:(TDCashierBanner *)cashierBanner;

@@ -11,5 +11,5 @@
 @interface TDCategory : NSObject
 @property (nonatomic, strong) NSString *cat_id;
 @property (nonatomic, strong) NSString *cat_name;
-@property (nonatomic, assign) BOOL hasChildren;
+@property (nonatomic, assign) BOOL children;
 @end

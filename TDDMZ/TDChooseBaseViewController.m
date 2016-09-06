@@ -195,38 +195,84 @@
 
 - (void)loadData
 {
-    RADataObject *phone1 = [RADataObject dataObjectWithName:@"Phone 1" children:nil];
-    RADataObject *phone2 = [RADataObject dataObjectWithName:@"Phone 2" children:nil];
-    RADataObject *phone3 = [RADataObject dataObjectWithName:@"Phone 3" children:nil];
-    RADataObject *phone4 = [RADataObject dataObjectWithName:@"Phone 4" children:nil];
+    NSMutableArray *categories = [NSMutableArray array];
     
-    RADataObject *phone = [RADataObject dataObjectWithName:@"Phones"
-                                                  children:[NSArray arrayWithObjects:phone1, phone2, phone3, phone4, nil]];
-    
-    RADataObject *notebook1 = [RADataObject dataObjectWithName:@"Notebook 1" children:nil];
-    RADataObject *notebook2 = [RADataObject dataObjectWithName:@"Notebook 2" children:nil];
-    
-    RADataObject *computer1 = [RADataObject dataObjectWithName:@"Computer 1"
-                                                      children:[NSArray arrayWithObjects:notebook1, notebook2, nil]];
-    RADataObject *computer2 = [RADataObject dataObjectWithName:@"Computer 2" children:nil];
-    RADataObject *computer3 = [RADataObject dataObjectWithName:@"Computer 3" children:nil];
-    
-    RADataObject *computer = [RADataObject dataObjectWithName:@"Computers"
-                                                     children:[NSArray arrayWithObjects:computer1, computer2, computer3, nil]];
-    RADataObject *car = [RADataObject dataObjectWithName:@"Cars" children:nil];
-    RADataObject *bike = [RADataObject dataObjectWithName:@"Bikes" children:nil];
-    RADataObject *house = [RADataObject dataObjectWithName:@"Houses" children:nil];
-    RADataObject *flats = [RADataObject dataObjectWithName:@"Flats" children:nil];
-    RADataObject *motorbike = [RADataObject dataObjectWithName:@"Motorbikes" children:nil];
-    RADataObject *drinks = [RADataObject dataObjectWithName:@"Drinks" children:nil];
-    RADataObject *food = [RADataObject dataObjectWithName:@"Food" children:nil];
-    RADataObject *sweets = [RADataObject dataObjectWithName:@"Sweets" children:nil];
-    RADataObject *watches = [RADataObject dataObjectWithName:@"Watches" children:nil];
-    RADataObject *walls = [RADataObject dataObjectWithName:@"Walls" children:nil];
-    
-    self.data = [NSArray arrayWithObjects:phone, computer, car, bike, house, flats, motorbike, drinks, food, sweets, watches, walls, nil];
-    
+    [[TDClient sharedInstance] getCategoryListWithCategoryId:@"0" completionHandler:^(BOOL success, NSError *error, id userInfo){
+        if (userInfo)
+        {
+            NSArray *res = userInfo;
+            for (NSDictionary *dic in res)
+            {
+                TDCategory *cat = [TDCategory new];
+                [cat setValuesForKeysWithDictionary:dic];
+                RADataObject *data = [RADataObject dataObjectWithName:cat.cat_name children:nil];
+                data.userInfo = cat;
+                [categories addObject:data];
+                [self rescursiveGetChildrenForCategory: data];
+            }
+            
+            self.data = categories;
+            [self.treeView reloadData];
+        }
+    }];
 }
+
+- (void)treeView:(RATreeView *)treeView didSelectRowForItem:(id)item;
+{
+//    RADataObject *adata = item;
+//    
+//    if (adata)
+//    {
+//        TDCategory *category = adata.userInfo;
+//        if (category.children)
+//        {
+//            [[TDClient sharedInstance] getCategoryListWithCategoryId:category.cat_id completionHandler:^(BOOL success, NSError *error, id userInfo){
+//                if (userInfo)
+//                {
+//                    NSArray *res = userInfo;
+//                    for (NSDictionary *dic in res)
+//                    {
+//                        TDCategory *cat = [TDCategory new];
+//                        [cat setValuesForKeysWithDictionary:dic];
+//                        RADataObject *children = [RADataObject dataObjectWithName:cat.cat_name children:nil];
+//                        children.userInfo = cat;
+//                        [adata addChild:children];
+//                    }
+//                }
+//            }];
+//        }
+//    }
+}
+
+- (void) rescursiveGetChildrenForCategory: (RADataObject *)adata;
+{
+    if (adata)
+    {
+        TDCategory *category = adata.userInfo;
+        if (category.children)
+        {
+            [[TDClient sharedInstance] getCategoryListWithCategoryId:category.cat_id completionHandler:^(BOOL success, NSError *error, id userInfo){
+                if (userInfo)
+                {
+                    NSArray *res = userInfo;
+                    for (NSDictionary *dic in res)
+                    {
+                        TDCategory *cat = [TDCategory new];
+                        [cat setValuesForKeysWithDictionary:dic];
+                        RADataObject *children = [RADataObject dataObjectWithName:cat.cat_name children:nil];
+                        children.userInfo = cat;
+                        [adata addChild:children];
+                        
+                        if (cat.children) {
+                            [self rescursiveGetChildrenForCategory: children];
+                        }
+                    }
+                }
+            }];
+        }
+    }
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
