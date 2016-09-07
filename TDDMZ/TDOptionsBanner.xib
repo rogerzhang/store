@@ -49,6 +49,9 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" id="CaS-rP-cqW">
                     <rect key="frame" x="748" y="38" width="22" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <connections>
+                        <action selector="buttonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="2rH-xp-zzG"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bXg-Am-dJ5">
                     <rect key="frame" x="218" y="8" width="291" height="20"/>
@@ -62,6 +65,7 @@
             <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
             <connections>
                 <outlet property="chooseStoreButton" destination="CaS-rP-cqW" id="4iK-31-7uQ"/>
+                <outlet property="receiverName" destination="7Aa-ZL-Raj" id="bsd-eL-5kx"/>
                 <outlet property="storeNameLabel" destination="e1z-Ag-VJA" id="AMm-mK-aE0"/>
                 <outlet property="timeLabel" destination="bXg-Am-dJ5" id="99P-d8-ema"/>
             </connections>
