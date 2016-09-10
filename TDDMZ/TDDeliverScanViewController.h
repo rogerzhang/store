@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface TDDeliverScanViewController : TDScanBaseViewController
-
+- (TDStore *)toStore;
 @end

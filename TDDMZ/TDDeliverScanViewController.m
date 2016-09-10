@@ -13,6 +13,7 @@
 @property (nonatomic, strong) TDOptionsBanner *optionBanner;
 @property (nonatomic, strong) NSTimer *timer;
 @property (nonatomic, strong) UIPopoverController *popoverController;
+@property (nonatomic, strong) TDStore *currentToStore;
 @end
 
 @implementation TDDeliverScanViewController
@@ -41,6 +42,11 @@
     self.optionBanner.timeLabel.text = [[TDHelper sharedInstance] dateFormatedString];
 }
 
+- (TDStore *)toStore;
+{
+    return self.currentToStore;
+}
+
 - (void)viewWillLayoutSubviews;
 {
     [super viewWillLayoutSubviews];
@@ -62,6 +68,7 @@
 
 - (void)storeListViewController:(TDSotreListTableViewController *)storeViewController didSelectStore: (TDStore *)store;
 {
+    self.currentToStore = store;
     self.optionBanner.receiverName.text = store.store_name;
     [self.popoverController dismissPopoverAnimated: YES];
 }

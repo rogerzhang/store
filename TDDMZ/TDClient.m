@@ -478,6 +478,8 @@
 {
     NSMutableDictionary *params = [[NSMutableDictionary alloc]init];
     [params setValue:self.userId forKey:@"userid"];
+    [params setValue:toStore forKey:@"tostore_id"];
+    [params setValue:goods forKey:@"goods"];
     
     NSString *jsonString = [params jsonStringWithPrettyPrint: NO];
     

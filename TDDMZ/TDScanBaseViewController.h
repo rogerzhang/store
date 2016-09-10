@@ -13,4 +13,7 @@
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) TDScanView *scanView;
 @property (nonatomic, strong) NSMutableArray *datasource;
+
+- (void) clean;
+
 @end

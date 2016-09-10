@@ -19,7 +19,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *storeNameLabel;
 @property (weak, nonatomic) IBOutlet UIButton *chooseStoreButton;
-@property (weak, nonatomic) IBOutlet UILabel *receiverName;
+@property (weak, nonatomic) IBOutlet UITextField *receiverName;
+
 @property (weak, nonatomic) NSObject<TDOptionsBannerDelegate> *delegate;
 
 @end

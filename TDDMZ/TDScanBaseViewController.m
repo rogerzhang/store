@@ -25,6 +25,12 @@
     [super didReceiveMemoryWarning];
 }
 
+- (void) clean;
+{
+    [self.datasource removeAllObjects];
+    [self.tableView reloadData];
+}
+
 #pragma mark-<UITableViewDelegate, UITableViewDataSource>
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
