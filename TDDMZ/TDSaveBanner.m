@@ -56,6 +56,9 @@
 }
 
 - (IBAction)saveAction:(id)sender {
+    if ([self.delegate respondsToSelector:@selector(saveActionWithSaveBanner:)]) {
+        [self.delegate saveActionWithSaveBanner: self];
+    }
 }
 
 /*

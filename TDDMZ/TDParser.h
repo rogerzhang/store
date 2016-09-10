@@ -14,6 +14,7 @@
 + (instancetype)sharedInstance;
 - (TDGood *)goodWithDictionary: (NSDictionary *)dict;
 - (NSDictionary *)dictionaryWithGood: (TDGood *)good;
+- (NSDictionary *)submitionDictionaryWithGood: (TDGood *)good;
 - (TDStore *)storeWithDictionary: (NSDictionary *)dict;
 - (NSDictionary *)dictionaryWithStore: (TDStore *)store;
 - (TDCategory *)categoryWithDictionary: (NSDictionary *)dict;

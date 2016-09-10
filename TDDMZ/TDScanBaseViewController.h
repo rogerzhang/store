@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TDProductPreviewTableViewCell.h"
 
-@interface TDScanBaseViewController : UIViewController<TDScanViewDelegate,UITableViewDelegate, UITableViewDataSource>
+@interface TDScanBaseViewController : UIViewController<TDScanViewDelegate,UITableViewDelegate, UITableViewDataSource, TDProductPreviewTableViewCellDelegate>
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) TDScanView *scanView;
 @property (nonatomic, strong) NSMutableArray *datasource;

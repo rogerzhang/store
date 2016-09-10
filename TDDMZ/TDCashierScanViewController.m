@@ -26,6 +26,12 @@
     [self.tableView registerNib:cellNib forCellReuseIdentifier:PreviewCellIdentifier];
 }
 
+- (void) clean;
+{
+    [self.datasource removeAllObjects];
+    [self.tableView reloadData];
+}
+
 - (void)viewWillLayoutSubviews;
 {
     [super viewWillLayoutSubviews];

@@ -19,13 +19,16 @@
 - (void)awakeFromNib
 {
     [super awakeFromNib];
-    self.count = 1;
+    self.count = 0;
 }
 
 - (void)setCount:(NSInteger)count;
 {
     _count = count;
     [self update];
+    if ([self.delegate respondsToSelector:@selector(countDidChanged:)]) {
+        [self.delegate countDidChanged: self];
+    }
 }
 
 - (void)update;
@@ -45,7 +48,7 @@
 
 - (IBAction)reduceAction:(id)sender
 {
-    if (self.count < 0) {
+    if (self.count < 1) {
         return;
     }
     self.count--;

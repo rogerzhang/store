@@ -89,7 +89,6 @@ static NSString * const reuseIdentifier = @"Cell";
     self.collectionView.frame = tRect;
 }
 
-
 #pragma mark - Actions
 
 - (void)refreshControlChanged:(UIRefreshControl *)refreshControl

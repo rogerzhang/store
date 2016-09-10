@@ -23,7 +23,6 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark-<UITableViewDelegate, UITableViewDataSource>
@@ -39,6 +38,7 @@
     
     TDGood *good = self.datasource[indexPath.row];
     cell.typeLabel.text = good.goods_name;
+    cell.delegate = self;
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSURL* aURL = [NSURL URLWithString: good.goods_img];
@@ -66,7 +66,18 @@
             NSString *goodId = result;
             [self searchGoodWithId:goodId];
         }
+        else
+        {
+            [self dismissViewControllerAnimated:YES completion:NULL];
+        }
     }];
+}
+
+- (void) countDidChanged: (TDProductPreviewTableViewCell *)cell;
+{
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    TDGood *good = self.datasource[indexPath.row];
+    good.goods_number = cell.count;
 }
 
 - (void) okAction: (TDScanView *)scanView;

@@ -46,7 +46,12 @@
      
                        to: 0];
     
-    [self.presentingViewController presentViewController: self.reader animated: YES completion: ^{}];
+    self.reader.readerView.frame = CGRectMake(0, 0, 200, 200);
+
+    [self.presentingViewController presentViewController: self.reader animated: YES completion: ^{
+        CGRect bounds = self.presentingViewController.view.bounds;
+        self.reader.readerView.center = CGPointMake(CGRectGetWidth(bounds) / 2.0f, CGRectGetHeight(bounds) / 2.0f);
+    }];
 }
 
 - (void) endScaningBarcode;

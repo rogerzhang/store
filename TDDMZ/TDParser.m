@@ -34,6 +34,12 @@
     return dict;
 }
 
+- (NSDictionary *)submitionDictionaryWithGood: (TDGood *)good;
+{
+    NSDictionary *dict = [good dictionaryWithValuesForKeys:@[@"goods_id",@"goods_name",@"shop_price",@"goods_sn",@"goodattr_id",@"goods_attr", @"goods_number"]];
+    return dict;
+}
+
 - (TDStore *)storeWithDictionary: (NSDictionary *)dict;
 {
     TDStore *good = [TDStore new];

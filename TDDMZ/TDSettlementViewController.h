@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface TDSettlementViewController : UIViewController
-
+@property (nonatomic, strong) NSString *totalMoney;
+@property (nonatomic, strong) NSArray *goodList;
 @end

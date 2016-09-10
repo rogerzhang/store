@@ -9,6 +9,8 @@
 #import "TDSettlementViewController.h"
 
 @interface TDSettlementViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *textField1;
+@property (weak, nonatomic) IBOutlet UITextField *textField2;
 
 @end
 
@@ -38,11 +40,29 @@
     [self.navigationController popViewControllerAnimated: YES];
 }
 
+- (IBAction)okAction:(id)sender
+{
+    NSString *string = self.textField1.text ? self.textField1.text : self.textField2.text;
+    NSString *payTye = self.textField1.text ? @"现金" : @"刷卡";
+    
+    if (string && [string integerValue])
+    {
+        [[TDClient sharedInstance] saveOrderWithOrderMomeny:[self totalMoney] payMomney:string payType:payTye goods:self.goodList completionHandler:^(BOOL success, NSError *error, id userInfo){
+            if (userInfo) {
+                TD_LOG(@"%@", userInfo);
+            }
+        }];
+    }
+    else
+    {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"请输入付款金额" message:nil delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil, nil];
+        [alertView show];
+    }
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
 
 @end

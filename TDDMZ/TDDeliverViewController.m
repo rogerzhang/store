@@ -10,7 +10,7 @@
 #import "TDDeliverChooseViewController.h"
 #import "TDDeliverScanViewController.h"
 
-@interface TDDeliverViewController ()
+@interface TDDeliverViewController ()<TDSaveBannerDelegate>
 
 @end
 
@@ -25,6 +25,7 @@
     self.saveBanner.key2Label.text = @"总金额：";
     self.saveBanner.value1Label.text = @"";
     self.saveBanner.value2Label.text = @"";
+    self.saveBanner.delegate = self;
     self.scanViewController = [[TDDeliverScanViewController alloc] initWithNibName: @"TDDeliverScanViewController" bundle: nil];
     self.chooseViewController = [[TDDeliverChooseViewController alloc] initWithNibName: @"TDDeliverChooseViewController" bundle: nil];
 }
@@ -45,6 +46,10 @@
     self.navigationItem.rightBarButtonItem = [self rightButtoItem];
 }
 
+- (void) saveActionWithSaveBanner: (TDSaveBanner *)banner;
+{
+    
+}
 
 - (void)didReceiveMemoryWarning
 {
