@@ -16,9 +16,14 @@
     
     if (self)
     {
+        UIImage *normalImage = [[UIImage imageNamed:@"12"] stretchableImageWithLeftCapWidth:5 topCapHeight:5];
+        UIImage *selectedImage = [[UIImage imageNamed:@"13"] stretchableImageWithLeftCapWidth:5 topCapHeight:5];
+        
         self.chooseGoodButton = [UIButton buttonWithType: UIButtonTypeCustom];
         [self.chooseGoodButton setTitle: @"选择商品" forState: UIControlStateNormal];
         [self.chooseGoodButton setTitle: @"选择商品" forState: UIControlStateSelected];
+        [self.chooseGoodButton setBackgroundImage:normalImage forState:UIControlStateNormal];
+        [self.chooseGoodButton setBackgroundImage:selectedImage forState:UIControlStateSelected];
         [self.chooseGoodButton setTitleColor: RGBColor(47,47,47) forState:UIControlStateNormal];
         [self.chooseGoodButton setTitleColor: RGBColor(237,84,22) forState:UIControlStateSelected];
         self.chooseGoodButton.frame = CGRectMake(0, 0, frame.size.width / 2, frame.size.height);
@@ -29,6 +34,8 @@
         self.chooseScanerButton = [UIButton buttonWithType: UIButtonTypeCustom];
         [self.chooseScanerButton setTitle: @"选择扫码" forState: UIControlStateNormal];
         [self.chooseScanerButton setTitle: @"选择扫码" forState: UIControlStateSelected];
+        [self.chooseScanerButton setBackgroundImage:normalImage forState:UIControlStateNormal];
+        [self.chooseScanerButton setBackgroundImage:selectedImage forState:UIControlStateSelected];
         [self.chooseScanerButton setTitleColor: RGBColor(47,47,47) forState:UIControlStateNormal];
         [self.chooseScanerButton setTitleColor: RGBColor(237,84,22) forState:UIControlStateSelected];
         [self.chooseScanerButton setTitleShadowColor: [UIColor greenColor] forState: UIControlStateSelected];

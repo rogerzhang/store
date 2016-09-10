@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface TDGood : NSObject
-@property (nonatomic, strong) NSString *good_id;
+@property (nonatomic, strong) NSString *goods_id;
 @property (nonatomic, strong) NSString *goods_name;
 @property (nonatomic, strong) NSString *shop_price;
 @property (nonatomic, strong) NSString *goods_img;

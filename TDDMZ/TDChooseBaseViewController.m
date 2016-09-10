@@ -7,13 +7,19 @@
 //
 
 #import "TDChooseBaseViewController.h"
+#import "TDChooseProductLayout.h"
+#import "TDChooseProductCollectionViewCell.h"
 
-@interface TDChooseBaseViewController ()<RATreeViewDelegate, RATreeViewDataSource>
+@interface TDChooseBaseViewController ()<RATreeViewDelegate, RATreeViewDataSource,UICollectionViewDelegate, UICollectionViewDataSource>
 @property (weak, nonatomic) RATreeView *treeView;
 @property (strong, nonatomic) NSArray *data;
+@property (strong, nonatomic) NSArray *goodList;
 @property (strong, nonatomic) id expanded;
 @property (strong, nonatomic) UIBarButtonItem *editButton;
+@property (strong, nonatomic) UICollectionView *collectionView;
 @end
+
+static NSString * const reuseIdentifier = @"Cell";
 
 @implementation TDChooseBaseViewController
 
@@ -24,6 +30,10 @@
     [self loadData];
     
     RATreeView *treeView = [[RATreeView alloc] initWithFrame:self.view.bounds];
+    
+    UICollectionViewLayout *layout = [TDChooseProductLayout new];
+    self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
+    [self.view addSubview: self.collectionView];
     
     treeView.delegate = self;
     treeView.dataSource = self;
@@ -43,12 +53,18 @@
     self.treeView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.view insertSubview:treeView atIndex:0];
     self.treeView.cellLayoutMarginsFollowReadableWidth = NO;
+    self.treeView.backgroundColor = UIColorFromRGB(0xeaebec);
     
     [self.navigationController setNavigationBarHidden:NO];
     self.navigationItem.title = NSLocalizedString(@"Things", nil);
     [self updateNavigationItemButton];
     
     [self.treeView registerNib:[UINib nibWithNibName:NSStringFromClass([RATableViewCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([RATableViewCell class])];
+    UINib *nib = [UINib nibWithNibName: @"TDChooseProductCollectionViewCell" bundle: nil];
+    [self.collectionView registerNib:nib forCellWithReuseIdentifier:reuseIdentifier];
+    self.collectionView.backgroundColor = [UIColor whiteColor];
+    self.collectionView.delegate = self;
+    self.collectionView.dataSource = self;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -63,7 +79,14 @@
         self.treeView.scrollView.contentOffset = CGPointMake(0.0, -heightPadding);
     }
     
-    self.treeView.frame = self.view.bounds;
+    CGRect bounds = self.view.bounds;
+    CGRect tRect = bounds;
+    tRect.size.width = 180;
+    self.treeView.frame = tRect;
+    
+    tRect.origin.x = CGRectGetMaxX(self.treeView.frame);
+    tRect.size.width = bounds.size.width - CGRectGetWidth(self.treeView.frame);
+    self.collectionView.frame = tRect;
 }
 
 
@@ -153,20 +176,10 @@
     
     RATableViewCell *cell = [self.treeView dequeueReusableCellWithIdentifier:NSStringFromClass([RATableViewCell class])];
     [cell setupWithTitle:dataObject.name detailText:detailText level:level additionButtonHidden:!expanded];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    
-    __weak typeof(self) weakSelf = self;
-    cell.additionButtonTapAction = ^(id sender){
-        if (![weakSelf.treeView isCellForItemExpanded:dataObject] || weakSelf.treeView.isEditing) {
-            return;
-        }
-        RADataObject *newDataObject = [[RADataObject alloc] initWithName:@"Added value" children:@[]];
-        [dataObject addChild:newDataObject];
-        [weakSelf.treeView insertItemsAtIndexes:[NSIndexSet indexSetWithIndex:0] inParent:dataObject withAnimation:RATreeViewRowAnimationLeft];
-        [weakSelf.treeView reloadRowsForItems:@[dataObject] withRowAnimation:RATreeViewRowAnimationNone];
-    };
+    cell.selectionStyle = UITableViewCellSelectionStyleBlue;
     
     cell.separatorInset = UIEdgeInsetsZero;
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     return cell;
 }
@@ -219,29 +232,35 @@
 
 - (void)treeView:(RATreeView *)treeView didSelectRowForItem:(id)item;
 {
-//    RADataObject *adata = item;
-//    
-//    if (adata)
-//    {
-//        TDCategory *category = adata.userInfo;
-//        if (category.children)
-//        {
-//            [[TDClient sharedInstance] getCategoryListWithCategoryId:category.cat_id completionHandler:^(BOOL success, NSError *error, id userInfo){
-//                if (userInfo)
-//                {
-//                    NSArray *res = userInfo;
-//                    for (NSDictionary *dic in res)
-//                    {
-//                        TDCategory *cat = [TDCategory new];
-//                        [cat setValuesForKeysWithDictionary:dic];
-//                        RADataObject *children = [RADataObject dataObjectWithName:cat.cat_name children:nil];
-//                        children.userInfo = cat;
-//                        [adata addChild:children];
-//                    }
-//                }
-//            }];
-//        }
-//    }
+    RADataObject *adata = item;
+    
+    if (adata)
+    {
+        TDCategory *category = adata.userInfo;
+        if (!category.children)
+        {
+            [[TDClient sharedInstance] getCategorygoodsWithId:category.cat_id withCompletionHandler:^(BOOL success, NSError *error, id userInfo){
+                if (userInfo)
+                {
+                    NSArray *res = userInfo;
+                    NSMutableArray *goodList = [NSMutableArray array];
+                    for (NSDictionary *dic in res)
+                    {
+                        TDGood *cat = [TDGood new];
+                        [cat setValuesForKeysWithDictionary:dic];
+                        [goodList addObject: cat];
+                    }
+                    if (goodList.count) {
+                        self.goodList = goodList;
+                        [self.collectionView reloadData];
+                    }
+                }
+            }];
+        }
+    }
+    
+    UITableViewCell *cell = [treeView cellForItem:item];
+    [cell setSelected: YES];
 }
 
 - (void) rescursiveGetChildrenForCategory: (RADataObject *)adata;
@@ -271,6 +290,58 @@
             }];
         }
     }
+}
+
+- (CGSize) collectionView: (UICollectionView *)collectionView
+                   layout: (UICollectionViewLayout *)collectionViewLayout
+   sizeForItemAtIndexPath: (NSIndexPath *)indexPath
+{
+    CGSize size = CGSizeMake (210, 186);
+    
+    return size;
+}
+
+#pragma mark <UICollectionViewDataSource>
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return 1;
+}
+
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return self.goodList.count;
+}
+
+- (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    TDChooseProductCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    
+    TDGood *good = self.goodList[indexPath.row];
+    cell.label.text = good.goods_name;
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSURL* aURL = [NSURL URLWithString: good.goods_img];
+        NSData* data = [[NSData alloc] initWithContentsOfURL:aURL];
+        UIImage *image = [UIImage imageWithData:data];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            cell.imageView.image = image;
+        });
+    });
+    
+    return cell;
+}
+
+- (void) orderDetailAction: (TDOrderCollectionViewCell*)cell;
+{
+    NSIndexPath *indexPath = [self.collectionView indexPathForCell: cell];
+    
+    TD_LOG(@"indexPath is %ld", (long)[indexPath row]);
+}
+
+- (void) orderOKAction: (TDOrderCollectionViewCell*)cell;
+{
+    NSIndexPath *indexPath = [self.collectionView indexPathForCell: cell];
+    
+    TD_LOG(@"indexPath is %ld", (long)[indexPath row]);
 }
 
 - (void)didReceiveMemoryWarning
