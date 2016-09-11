@@ -9,7 +9,7 @@
 #import "TDBaseViewController.h"
 
 @interface TDBaseViewController ()<TDItemsBarDelegate>
-
+@property (nonatomic, assign) BOOL isFirstLoad;
 @end
 
 @implementation TDBaseViewController
@@ -25,6 +25,8 @@
     self.saveBanner = [[[NSBundle mainBundle] loadNibNamed:@"TDSaveBanner" owner:self options:nil] objectAtIndex:0];
     [self.view addSubview: self.saveBanner];
     self.saveBanner.backgroundColor = RGBColor(247, 247, 247);
+    
+    self.isFirstLoad = YES;
 }
 
 - (void)viewWillAppear:(BOOL)animated;
@@ -50,12 +52,16 @@
     CGFloat height = TDBANNER_HEIGHT;
     frame = CGRectMake(0, bounds.size.height - height, bounds.size.width, height);
     self.saveBanner.frame = frame;
+    
+    if (self.isFirstLoad) {
+        [self.itemsBar setDefaultActionButton: self.itemsBar.chooseScanerButton];
+        self.isFirstLoad = NO;
+    }
 }
 
 -(void) viewDidAppear:(BOOL)animated;
 {
     [super viewDidAppear:animated];
-    [self.itemsBar setDefaultActionButton: self.itemsBar.chooseScanerButton];
 }
 
 - (void)didReceiveMemoryWarning
