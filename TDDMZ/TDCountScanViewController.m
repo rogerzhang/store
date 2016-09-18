@@ -27,6 +27,7 @@
     self.infoView = [[[NSBundle mainBundle] loadNibNamed:@"TDInfoView" owner:self options:nil] objectAtIndex:0];
     [self.view addSubview: self.infoView];
     self.infoView.dateLabel.text = [[TDHelper sharedInstance] dateFormatedString];
+    self.infoView.nameLabel.text = [TDClient sharedInstance].storeName;
     
     self.timer = [NSTimer scheduledTimerWithTimeInterval: 1 target:self selector:@selector(updateTimeLabelText) userInfo:nil repeats:YES];
     UINib *cellNib = [UINib nibWithNibName:@"TDCountPreviewTableViewCell" bundle:nil];

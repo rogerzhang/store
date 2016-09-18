@@ -524,4 +524,195 @@
          }];
 }
 
+- (void) checkdborderWithId:(NSString *)orderId completionHandler:(TDCompletionHandler)completionHandler;
+{
+    NSMutableDictionary *params = [[NSMutableDictionary alloc]init];
+    [params setValue:self.userId forKey:@"userid"];
+    [params setValue:orderId forKey:@"order_id"];
+    
+    NSString *jsonString = [params jsonStringWithPrettyPrint: NO];
+    
+    [self.manager
+        POST:@"checkdborder"
+        parameters:@{@"code":jsonString}
+        progress:^(NSProgress *uploadProgress){}
+        success:^(NSURLSessionDataTask *task, id _Nullable responseObject){
+         TD_LOG(@"%@", responseObject);
+         NSDictionary *result = (NSDictionary *)responseObject;
+         NSString *status = [result objectForKey:@"status"];
+         if ([status isEqualToString:@"failed"])
+         {
+             NSString *errorMsg = [result objectForKey:@"error_msg"];
+             NSMutableDictionary* details = [NSMutableDictionary dictionary];
+             [details setValue:errorMsg forKey:NSLocalizedDescriptionKey];
+             NSError *error = [NSError errorWithDomain:@"error" code:111 userInfo:details];
+             
+             if (completionHandler) {
+                 completionHandler(NO, error, nil);
+             }
+         }
+         else
+         {
+             NSString *orderId = [result objectForKey:@"order_id"];
+             
+             if (orderId)
+             {
+                 TD_LOG(@"%@", orderId);
+             }
+             
+             if (completionHandler) {
+                 completionHandler(YES, nil, orderId);
+             }
+         }
+        }
+        failure:^(NSURLSessionDataTask * _Nullable task, NSError *error){
+         TD_LOG(@"%@", error);
+         if (completionHandler) {
+             completionHandler(NO, error, nil);
+         }
+        }];
+}
+
+- (void) canceldborderbillWithId:(NSString *)orderId completionHandler:(TDCompletionHandler)completionHandler;
+{
+    NSMutableDictionary *params = [[NSMutableDictionary alloc]init];
+    [params setValue:self.userId forKey:@"userid"];
+    [params setValue:orderId forKey:@"order_id"];
+    
+    NSString *jsonString = [params jsonStringWithPrettyPrint: NO];
+    
+    [self.manager
+        POST:@"canceldborderbill"
+        parameters:@{@"code":jsonString}
+        progress:^(NSProgress *uploadProgress){}
+        success:^(NSURLSessionDataTask *task, id _Nullable responseObject){
+         TD_LOG(@"%@", responseObject);
+         NSDictionary *result = (NSDictionary *)responseObject;
+         NSString *status = [result objectForKey:@"status"];
+         if ([status isEqualToString:@"failed"])
+         {
+             NSString *errorMsg = [result objectForKey:@"error_msg"];
+             NSMutableDictionary* details = [NSMutableDictionary dictionary];
+             [details setValue:errorMsg forKey:NSLocalizedDescriptionKey];
+             NSError *error = [NSError errorWithDomain:@"error" code:112 userInfo:details];
+             
+             if (completionHandler) {
+                 completionHandler(NO, error, nil);
+             }
+         }
+         else
+         {
+             NSString *orderId = [result objectForKey:@"order_id"];
+             
+             if (orderId)
+             {
+                 TD_LOG(@"%@", orderId);
+             }
+             
+             if (completionHandler) {
+                 completionHandler(YES, nil, orderId);
+             }
+         }
+        }
+        failure:^(NSURLSessionDataTask * _Nullable task, NSError *error){
+         TD_LOG(@"%@", error);
+         if (completionHandler) {
+             completionHandler(NO, error, nil);
+         }
+        }];
+}
+
+- (void) serachticketWithType:(NSString *)type ticketNumber: (NSString *)tickeNumber completionHandler:(TDCompletionHandler)completionHandler;
+{
+    NSMutableDictionary *params = [[NSMutableDictionary alloc]init];
+    [params setValue:self.userId forKey:@"userid"];
+    [params setValue:type forKey:@"type"];
+    [params setValue:tickeNumber forKey:@"number"];
+    
+    NSString *jsonString = [params jsonStringWithPrettyPrint: NO];
+    
+    [self.manager
+        POST:@"serachticket"
+        parameters:@{@"code":jsonString}
+        progress:^(NSProgress *uploadProgress){}
+        success:^(NSURLSessionDataTask *task, id _Nullable responseObject){
+         TD_LOG(@"%@", responseObject);
+         NSDictionary *result = (NSDictionary *)responseObject;
+         NSString *status = [result objectForKey:@"status"];
+         if ([status isEqualToString:@"failed"])
+         {
+             NSString *errorMsg = [result objectForKey:@"error_msg"];
+             NSMutableDictionary* details = [NSMutableDictionary dictionary];
+             [details setValue:errorMsg forKey:NSLocalizedDescriptionKey];
+             NSError *error = [NSError errorWithDomain:@"error" code:113 userInfo:details];
+             
+             if (completionHandler) {
+                 completionHandler(NO, error, nil);
+             }
+         }
+         else
+         {
+             NSString *description = [result objectForKey:@"ticket"];
+             
+             if (description)
+             {
+                 TD_LOG(@"%@", description);
+             }
+             
+             if (completionHandler) {
+                 completionHandler(YES, nil, description);
+             }
+         }
+        }
+        failure:^(NSURLSessionDataTask * _Nullable task, NSError *error){
+         TD_LOG(@"%@", error);
+         if (completionHandler) {
+             completionHandler(NO, error, nil);
+         }
+        }];
+}
+
+- (void) writeoffWithType:(NSString *)type ticketNumber: (NSString *)tickeNumber completionHandler:(TDCompletionHandler)completionHandler;
+{
+    NSMutableDictionary *params = [[NSMutableDictionary alloc]init];
+    [params setValue:self.userId forKey:@"userid"];
+    [params setValue:type forKey:@"type"];
+    [params setValue:tickeNumber forKey:@"number"];
+    
+    NSString *jsonString = [params jsonStringWithPrettyPrint: NO];
+    
+    [self.manager
+        POST:@"writeoff"
+        parameters:@{@"code":jsonString}
+        progress:^(NSProgress *uploadProgress){}
+        success:^(NSURLSessionDataTask *task, id _Nullable responseObject){
+         TD_LOG(@"%@", responseObject);
+         NSDictionary *result = (NSDictionary *)responseObject;
+         NSString *status = [result objectForKey:@"status"];
+         if ([status isEqualToString:@"failed"])
+         {
+             NSString *errorMsg = [result objectForKey:@"error_msg"];
+             NSMutableDictionary* details = [NSMutableDictionary dictionary];
+             [details setValue:errorMsg forKey:NSLocalizedDescriptionKey];
+             NSError *error = [NSError errorWithDomain:@"error" code:114 userInfo:details];
+             
+             if (completionHandler) {
+                 completionHandler(NO, error, nil);
+             }
+         }
+         else
+         {
+             if (completionHandler) {
+                 completionHandler(YES, nil, nil);
+             }
+         }
+        }
+        failure:^(NSURLSessionDataTask * _Nullable task, NSError *error){
+         TD_LOG(@"%@", error);
+         if (completionHandler) {
+             completionHandler(NO, error, nil);
+         }
+        }];
+}
+
 @end

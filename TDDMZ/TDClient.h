@@ -36,4 +36,8 @@ typedef void (^TDCompletionHandler) (BOOL success, NSError *error, id userInfo);
 - (void) checkorderWithId: (NSString *)orderId status: (NSString *)status completionHandler:(TDCompletionHandler)completionHandler;
 - (void) getStorelistWithCompletionHandler:(TDCompletionHandler)completionHandler;
 - (void) deliverToStoreId: (NSString *)toStore goods: (NSArray *)goods completionHandler:(TDCompletionHandler)completionHandler;
+- (void) checkdborderWithId:(NSString *)orderId completionHandler:(TDCompletionHandler)completionHandler;
+- (void) canceldborderbillWithId:(NSString *)orderId completionHandler:(TDCompletionHandler)completionHandler;
+- (void) serachticketWithType:(NSString *)type ticketNumber: (NSString *)tickeNumber completionHandler:(TDCompletionHandler)completionHandler;
+- (void) writeoffWithType:(NSString *)type ticketNumber: (NSString *)tickeNumber completionHandler:(TDCompletionHandler)completionHandler;
 @end

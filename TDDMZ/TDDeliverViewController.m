@@ -65,7 +65,7 @@
         count += good.goods_number * [good.shop_price integerValue];
     }
     
-    money = [NSString stringWithFormat:@"%ld",count];
+    money = [NSString stringWithFormat:@"%ld",(long)count];
     
     return money;
 }
@@ -81,7 +81,7 @@
         count += good.goods_number;
     }
     
-    money = [NSString stringWithFormat:@"%ld",count];
+    money = [NSString stringWithFormat:@"%ld",(long)count];
     
     return money;
 }
