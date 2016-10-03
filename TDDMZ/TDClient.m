@@ -8,6 +8,8 @@
 
 #import "TDClient.h"
 
+NSString * const TDFormatDateString = @"yyyy-mm-dd";
+
 @interface TDClient()
 
 @property (nonatomic, strong) NSString *userId;
@@ -777,8 +779,12 @@
 {
     NSMutableDictionary *params = [[NSMutableDictionary alloc]init];
     [params setValue:self.userId forKey:@"userid"];
-    [params setValue:fromDate forKey:@"begin"];
-    [params setValue:toDate forKey:@"end"];
+    
+    NSString *from = [[TDHelper sharedInstance] date:fromDate formatedWithString:TDFormatDateString];
+    NSString *to = [[TDHelper sharedInstance] date:toDate formatedWithString:TDFormatDateString];
+    
+    [params setValue:from forKey:@"begin"];
+    [params setValue:to forKey:@"end"];
     [params setValue:type forKey:@"type"];
     [params setValue:status forKey:@"checked"];
     
@@ -1359,10 +1365,12 @@
 
 - (void) searchpdorderFormDate: (NSDate *)fromDate to: (NSDate *)toDate status: (NSString *)status withCompletionHandler: (TDCompletionHandler)completionHandler;
 {
+    NSString *from = [[TDHelper sharedInstance] date:fromDate formatedWithString:TDFormatDateString];
+    NSString *to = [[TDHelper sharedInstance] date:toDate formatedWithString:TDFormatDateString];
     NSMutableDictionary *params = [[NSMutableDictionary alloc]init];
     [params setValue:self.userId forKey:@"userid"];
-    [params setValue:fromDate forKey:@"begin"];
-    [params setValue:toDate forKey:@"end"];
+    [params setValue:from forKey:@"begin"];
+    [params setValue:to forKey:@"end"];
     [params setValue:status forKey:@"checked"];
     
     NSString *jsonString = [params jsonStringWithPrettyPrint: NO];

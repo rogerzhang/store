@@ -13,5 +13,6 @@
 + (instancetype) sharedInstance;
 
 - (NSString *) dateFormatedString;
+- (NSString *) date: (NSDate *)date formatedWithString: (NSString *const)formatString;
 
 @end

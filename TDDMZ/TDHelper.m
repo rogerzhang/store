@@ -48,4 +48,12 @@
     return str;
 }
 
+- (NSString *) date: (NSDate *)date formatedWithString: (NSString *const)formatString;
+{
+    [self.outputFormatter setLocale:[NSLocale currentLocale]];
+    [self.outputFormatter setDateFormat:formatString];
+    NSString *str = [self.outputFormatter stringFromDate:date];
+    return str;
+}
+
 @end
