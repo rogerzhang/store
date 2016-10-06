@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+static NSString * const TDFormatDateString = @"yyyy-MM-dd";
 #if NDEBUG
 #define BASEURL [NSURL URLWithString:@"http://dev.dmuzhi.cn/CashierService"]
 #else

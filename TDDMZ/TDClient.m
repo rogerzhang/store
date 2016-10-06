@@ -8,8 +8,6 @@
 
 #import "TDClient.h"
 
-NSString * const TDFormatDateString = @"yyyy-mm-dd";
-
 @interface TDClient()
 
 @property (nonatomic, strong) NSString *userId;

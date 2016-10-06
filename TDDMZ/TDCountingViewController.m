@@ -25,6 +25,26 @@
     self.chooseViewController = [[TDCountChooseViewController alloc] initWithNibName: @"TDCountChooseViewController" bundle: nil];
 }
 
+
+- (UIBarButtonItem *)rightButtoItem;
+{
+    UIBarButtonItem *rightButtoItem = [[UIBarButtonItem alloc] initWithTitle:@"未审核" style:UIBarButtonItemStylePlain target:self action:@selector(rightButtonAction)];
+    
+    return rightButtoItem;
+}
+
+- (void) rightButtonAction;
+{
+    TDUnCountingViewController *unCountingVC = [[TDUnCountingViewController alloc] initWithNibName:@"TDUnCountingViewController" bundle:nil];
+    [self.navigationController pushViewController:unCountingVC animated: YES];
+}
+
+- (void)viewWillAppear:(BOOL)animated;
+{
+    [super viewWillAppear:animated];
+    self.navigationItem.rightBarButtonItem = [self rightButtoItem];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

@@ -329,6 +329,14 @@ static NSString * const reuseIdentifier = @"Cell";
     return cell;
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath;
+{
+    TDProductDetailViewController *detailVC = [[TDProductDetailViewController alloc] initWithNibName:@"TDProductDetailViewController" bundle:nil];
+    TDGood *good = self.goodList[indexPath.row];
+    detailVC.goodsId = good.goods_id;
+    [self.navigationController pushViewController:detailVC animated:YES];
+}
+
 - (void) orderDetailAction: (TDOrderCollectionViewCell*)cell;
 {
     NSIndexPath *indexPath = [self.collectionView indexPathForCell: cell];
