@@ -24,6 +24,13 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FaV-mt-brf">
+                        <rect key="frame" x="0.0" y="133" width="213" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
@@ -31,8 +38,9 @@
             <connections>
                 <outlet property="imageView" destination="V4O-LN-3Ct" id="O6v-xv-fz5"/>
                 <outlet property="label" destination="Z2C-wb-mQz" id="7Q6-ss-0Pn"/>
+                <outlet property="label1" destination="FaV-mt-brf" id="pm6-5E-m4k"/>
             </connections>
-            <point key="canvasLocation" x="960.5" y="262"/>
+            <point key="canvasLocation" x="471.5" y="283"/>
         </collectionViewCell>
     </objects>
 </document>

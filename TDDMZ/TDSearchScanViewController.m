@@ -77,7 +77,7 @@
 {
     TDSearchGoodsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: PreviewCellIdentifier];
     NSDictionary *dic = self.datasource[indexPath.row];
-    cell.indexLabel.text = [NSString stringWithFormat:@"%ld", indexPath.row];
+    cell.indexLabel.text = [NSString stringWithFormat:@"%ld", indexPath.row + 1];
     cell.storeNameLabel.text = dic[@"store"];
     cell.attr1Label.text = dic[@"attr1"];
     [cell setAttributes:dic[@"attr2"] keys: dic[@"attr2_name"]];

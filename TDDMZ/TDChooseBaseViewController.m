@@ -316,6 +316,7 @@ static NSString * const reuseIdentifier = @"Cell";
     
     TDGood *good = self.goodList[indexPath.row];
     cell.label.text = good.goods_name;
+    cell.label1.text = good.goods_sn;
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSURL* aURL = [NSURL URLWithString: good.goods_img];
