@@ -82,6 +82,11 @@
     [self.navigationController popViewControllerAnimated: YES];
 }
 
+- (void) selectedScanViewController;
+{
+    [self.itemsBar tapChooseScanAction];
+}
+
 - (void) chooseGoodButtonAction: (TDItemsBar *)itemsBar;
 {
     [self.scanViewController removeFromParentViewController];
@@ -89,9 +94,16 @@
     [self.scanViewController didMoveToParentViewController: nil];
     
     [self addChildViewController: self.chooseViewController];
-    self.chooseViewController.view.frame = [self subViewRect];
+    self.chooseViewController.view.frame = [self chooseGoodViewRect];
     [self.view addSubview: self.chooseViewController.view];
     [self.chooseViewController didMoveToParentViewController: self];
+    
+    [self chooseButtonSelectedChangeAction: itemsBar];
+    self.saveBanner.hidden = itemsBar.chooseGoodButton.selected;
+}
+
+- (void) chooseButtonSelectedChangeAction: (TDItemsBar *)itemsBar;
+{
 }
 
 - (void) chooseScanerButtonAction: (TDItemsBar *)itemsBar;
@@ -101,12 +113,15 @@
     [self.chooseViewController didMoveToParentViewController: nil];
     
     [self addChildViewController: self.scanViewController];
-    self.scanViewController.view.frame = [self subViewRect];
+    self.scanViewController.view.frame = [self scanViewRect];
     [self.view addSubview: self.scanViewController.view];
     [self.scanViewController didMoveToParentViewController: self];
+    
+    [self chooseButtonSelectedChangeAction: itemsBar];
+    self.saveBanner.hidden = itemsBar.chooseGoodButton.selected;
 }
 
-- (CGRect) subViewRect;
+- (CGRect) scanViewRect;
 {
     CGRect frame = self.view.frame;
     CGFloat x = 0;
@@ -114,6 +129,26 @@
     CGFloat w = frame.size.width;
     CGFloat h = frame.size.height - y - CGRectGetHeight(self.saveBanner.frame);
     return CGRectMake(x, y, w, h);
+}
+
+- (CGRect) chooseGoodViewRect;
+{
+    CGRect frame = self.view.frame;
+    CGFloat x = 0;
+    CGFloat y = CGRectGetMaxY(self.itemsBar.frame);
+    CGFloat w = frame.size.width;
+    CGFloat h = frame.size.height - y;
+    return CGRectMake(x, y, w, h);
+}
+
+- (void) saveActionWithDetailViewController: (TDProductDetailViewController *)detailViewController;
+{
+    [self.navigationController popViewControllerAnimated: YES];
+    [self selectedScanViewController];
+    
+    TDScanBaseViewController *scanViewController = (TDScanBaseViewController *)self.scanViewController;
+    TDGood *good = detailViewController.goods;
+    [scanViewController addGoods:good];
 }
 
 @end

@@ -43,7 +43,15 @@
     TDProductPreviewTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: PreviewCellIdentifier];
     
     TDGood *good = self.datasource[indexPath.row];
-    cell.typeLabel.text = good.goods_name;
+    NSString *name = [NSString stringWithFormat:@"名称：%@", good.goods_name];
+    NSString *type = [NSString stringWithFormat:@"编码：%@", good.goods_sn];
+    NSString *attr = [NSString stringWithFormat:@"规格：%@", good.goods_attr];
+    NSString *price = [NSString stringWithFormat:@"单价：￥%@", good.shop_price];
+    
+    cell.nameLabel.text = name;
+    cell.typeLabel.text = type;
+    cell.sizeLabel.text = attr;
+    cell.priceLabel.text = price;
     cell.delegate = self;
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -89,7 +97,7 @@
 - (void) okAction: (TDScanView *)scanView;
 {
     NSString *goodId = [self.scanView.textView.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-    goodId = @"45348271";
+    goodId = @"100118000003";
     [self searchGoodWithId:goodId];
 }
 
@@ -100,10 +108,22 @@
         [[TDClient sharedInstance] getGoodInfo:goodId withCompletionHandler:^(BOOL success, NSError *error, id userInfo){
             if (userInfo) {
                 TDGood *good = [[TDParser sharedInstance] goodWithDictionary:userInfo];
-                [self.datasource addObject:good];
-                [self.tableView reloadData];
+                [self addGoods: good];
             }
         }];
     }
 }
+
+- (void) addGoods: (TDGood *)good;
+{
+    [self.datasource addObject:good];
+    [self.tableView reloadData];
+}
+
+- (void) removeGoods: (TDGood *)good;
+{
+    [self.datasource addObject:good];
+    [self.tableView reloadData];
+}
+
 @end

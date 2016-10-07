@@ -32,9 +32,11 @@
     self.cashierBanner.delegate = self;
 
     self.scanViewController = [[TDCashierScanViewController alloc] initWithNibName: @"TDCashierScanViewController" bundle: nil];
-    self.chooseViewController = [[TDCashierChooseViewController alloc] initWithNibName: @"TDCashierChooseViewController" bundle: nil];
+    TDCashierChooseViewController *chooseVC = [[TDCashierChooseViewController alloc] initWithNibName: @"TDCashierChooseViewController" bundle: nil];
     self.settlementViewController = [[TDSettlementViewController alloc] initWithNibName:@"TDSettlementViewController" bundle:nil];
     self.customerSettlementViewController = [[TDCustomerSettlementViewController alloc] initWithNibName:@"TDCustomerSettlementViewController" bundle:nil];
+    chooseVC.delegate = self;
+    self.chooseViewController = chooseVC;
     
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateLabel) userInfo:nil repeats:YES];
 }
@@ -43,6 +45,7 @@
 {
     [super viewWillLayoutSubviews];
     
+    self.chooseViewController.view.frame = self.view.frame;
     self.cashierBanner.frame = self.saveBanner.frame;
 }
 
@@ -58,6 +61,14 @@
 
 - (void) holdListAction:(TDCashierBanner *)cashierBanner;
 {}
+
+- (void) chooseButtonSelectedChangeAction: (TDItemsBar *)itemsBar;
+{
+    [super chooseButtonSelectedChangeAction: itemsBar];
+    
+    self.cashierBanner.hidden = itemsBar.chooseGoodButton.isSelected;
+    self.saveBanner.hidden = itemsBar.chooseGoodButton.isSelected;
+}
 
 - (void) customerSettlementAction:(TDCashierBanner *)cashierBanner;
 {
@@ -106,6 +117,11 @@
     [scanVC clean];
     
     [self.navigationController pushViewController:self.settlementViewController animated:YES];
+}
+
+- (void) saveActionWithDetailViewController: (TDProductDetailViewController *)detailViewController;
+{
+    [super saveActionWithDetailViewController: detailViewController];
 }
 
 - (void) dealloc;

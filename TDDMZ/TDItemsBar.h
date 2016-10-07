@@ -20,4 +20,5 @@
 @property (nonatomic, strong) UIButton *chooseScanerButton;
 @property (nonatomic, weak) NSObject<TDItemsBarDelegate> *delegate;
 - (void)setDefaultActionButton: (UIButton *)button;
+- (void) tapChooseScanAction;
 @end

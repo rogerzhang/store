@@ -66,6 +66,11 @@
     [self tapChooseScanerAction: button];
 }
 
+- (void) tapChooseScanAction;
+{
+    [self tapChooseScanerAction: self.chooseScanerButton];
+}
+
 - (IBAction) tapChooseGoodAction: (id)sender;
 {
     [self chooseButton: sender];

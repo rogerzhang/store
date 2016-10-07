@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TDProductDetailViewController.h"
 
 @interface TDChooseBaseViewController : UIViewController
-
+@property (nonatomic, weak) NSObject<TDProductDetailViewControllerDelegate> *delegate;
 @end

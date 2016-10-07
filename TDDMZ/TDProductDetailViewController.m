@@ -8,7 +8,7 @@
 
 #import "TDProductDetailViewController.h"
 
-@interface TDProductDetailViewController ()<TDSaveBannerDelegate>
+@interface TDProductDetailViewController ()<TDSaveBannerDelegate, TDSaveBannerDelegate>
 
 @end
 
@@ -18,13 +18,17 @@
 {
     [super viewDidLoad];
     
+    self.title = @"商品详情";
+    
     self.saveBanner = [[[NSBundle mainBundle] loadNibNamed:@"TDSaveBanner" owner:self options:nil] objectAtIndex:0];
     [self.view addSubview: self.saveBanner];
+    self.saveBanner.delegate = self;
     self.saveBanner.backgroundColor = RGBColor(247, 247, 247);
+    [self.saveBanner showLabel: NO];
     
-    if (self.goodsId)
+    if (self.goods)
     {
-        [[TDClient sharedInstance] getGoodsDetailInfoWithId:self.goodsId withCompletionHandler:^(BOOL success, NSError *error, id userInfo){
+        [[TDClient sharedInstance] getGoodsDetailInfoWithId:self.goods.goods_id withCompletionHandler:^(BOOL success, NSError *error, id userInfo){
             if (success) {
                 NSDictionary *res = userInfo;
                 self.nameLabel.text = res[@"goods_name"];

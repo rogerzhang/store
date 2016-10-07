@@ -27,7 +27,9 @@
     self.saveBanner.value2Label.text = @"";
     self.saveBanner.delegate = self;
     self.scanViewController = [[TDDeliverScanViewController alloc] initWithNibName: @"TDDeliverScanViewController" bundle: nil];
-    self.chooseViewController = [[TDDeliverChooseViewController alloc] initWithNibName: @"TDDeliverChooseViewController" bundle: nil];
+    TDDeliverChooseViewController *chooseViewController = [[TDDeliverChooseViewController alloc] initWithNibName: @"TDDeliverChooseViewController" bundle: nil];
+    chooseViewController.delegate = self;
+    self.chooseViewController = chooseViewController;
     
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateLabel) userInfo:nil repeats:YES];
 }

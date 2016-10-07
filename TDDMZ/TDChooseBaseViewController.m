@@ -332,8 +332,9 @@ static NSString * const reuseIdentifier = @"Cell";
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath;
 {
     TDProductDetailViewController *detailVC = [[TDProductDetailViewController alloc] initWithNibName:@"TDProductDetailViewController" bundle:nil];
+    detailVC.delegate = self.delegate;
     TDGood *good = self.goodList[indexPath.row];
-    detailVC.goodsId = good.goods_id;
+    detailVC.goods = good;
     [self.navigationController pushViewController:detailVC animated:YES];
 }
 

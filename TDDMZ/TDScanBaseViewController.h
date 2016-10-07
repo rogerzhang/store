@@ -14,6 +14,9 @@
 @property (nonatomic, strong) TDScanView *scanView;
 @property (nonatomic, strong) NSMutableArray *datasource;
 
+- (void) searchGoodWithId: (NSString *)goodId;
+- (void) addGoods: (TDGood *)good;
+- (void) removeGoods: (TDGood *)good;
 - (void) clean;
 
 @end

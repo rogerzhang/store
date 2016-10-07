@@ -20,7 +20,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imagView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
-@property (nonatomic, strong) NSString *goodsId;
+@property (nonatomic, strong) TDGood *goods;
 @property (strong, nonatomic) TDSaveBanner *saveBanner;
 @property (weak, nonatomic) NSObject<TDProductDetailViewControllerDelegate> *delegate;
 

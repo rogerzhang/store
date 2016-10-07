@@ -22,7 +22,9 @@
     self.title = @"盘 点";
     
     self.scanViewController = [[TDCountScanViewController alloc] initWithNibName: @"TDCountScanViewController" bundle: nil];
-    self.chooseViewController = [[TDCountChooseViewController alloc] initWithNibName: @"TDCountChooseViewController" bundle: nil];
+    TDCountChooseViewController *chooseViewController = [[TDCountChooseViewController alloc] initWithNibName: @"TDCountChooseViewController" bundle: nil];
+    chooseViewController.delegate = self;
+    self.chooseViewController = chooseViewController;
 }
 
 

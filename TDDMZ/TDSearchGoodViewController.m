@@ -23,7 +23,9 @@
     self.navigationController.navigationBar.hidden = NO;
     
     self.scanViewController = [[TDSearchScanViewController alloc] initWithNibName: @"TDSearchScanViewController" bundle: nil];
-    self.chooseViewController = [[TDSearchChooseViewController alloc] initWithNibName: @"TDSearchChooseViewController" bundle: nil];
+    TDSearchChooseViewController *chooseViewController = [[TDSearchChooseViewController alloc] initWithNibName: @"TDSearchChooseViewController" bundle: nil];
+    chooseViewController.delegate = self;
+    self.chooseViewController = chooseViewController;
 }
 
 - (void)viewWillAppear:(BOOL)animated;
