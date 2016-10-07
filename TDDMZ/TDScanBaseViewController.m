@@ -98,7 +98,12 @@
 {
     NSString *goodId = [self.scanView.textView.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     goodId = @"100118000003";
-    [self searchGoodWithId:goodId];
+    [self searchGoodsWithBarId: goodId];
+}
+
+- (void) searchGoodsWithBarId: (NSString *)barId;
+{
+    [self searchGoodWithId:barId];
 }
 
 - (void)searchGoodWithId: (NSString *)goodId;

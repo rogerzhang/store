@@ -26,11 +26,18 @@
     TDSearchChooseViewController *chooseViewController = [[TDSearchChooseViewController alloc] initWithNibName: @"TDSearchChooseViewController" bundle: nil];
     chooseViewController.delegate = self;
     self.chooseViewController = chooseViewController;
+    
+    self.saveBanner.hidden = YES;
 }
 
 - (void)viewWillAppear:(BOOL)animated;
 {
     [super viewWillAppear:animated];
+}
+
+- (void)viewWillLayoutSubviews;
+{
+    [super viewWillLayoutSubviews];
 }
 
 - (void)didReceiveMemoryWarning

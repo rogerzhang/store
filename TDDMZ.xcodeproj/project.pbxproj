@@ -59,6 +59,9 @@
 		22AAD39E1DA5000500DFA8DF /* TDUnCountingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AAD39C1DA5000500DFA8DF /* TDUnCountingViewController.m */; };
 		22AAD39F1DA5000500DFA8DF /* TDUnCountingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22AAD39D1DA5000500DFA8DF /* TDUnCountingViewController.xib */; };
 		22AAD3A21DA5082B00DFA8DF /* TDDateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AAD3A11DA5082B00DFA8DF /* TDDateViewController.m */; };
+		22AAD3A61DA788B200DFA8DF /* TDSearchGoodsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AAD3A41DA788B200DFA8DF /* TDSearchGoodsTableViewCell.m */; };
+		22AAD3A71DA788B200DFA8DF /* TDSearchGoodsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22AAD3A51DA788B200DFA8DF /* TDSearchGoodsTableViewCell.xib */; };
+		22AAD3AA1DA78A5D00DFA8DF /* TDSearchGoodHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AAD3A91DA78A5D00DFA8DF /* TDSearchGoodHeaderView.m */; };
 		22CC03B01D719DC50081AB16 /* TDCountScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC03AE1D719DC50081AB16 /* TDCountScanViewController.m */; };
 		22CC03B11D719DC50081AB16 /* TDCountScanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22CC03AF1D719DC50081AB16 /* TDCountScanViewController.xib */; };
 		22CC03B51D719DDC0081AB16 /* TDCountChooseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC03B31D719DDC0081AB16 /* TDCountChooseViewController.m */; };
@@ -198,6 +201,11 @@
 		22AAD39D1DA5000500DFA8DF /* TDUnCountingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDUnCountingViewController.xib; sourceTree = "<group>"; };
 		22AAD3A01DA5082B00DFA8DF /* TDDateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDDateViewController.h; sourceTree = "<group>"; };
 		22AAD3A11DA5082B00DFA8DF /* TDDateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDDateViewController.m; sourceTree = "<group>"; };
+		22AAD3A31DA788B200DFA8DF /* TDSearchGoodsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDSearchGoodsTableViewCell.h; sourceTree = "<group>"; };
+		22AAD3A41DA788B200DFA8DF /* TDSearchGoodsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDSearchGoodsTableViewCell.m; sourceTree = "<group>"; };
+		22AAD3A51DA788B200DFA8DF /* TDSearchGoodsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDSearchGoodsTableViewCell.xib; sourceTree = "<group>"; };
+		22AAD3A81DA78A5D00DFA8DF /* TDSearchGoodHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDSearchGoodHeaderView.h; sourceTree = "<group>"; };
+		22AAD3A91DA78A5D00DFA8DF /* TDSearchGoodHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDSearchGoodHeaderView.m; sourceTree = "<group>"; };
 		22CC03AD1D719DC50081AB16 /* TDCountScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDCountScanViewController.h; sourceTree = "<group>"; };
 		22CC03AE1D719DC50081AB16 /* TDCountScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDCountScanViewController.m; sourceTree = "<group>"; };
 		22CC03AF1D719DC50081AB16 /* TDCountScanViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDCountScanViewController.xib; sourceTree = "<group>"; };
@@ -438,6 +446,11 @@
 				225FE7771D8399EB007D15E8 /* TDChooseProductCollectionViewCell.h */,
 				225FE7781D8399EB007D15E8 /* TDChooseProductCollectionViewCell.m */,
 				225FE7791D8399EB007D15E8 /* TDChooseProductCollectionViewCell.xib */,
+				22AAD3A31DA788B200DFA8DF /* TDSearchGoodsTableViewCell.h */,
+				22AAD3A41DA788B200DFA8DF /* TDSearchGoodsTableViewCell.m */,
+				22AAD3A51DA788B200DFA8DF /* TDSearchGoodsTableViewCell.xib */,
+				22AAD3A81DA78A5D00DFA8DF /* TDSearchGoodHeaderView.h */,
+				22AAD3A91DA78A5D00DFA8DF /* TDSearchGoodHeaderView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -726,6 +739,7 @@
 				2215B3511D6F394B00616107 /* TDOptionsBanner.xib in Resources */,
 				22CC04231D727AE50081AB16 /* TDOrderCollectionViewController.xib in Resources */,
 				2215B09C1D6C903C00616107 /* TDProductPreviewTableViewCell.xib in Resources */,
+				22AAD3A71DA788B200DFA8DF /* TDSearchGoodsTableViewCell.xib in Resources */,
 				22013D1D1D7F0CCE001AD2E0 /* TDCustomerSettlementViewController.xib in Resources */,
 				2215B0F01D6C9C6800616107 /* TDSaveBanner.xib in Resources */,
 				2221A8F11D64AFC900D30775 /* TDVerifyViewController.xib in Resources */,
@@ -855,6 +869,7 @@
 				22CC04441D73B7130081AB16 /* NSDictionary+TDConvertToJson.m in Sources */,
 				22409DBF1D745EC2004FF14C /* TDCashierScanViewController.m in Sources */,
 				22A1E0C91D7BE437007A6905 /* RATableViewCell.m in Sources */,
+				22AAD3A61DA788B200DFA8DF /* TDSearchGoodsTableViewCell.m in Sources */,
 				22703A0D1D7DB9DF0060F8D2 /* TDChooseBaseViewController.m in Sources */,
 				2290B1C61D6200360085BD49 /* TDScanView.m in Sources */,
 				225FE7761D839963007D15E8 /* TDChooseProductLayout.m in Sources */,
@@ -874,6 +889,7 @@
 				22D9BE991D65F13900E06184 /* TDItemsBar.m in Sources */,
 				22E0A0161D786EA600786749 /* TDParser.m in Sources */,
 				2221A8F01D64AFC900D30775 /* TDVerifyViewController.m in Sources */,
+				22AAD3AA1DA78A5D00DFA8DF /* TDSearchGoodHeaderView.m in Sources */,
 				225FE77A1D8399EB007D15E8 /* TDChooseProductCollectionViewCell.m in Sources */,
 				22013D211D7F158D001AD2E0 /* TDSotreListTableViewController.m in Sources */,
 				22AAD3991DA4A4DC00DFA8DF /* TDProductDetailViewController.m in Sources */,
