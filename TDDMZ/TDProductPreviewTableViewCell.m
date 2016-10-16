@@ -19,7 +19,7 @@
 - (void)awakeFromNib
 {
     [super awakeFromNib];
-    self.count = 0;
+    self.count = 1;
 }
 
 - (void)setCount:(NSInteger)count;

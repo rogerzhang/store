@@ -16,6 +16,7 @@
 @property (nonatomic, strong) TDSettlementViewController *settlementViewController;
 @property (nonatomic, strong) TDCustomerSettlementViewController *customerSettlementViewController;
 @property (nonatomic, strong) NSTimer *timer;
+@property (nonatomic, strong) NSArray *datasouce;
 @end
 
 @implementation TDCashierViewController
@@ -38,6 +39,12 @@
     chooseVC.delegate = self;
     self.chooseViewController = chooseVC;
     
+    if (self.datasouce) {
+        TDCashierScanViewController *scanVC = (TDCashierScanViewController *)self.scanViewController;
+        NSMutableArray *data = [NSMutableArray arrayWithArray:self.datasouce];
+        [scanVC setDatasource:data];
+    }
+
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateLabel) userInfo:nil repeats:YES];
 }
 
@@ -54,13 +61,47 @@
     [super didReceiveMemoryWarning];
 }
 
+- (void) setDatasource: (NSArray *)datasource;
+{
+    _datasouce = datasource;
+}
+
 - (void) updateLabel;
 {
     self.cashierBanner.label.text = [NSString stringWithFormat:@"总金额: ￥%@",[self totalMoney]];
 }
 
 - (void) holdListAction:(TDCashierBanner *)cashierBanner;
-{}
+{
+    TDCashierScanViewController *scanVC = (TDCashierScanViewController *)self.scanViewController;
+    NSArray *goods = scanVC.datasource;
+    
+    NSInteger count = 0;
+    for (TDGood *good in goods)
+    {
+        count += good.goods_number;
+    }
+    
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    
+    NSDate *date = [NSDate date];
+    [dict setObject:date forKey:@"time"];
+    [dict setObject:@(count) forKey:@"count"];
+    [dict setObject:[self totalMoney] forKey:@"money"];
+    [dict setObject:[goods copy] forKey:@"goods"];
+    
+    [[TDClient sharedInstance] addOrder:dict];
+    
+    [self showMessage: @"挂单成功！"];
+    
+    [scanVC clean];
+}
+
+- (void) showMessage: (NSString *)message;
+{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:message delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    [alertView show];
+}
 
 - (void) chooseButtonSelectedChangeAction: (TDItemsBar *)itemsBar;
 {

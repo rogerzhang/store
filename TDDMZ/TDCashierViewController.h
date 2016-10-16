@@ -10,4 +10,7 @@
 
 @interface TDCashierViewController : TDBaseViewController
 @property (nonatomic, strong) TDCashierBanner *cashierBanner;
+
+- (void) setDatasource: (NSArray *)datasource;
+
 @end

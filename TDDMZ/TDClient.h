@@ -21,10 +21,13 @@ typedef void (^TDCompletionHandler) (BOOL success, NSError *error, id userInfo);
 @property (nonatomic, readonly, strong) NSString *userId;
 @property (nonatomic, readonly, strong) NSString *userName;
 @property (nonatomic, readonly, strong) NSString *storeName;
+@property (nonatomic, readonly, strong) NSMutableArray *list;
 @property (nonatomic, readonly, strong) AFHTTPSessionManager *httpSessionManager;
 
 + (instancetype) sharedInstance;
 
+- (void) addOrder: (NSDictionary *)dict;
+- (void) removeAllOrder;
 - (void) loginWithAccount: (NSString *)account password: (NSString *)password completionHandler: (TDCompletionHandler)completionHandler;
 - (void) logoutWithCompletionHandler: (TDCompletionHandler)completionHandler;
 - (void) getIndexNumWithCompletionHandler: (TDCompletionHandler)completionHandler;

@@ -40,7 +40,8 @@
         if (success) {
             TDMainViewController *mv = [[TDMainViewController alloc] initWithNibName: @"TDMainViewController" bundle: nil];
             UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController: mv];
-            
+            AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+            delegate.mainVC = mv;
             [self presentViewController: nav animated: YES completion: NULL];
         }
         else

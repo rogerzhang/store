@@ -14,6 +14,7 @@
 @property (nonatomic, strong) NSString *userName;
 @property (nonatomic, strong) NSString *storeName;
 @property (nonatomic, strong) AFHTTPSessionManager *manager;
+@property (nonatomic, strong) NSMutableArray *list;
 
 @end
 
@@ -30,9 +31,21 @@
         
         client.manager = [[AFHTTPSessionManager alloc] initWithBaseURL:URL sessionConfiguration:configuration];
         client.manager.responseSerializer = [AFJSONResponseSerializer serializer];
+        
+        client.list = [NSMutableArray array];
     });
     
     return client;
+}
+
+- (void) addOrder: (NSDictionary *)dict;
+{
+    [self.list addObject: dict];
+}
+
+- (void) removeAllOrder;
+{
+    [self.list removeAllObjects];
 }
 
 - (void)loginWithAccount: (NSString *)account password: (NSString *)password completionHandler: (TDCompletionHandler)completionHandler;
@@ -48,6 +61,8 @@
         progress:^(NSProgress *uploadProgress){}
         success:^(NSURLSessionDataTask *task, id _Nullable responseObject){
             TD_LOG(@"%@", responseObject);
+            [self.list removeAllObjects];
+            
             NSDictionary *result = (NSDictionary *)responseObject;
             NSString *status = [result objectForKey:@"status"];
             if ([status isEqualToString:@"failed"])
@@ -78,6 +93,7 @@
         }
         failure:^(NSURLSessionDataTask * _Nullable task, NSError *error){
             TD_LOG(@"%@", error);
+            [self.list removeAllObjects];
             if (completionHandler) {
                 completionHandler(NO, error, nil);
             }

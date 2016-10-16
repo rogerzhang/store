@@ -17,7 +17,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.datasource = [NSMutableArray array];
+    
+    if (!self.datasource) {
+        self.datasource = [NSMutableArray array];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -48,6 +51,7 @@
     NSString *attr = [NSString stringWithFormat:@"规格：%@", good.goods_attr];
     NSString *price = [NSString stringWithFormat:@"单价：￥%@", good.shop_price];
     
+    cell.count = good.goods_number;
     cell.nameLabel.text = name;
     cell.typeLabel.text = type;
     cell.sizeLabel.text = attr;
@@ -113,6 +117,7 @@
         [[TDClient sharedInstance] getGoodInfo:goodId withCompletionHandler:^(BOOL success, NSError *error, id userInfo){
             if (userInfo) {
                 TDGood *good = [[TDParser sharedInstance] goodWithDictionary:userInfo];
+                good.goods_number = 1;//default
                 [self addGoods: good];
             }
         }];
