@@ -1481,4 +1481,53 @@
      }];
 }
 
+- (void) lspaystatus: (NSString *)orderId withCompletionHandler:(TDCompletionHandler)completionHandler;
+{
+    NSMutableDictionary *params = [[NSMutableDictionary alloc]init];
+    [params setValue:self.userId forKey:@"userid"];
+    [params setValue:orderId forKey:@"order_id"];
+    
+    NSString *jsonString = [params jsonStringWithPrettyPrint: NO];
+    
+    [self.manager
+     POST:@"lspaystatus"
+     parameters:@{@"code":jsonString}
+     progress:^(NSProgress *uploadProgress){}
+     success:^(NSURLSessionDataTask *task, id _Nullable responseObject){
+         TD_LOG(@"%@", responseObject);
+         NSDictionary *result = (NSDictionary *)responseObject;
+         NSString *status = [result objectForKey:@"status"];
+         if ([status isEqualToString:@"failed"])
+         {
+             NSString *errorMsg = [result objectForKey:@"error_msg"];
+             NSMutableDictionary* details = [NSMutableDictionary dictionary];
+             [details setValue:errorMsg forKey:NSLocalizedDescriptionKey];
+             NSError *error = [NSError errorWithDomain:@"error" code:127 userInfo:details];
+             
+             if (completionHandler) {
+                 completionHandler(NO, error, nil);
+             }
+         }
+         else
+         {
+             NSString *res = [result objectForKey:@"pay_status"];
+             
+             if (res)
+             {
+                 TD_LOG(@"%@", res);
+             }
+             
+             if (completionHandler) {
+                 completionHandler(YES, nil, res);
+             }
+         }
+     }
+     failure:^(NSURLSessionDataTask * _Nullable task, NSError *error){
+         TD_LOG(@"%@", error);
+         if (completionHandler) {
+             completionHandler(NO, error, nil);
+         }
+     }];
+}
+
 @end

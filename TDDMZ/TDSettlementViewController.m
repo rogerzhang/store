@@ -40,6 +40,12 @@
     [self.navigationController popViewControllerAnimated: YES];
 }
 
+- (void) showMessage: (NSString *)message;
+{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:message delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    [alertView show];
+}
+
 - (IBAction)okAction:(id)sender
 {
     NSString *string = self.textField1.text ? self.textField1.text : self.textField2.text;
@@ -50,6 +56,15 @@
         [[TDClient sharedInstance] saveOrderWithOrderMomeny:[self totalMoney] payMomney:string payType:payTye goods:self.goodList completionHandler:^(BOOL success, NSError *error, id userInfo){
             if (userInfo) {
                 TD_LOG(@"%@", userInfo);
+                if (success) {
+                    [self showMessage: @"支付成功！"];
+                    
+                    [self.scanVC clean];
+                }
+                else
+                {
+                    [self showMessage:error.description];
+                }
             }
         }];
     }

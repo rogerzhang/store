@@ -7,9 +7,10 @@
 //
 
 #import "TDCustomerSettlementViewController.h"
+#import "QREncoder.h"
+#import "DataMatrix.h"
 
 @interface TDCustomerSettlementViewController ()
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end
 
@@ -24,6 +25,22 @@
     NSDictionary * dict=[NSDictionary dictionaryWithObject:color forKey:NSForegroundColorAttributeName];
     self.navigationController.navigationBar.titleTextAttributes = dict;
     self.navigationItem.leftBarButtonItem = [self backButton];
+}
+
+- (void) viewWillAppear:(BOOL)animated;
+{
+    [super viewWillAppear:animated];
+    
+    if (self.urlString) {
+
+        DataMatrix* qrMatrix = [QREncoder encodeWithECLevel:QR_ECLEVEL_AUTO version:QR_VERSION_AUTO string:self.urlString];
+        
+        int qrcodeImageDimension = 250;
+        //then render the matrix
+        UIImage* qrcodeImage = [QREncoder renderDataMatrix:qrMatrix imageDimension:qrcodeImageDimension];
+        
+        self.imageView.image = qrcodeImage;
+    }
 }
 
 - (UIBarButtonItem *)backButton;

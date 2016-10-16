@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TDCashierScanViewController.h"
 
 @interface TDSettlementViewController : UIViewController
 @property (nonatomic, strong) NSString *totalMoney;
 @property (nonatomic, strong) NSArray *goodList;
+@property (nonatomic, weak) TDCashierScanViewController *scanVC;
 @end

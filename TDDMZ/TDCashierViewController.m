@@ -115,9 +115,43 @@
 {
     [[TDClient sharedInstance] submitorderGoods: [self goodsInfoList] orderMoney: [self totalMoney] withCompletionHandler:^(BOOL success, NSError *error, id userInfo){
         TD_LOG(@"%@", userInfo);
-        TDCashierScanViewController *scanVC = (TDCashierScanViewController *)self.scanViewController;
-        [scanVC clean];
-        [self.navigationController pushViewController:self.customerSettlementViewController animated:YES];
+        
+        if (success)
+        {
+            NSString *qrcode = userInfo[@"qrcode"];
+            NSString *orderId = userInfo[@"order_id"];
+            
+            [self checkOrderId: orderId];
+
+            TDCashierScanViewController *scanVC = (TDCashierScanViewController *)self.scanViewController;
+            self.customerSettlementViewController.urlString = qrcode;
+            [scanVC clean];
+            [self.navigationController pushViewController:self.customerSettlementViewController animated:YES];
+        }
+        else
+        {
+            [self showMessage:error.description];
+        }
+    }];
+}
+
+- (void) checkOrderId: (NSString *)orderId;
+{
+    [[TDClient sharedInstance] lspaystatus:orderId withCompletionHandler:^(BOOL success, NSError *error, id userInfo){
+        if (success)
+        {
+            if ([userInfo isEqualToString:@"0"]) {
+                [self checkOrderId:orderId];
+            }
+            else
+            {
+                [self showMessage:@"支付成功！"];
+            }
+        }
+        else
+        {
+            [self showMessage:@"网络错误"];
+        }
     }];
 }
 
@@ -143,6 +177,12 @@
     NSArray *goods = scanVC.datasource;
     NSMutableArray *goodList = [NSMutableArray array];
     for (TDGood *good in goods) {
+        if (!good.goods_attr) {
+            good.goods_attr = @"";
+        }
+        if (!good.goodattr_id) {
+            good.goodattr_id = @"";
+        }
         NSDictionary *dic = [[TDParser sharedInstance] submitionDictionaryWithGood: good];
         [goodList addObject: dic];
     }

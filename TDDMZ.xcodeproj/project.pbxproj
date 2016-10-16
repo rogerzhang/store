@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		22013D1C1D7F0CCE001AD2E0 /* TDCustomerSettlementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22013D1A1D7F0CCE001AD2E0 /* TDCustomerSettlementViewController.m */; };
+		22013D1C1D7F0CCE001AD2E0 /* TDCustomerSettlementViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 22013D1A1D7F0CCE001AD2E0 /* TDCustomerSettlementViewController.mm */; };
 		22013D1D1D7F0CCE001AD2E0 /* TDCustomerSettlementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22013D1B1D7F0CCE001AD2E0 /* TDCustomerSettlementViewController.xib */; };
 		22013D211D7F158D001AD2E0 /* TDSotreListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22013D1F1D7F158D001AD2E0 /* TDSotreListTableViewController.m */; };
 		22013D221D7F158D001AD2E0 /* TDSotreListTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22013D201D7F158D001AD2E0 /* TDSotreListTableViewController.xib */; };
@@ -85,6 +85,7 @@
 		22CC043E1D7294A70081AB16 /* TDClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC043D1D7294A70081AB16 /* TDClient.m */; };
 		22CC04441D73B7130081AB16 /* NSDictionary+TDConvertToJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC04431D73B7130081AB16 /* NSDictionary+TDConvertToJson.m */; };
 		22D0A1271D54826800D27A6A /* TDZbarReaderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D0A1261D54826800D27A6A /* TDZbarReaderManager.m */; };
+		22D62F681DB38898002B2453 /* libqrencoder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22D62F671DB38898002B2453 /* libqrencoder.a */; };
 		22D9BE991D65F13900E06184 /* TDItemsBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D9BE981D65F13900E06184 /* TDItemsBar.m */; };
 		22DCDDAF1D4EF0010068983C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DCDDAE1D4EF0010068983C /* main.m */; };
 		22DCDDB21D4EF0010068983C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DCDDB11D4EF0010068983C /* AppDelegate.m */; };
@@ -122,7 +123,7 @@
 
 /* Begin PBXFileReference section */
 		22013D191D7F0CCE001AD2E0 /* TDCustomerSettlementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDCustomerSettlementViewController.h; sourceTree = "<group>"; };
-		22013D1A1D7F0CCE001AD2E0 /* TDCustomerSettlementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDCustomerSettlementViewController.m; sourceTree = "<group>"; };
+		22013D1A1D7F0CCE001AD2E0 /* TDCustomerSettlementViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TDCustomerSettlementViewController.mm; sourceTree = "<group>"; };
 		22013D1B1D7F0CCE001AD2E0 /* TDCustomerSettlementViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDCustomerSettlementViewController.xib; sourceTree = "<group>"; };
 		22013D1E1D7F158D001AD2E0 /* TDSotreListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDSotreListTableViewController.h; sourceTree = "<group>"; };
 		22013D1F1D7F158D001AD2E0 /* TDSotreListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDSotreListTableViewController.m; sourceTree = "<group>"; };
@@ -244,6 +245,7 @@
 		22D0A1251D54826800D27A6A /* TDZbarReaderManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDZbarReaderManager.h; sourceTree = "<group>"; };
 		22D0A1261D54826800D27A6A /* TDZbarReaderManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = TDZbarReaderManager.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		22D0A1281D548B1200D27A6A /* TDDMZ-prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "TDDMZ-prefix.pch"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		22D62F671DB38898002B2453 /* libqrencoder.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libqrencoder.a; sourceTree = "<group>"; };
 		22D9BE971D65F13900E06184 /* TDItemsBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDItemsBar.h; sourceTree = "<group>"; };
 		22D9BE981D65F13900E06184 /* TDItemsBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDItemsBar.m; sourceTree = "<group>"; };
 		22DCDDAA1D4EF0010068983C /* TDDMZ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TDDMZ.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -285,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A689D7F43E1E6ED534C201C3 /* libPods.a in Frameworks */,
+				22D62F681DB38898002B2453 /* libqrencoder.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -528,6 +531,7 @@
 		22DCDDA11D4EF0010068983C = {
 			isa = PBXGroup;
 			children = (
+				22D62F671DB38898002B2453 /* libqrencoder.a */,
 				22DCDDAC1D4EF0010068983C /* TDDMZ */,
 				22DCDDC61D4EF0010068983C /* TDDMZTests */,
 				22DCDDD11D4EF0010068983C /* TDDMZUITests */,
@@ -612,7 +616,7 @@
 				22FA3C1B1D79D7E400B27328 /* TDSettlementViewController.m */,
 				22FA3C1C1D79D7E400B27328 /* TDSettlementViewController.xib */,
 				22013D191D7F0CCE001AD2E0 /* TDCustomerSettlementViewController.h */,
-				22013D1A1D7F0CCE001AD2E0 /* TDCustomerSettlementViewController.m */,
+				22013D1A1D7F0CCE001AD2E0 /* TDCustomerSettlementViewController.mm */,
 				22013D1B1D7F0CCE001AD2E0 /* TDCustomerSettlementViewController.xib */,
 			);
 			name = " Settlement";
@@ -844,7 +848,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				22DCDDB51D4EF0010068983C /* ViewController.m in Sources */,
-				22013D1C1D7F0CCE001AD2E0 /* TDCustomerSettlementViewController.m in Sources */,
+				22013D1C1D7F0CCE001AD2E0 /* TDCustomerSettlementViewController.mm in Sources */,
 				22CC04271D727BE50081AB16 /* TDOrderCollectionViewCell.m in Sources */,
 				22FA3C181D79C93D00B27328 /* TDScanBaseViewController.m in Sources */,
 				22FA3C1D1D79D7E400B27328 /* TDSettlementViewController.m in Sources */,
@@ -1052,6 +1056,10 @@
 				INFOPLIST_FILE = TDDMZ/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ringcentral.TDDMZ;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -1072,6 +1080,10 @@
 				INFOPLIST_FILE = TDDMZ/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ringcentral.TDDMZ;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

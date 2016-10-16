@@ -19,6 +19,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>QR-Code-Encoder-for-Objective-C.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>RATreeView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,7 +37,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>8D3728C7163EC181CECE71CBA9956A35</key>
+		<key>5B986AEB2C940213BF5D12D1E4E55848</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8B1FFD0892A16C7100298CC4AADF1BAB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -42,12 +52,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AB0C8B566A217874ADEEBB48FC9295CA</key>
+		<key>A7A98BC7EF87A7637A001AF5B3796716</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AE69488F7928EEB499B4B606BB539086</key>
+		<key>C03B355E03531805AB12079E1E235592</key>
 		<dict>
 			<key>primary</key>
 			<true/>
