@@ -1530,4 +1530,52 @@
      }];
 }
 
+- (void) getUncheckorderlistWithCompletionHandler:(TDCompletionHandler)completionHandler;
+{
+    NSMutableDictionary *params = [[NSMutableDictionary alloc]init];
+    [params setValue:self.userId forKey:@"userid"];
+    
+    NSString *jsonString = [params jsonStringWithPrettyPrint: NO];
+    
+    [self.manager
+     POST:@"uncheckorder"
+     parameters:@{@"code":jsonString}
+     progress:^(NSProgress *uploadProgress){}
+     success:^(NSURLSessionDataTask *task, id _Nullable responseObject){
+         TD_LOG(@"%@", responseObject);
+         NSDictionary *result = (NSDictionary *)responseObject;
+         NSString *status = [result objectForKey:@"status"];
+         if ([status isEqualToString:@"failed"])
+         {
+             NSString *errorMsg = [result objectForKey:@"error_msg"];
+             NSMutableDictionary* details = [NSMutableDictionary dictionary];
+             [details setValue:errorMsg forKey:NSLocalizedDescriptionKey];
+             NSError *error = [NSError errorWithDomain:@"error" code:111 userInfo:details];
+             
+             if (completionHandler) {
+                 completionHandler(NO, error, nil);
+             }
+         }
+         else
+         {
+             NSDictionary *storelist = [result objectForKey:@"order_list"];
+             
+             if (storelist)
+             {
+                 TD_LOG(@"%@", storelist);
+             }
+             
+             if (completionHandler) {
+                 completionHandler(YES, nil, storelist);
+             }
+         }
+     }
+     failure:^(NSURLSessionDataTask * _Nullable task, NSError *error){
+         TD_LOG(@"%@", error);
+         if (completionHandler) {
+             completionHandler(NO, error, nil);
+         }
+     }];
+}
+
 @end
