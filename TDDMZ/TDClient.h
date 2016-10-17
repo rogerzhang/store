@@ -61,4 +61,5 @@ typedef void (^TDCompletionHandler) (BOOL success, NSError *error, id userInfo);
 - (void) searchgoodsWithBarcode: (NSString *)barcode orGoodsId: (NSString *)goodsId orGoodattrId: (NSString *)goodattr_id withCompletionHandler: (TDCompletionHandler)completionHandler;
 - (void) lspaystatus: (NSString *)orderId withCompletionHandler:(TDCompletionHandler)completionHandler;
 - (void) getUncheckorderlistWithCompletionHandler:(TDCompletionHandler)completionHandler;
+- (void) getOrderDetailWithOrderId: (NSString *)orderId completionHandler:(TDCompletionHandler)completionHandler;
 @end

@@ -1,17 +1,20 @@
 //
-//  TDSearchGoodHeaderView.m
+//  TDOrderHeaderView.m
 //  TDDMZ
 //
-//  Created by Roger (Wei) Zhang on 10/7/16.
+//  Created by Roger (Wei) Zhang on 17/10/2016.
 //  Copyright © 2016 Roger (Wei) Zhang. All rights reserved.
 //
 
-#import "TDSearchGoodHeaderView.h"
+#import "TDOrderHeaderView.h"
 
-@interface TDSearchGoodHeaderView()
+@interface TDOrderHeaderView ()
+
 @property (nonatomic, strong) NSMutableArray *labels;
-@end;
-@implementation TDSearchGoodHeaderView
+
+@end
+
+@implementation TDOrderHeaderView
 
 - (void) prepareForReuse;
 {
@@ -42,9 +45,9 @@
         label.text = attr;
         label.textAlignment = NSTextAlignmentCenter;
         
-        CGFloat w = 70;
+        CGFloat w = 50;
         CGFloat h = 44;
-        CGFloat x = 44 + [self gap] + i * ([self gap] + w);
+        CGFloat x = 443 + [self gap] + i * ([self gap] + w);
         CGFloat y = 0;
         
         label.frame = CGRectMake(x, y, w, h);
@@ -56,4 +59,5 @@
 {
     return 40;
 }
+
 @end

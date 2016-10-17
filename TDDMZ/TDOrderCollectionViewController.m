@@ -7,6 +7,7 @@
 //
 
 #import "TDOrderCollectionViewController.h"
+#import "TDOrderDetailViewController.h"
 
 @interface TDOrderCollectionViewController ()<TDOrderCollectionViewCellDeleagate>
 @property (nonatomic, strong) NSArray *datasource;
@@ -132,8 +133,24 @@ static NSString * const reuseIdentifier = @"Cell";
 - (void) orderDetailAction: (TDOrderCollectionViewCell*)cell;
 {
     NSIndexPath *indexPath = [self.collectionView indexPathForCell: cell];
-    
     TD_LOG(@"indexPath is %ld", (long)[indexPath row]);
+    
+    NSDictionary *dic = self.datasource[indexPath.row];
+    NSString *orderId = dic[@"order_id"];
+    
+    [[TDClient sharedInstance] getOrderDetailWithOrderId:orderId completionHandler:^(BOOL success, NSError *error, id userInfo){
+        if (success) {
+            TD_LOG(@"%@", userInfo);
+            
+            TDOrderDetailViewController *detailVC = [[TDOrderDetailViewController alloc] initWithNibName:@"TDOrderDetailViewController" bundle:nil];
+            detailVC.datasource = (NSArray *)userInfo;
+            [self.navigationController pushViewController:detailVC animated: YES];
+        }
+        else
+        {
+            [self showMessage:error.description];
+        }
+    }];
 }
 
 - (void) orderOKAction: (TDOrderCollectionViewCell*)cell;

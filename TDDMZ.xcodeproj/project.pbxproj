@@ -102,6 +102,11 @@
 		22FA3C181D79C93D00B27328 /* TDScanBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FA3C171D79C93D00B27328 /* TDScanBaseViewController.m */; };
 		22FA3C1D1D79D7E400B27328 /* TDSettlementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FA3C1B1D79D7E400B27328 /* TDSettlementViewController.m */; };
 		22FA3C1E1D79D7E400B27328 /* TDSettlementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22FA3C1C1D79D7E400B27328 /* TDSettlementViewController.xib */; };
+		22FCF1281DB506BA00589D56 /* TDOrderDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FCF1261DB506BA00589D56 /* TDOrderDetailViewController.m */; };
+		22FCF1291DB506BA00589D56 /* TDOrderDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22FCF1271DB506BA00589D56 /* TDOrderDetailViewController.xib */; };
+		22FCF12C1DB509AA00589D56 /* TDOrderHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FCF12B1DB509AA00589D56 /* TDOrderHeaderView.m */; };
+		22FCF1301DB50A9D00589D56 /* TDOrderDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FCF12E1DB50A9D00589D56 /* TDOrderDetailTableViewCell.m */; };
+		22FCF1311DB50A9D00589D56 /* TDOrderDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22FCF12F1DB50A9D00589D56 /* TDOrderDetailTableViewCell.xib */; };
 		A689D7F43E1E6ED534C201C3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DF8B3C16C4047201BCCC8DA /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -279,6 +284,14 @@
 		22FA3C1A1D79D7E400B27328 /* TDSettlementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDSettlementViewController.h; sourceTree = "<group>"; };
 		22FA3C1B1D79D7E400B27328 /* TDSettlementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDSettlementViewController.m; sourceTree = "<group>"; };
 		22FA3C1C1D79D7E400B27328 /* TDSettlementViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDSettlementViewController.xib; sourceTree = "<group>"; };
+		22FCF1251DB506BA00589D56 /* TDOrderDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDOrderDetailViewController.h; sourceTree = "<group>"; };
+		22FCF1261DB506BA00589D56 /* TDOrderDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDOrderDetailViewController.m; sourceTree = "<group>"; };
+		22FCF1271DB506BA00589D56 /* TDOrderDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDOrderDetailViewController.xib; sourceTree = "<group>"; };
+		22FCF12A1DB509AA00589D56 /* TDOrderHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDOrderHeaderView.h; sourceTree = "<group>"; };
+		22FCF12B1DB509AA00589D56 /* TDOrderHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDOrderHeaderView.m; sourceTree = "<group>"; };
+		22FCF12D1DB50A9D00589D56 /* TDOrderDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDOrderDetailTableViewCell.h; sourceTree = "<group>"; };
+		22FCF12E1DB50A9D00589D56 /* TDOrderDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDOrderDetailTableViewCell.m; sourceTree = "<group>"; };
+		22FCF12F1DB50A9D00589D56 /* TDOrderDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDOrderDetailTableViewCell.xib; sourceTree = "<group>"; };
 		8DF8B3C16C4047201BCCC8DA /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C495F91967DBD12A9BE3E16A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C701B8FF8DB232AA352E17A9 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -360,11 +373,19 @@
 		2215B32E1D6F2F7B00616107 /* OrderConfirm */ = {
 			isa = PBXGroup;
 			children = (
+				22FCF12D1DB50A9D00589D56 /* TDOrderDetailTableViewCell.h */,
+				22FCF12E1DB50A9D00589D56 /* TDOrderDetailTableViewCell.m */,
+				22FCF12F1DB50A9D00589D56 /* TDOrderDetailTableViewCell.xib */,
 				22CC041F1D727AE50081AB16 /* TDOrderCollectionViewController.h */,
 				22CC04201D727AE50081AB16 /* TDOrderCollectionViewController.m */,
 				22CC04211D727AE50081AB16 /* TDOrderCollectionViewController.xib */,
 				22CC04291D727D600081AB16 /* TDOrderLayout.h */,
 				22CC042A1D727D600081AB16 /* TDOrderLayout.m */,
+				22FCF1251DB506BA00589D56 /* TDOrderDetailViewController.h */,
+				22FCF1261DB506BA00589D56 /* TDOrderDetailViewController.m */,
+				22FCF1271DB506BA00589D56 /* TDOrderDetailViewController.xib */,
+				22FCF12A1DB509AA00589D56 /* TDOrderHeaderView.h */,
+				22FCF12B1DB509AA00589D56 /* TDOrderHeaderView.m */,
 			);
 			name = OrderConfirm;
 			sourceTree = "<group>";
@@ -745,10 +766,12 @@
 			files = (
 				22CC03CB1D726C580081AB16 /* TDCountHeader.xib in Resources */,
 				22CC04281D727BE50081AB16 /* TDOrderCollectionViewCell.xib in Resources */,
+				22FCF1311DB50A9D00589D56 /* TDOrderDetailTableViewCell.xib in Resources */,
 				2215B3511D6F394B00616107 /* TDOptionsBanner.xib in Resources */,
 				22CC04231D727AE50081AB16 /* TDOrderCollectionViewController.xib in Resources */,
 				2215B09C1D6C903C00616107 /* TDProductPreviewTableViewCell.xib in Resources */,
 				22AAD3A71DA788B200DFA8DF /* TDSearchGoodsTableViewCell.xib in Resources */,
+				22FCF1291DB506BA00589D56 /* TDOrderDetailViewController.xib in Resources */,
 				22013D1D1D7F0CCE001AD2E0 /* TDCustomerSettlementViewController.xib in Resources */,
 				2215B0F01D6C9C6800616107 /* TDSaveBanner.xib in Resources */,
 				2221A8F11D64AFC900D30775 /* TDVerifyViewController.xib in Resources */,
@@ -871,6 +894,7 @@
 				22CC042B1D727D600081AB16 /* TDOrderLayout.m in Sources */,
 				22CC03BF1D719FC60081AB16 /* TDHelper.m in Sources */,
 				22E0A0131D786B6800786749 /* TDCategory.m in Sources */,
+				22FCF1301DB50A9D00589D56 /* TDOrderDetailTableViewCell.m in Sources */,
 				22CC04221D727AE50081AB16 /* TDOrderCollectionViewController.m in Sources */,
 				2215B09B1D6C903C00616107 /* TDProductPreviewTableViewCell.m in Sources */,
 				2215B3551D6F3CED00616107 /* TDDeliverChooseViewController.m in Sources */,
@@ -882,6 +906,8 @@
 				22703A0D1D7DB9DF0060F8D2 /* TDChooseBaseViewController.m in Sources */,
 				2290B1C61D6200360085BD49 /* TDScanView.m in Sources */,
 				225FE7761D839963007D15E8 /* TDChooseProductLayout.m in Sources */,
+				22FCF12C1DB509AA00589D56 /* TDOrderHeaderView.m in Sources */,
+				22FCF1281DB506BA00589D56 /* TDOrderDetailViewController.m in Sources */,
 				22DCDDB21D4EF0010068983C /* AppDelegate.m in Sources */,
 				2215B0A21D6C915100616107 /* TDCashierBanner.m in Sources */,
 				2215B0AB1D6C953900616107 /* TDSearchChooseViewController.m in Sources */,
