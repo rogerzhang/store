@@ -35,6 +35,7 @@ typedef void (^TDCompletionHandler) (BOOL success, NSError *error, id userInfo);
 - (void) getCategorygoodsWithId: (NSString *)categoryId withCompletionHandler: (TDCompletionHandler)completionHandler;
 - (void) getGoodsDetailInfoWithId: (NSString *)goodsId withCompletionHandler: (TDCompletionHandler)completionHandler;
 - (void) addgoods: (NSString *)goodId attributes: (NSArray *)attributes withCompletionHandler: (TDCompletionHandler) completionHandler;
+- (void) chooseattr1: (NSString *)attr1Id attr2: (NSString *)attr2Id forGoods: (NSString *)goodId completionHandler: (TDCompletionHandler) completionHandler;
 - (void) getGoodInfo: (NSString *)goodId withCompletionHandler: (TDCompletionHandler) completionHandler;
 - (void) submitorderGoods: (NSArray *)Goods orderMoney: (NSString *)ordermoney withCompletionHandler: (TDCompletionHandler)completionHandler;
 - (void) saveOrderWithOrderMomeny: (NSString *)ordermoney payMomney: (NSString *)payMomeny payType: (NSString *)payType goods: (NSArray *)goods completionHandler: (TDCompletionHandler)completionHandler;

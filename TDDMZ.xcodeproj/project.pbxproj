@@ -40,6 +40,7 @@
 		22409DC41D745ED8004FF14C /* TDCashierChooseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22409DC21D745ED8004FF14C /* TDCashierChooseViewController.m */; };
 		22409DC51D745ED8004FF14C /* TDCashierChooseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22409DC31D745ED8004FF14C /* TDCashierChooseViewController.xib */; };
 		22409DC71D746208004FF14C /* TDCashierBanner.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22409DC61D746208004FF14C /* TDCashierBanner.xib */; };
+		225D5BAB1DB3BAA500E13B01 /* TDInfoButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 225D5BAA1DB3BAA500E13B01 /* TDInfoButton.m */; };
 		225FE7761D839963007D15E8 /* TDChooseProductLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 225FE7751D839963007D15E8 /* TDChooseProductLayout.m */; };
 		225FE77A1D8399EB007D15E8 /* TDChooseProductCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 225FE7781D8399EB007D15E8 /* TDChooseProductCollectionViewCell.m */; };
 		225FE77B1D8399EB007D15E8 /* TDChooseProductCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 225FE7791D8399EB007D15E8 /* TDChooseProductCollectionViewCell.xib */; };
@@ -172,6 +173,8 @@
 		22409DC21D745ED8004FF14C /* TDCashierChooseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDCashierChooseViewController.m; sourceTree = "<group>"; };
 		22409DC31D745ED8004FF14C /* TDCashierChooseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDCashierChooseViewController.xib; sourceTree = "<group>"; };
 		22409DC61D746208004FF14C /* TDCashierBanner.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDCashierBanner.xib; sourceTree = "<group>"; };
+		225D5BA91DB3BAA500E13B01 /* TDInfoButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDInfoButton.h; sourceTree = "<group>"; };
+		225D5BAA1DB3BAA500E13B01 /* TDInfoButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDInfoButton.m; sourceTree = "<group>"; };
 		225FE7741D839963007D15E8 /* TDChooseProductLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDChooseProductLayout.h; sourceTree = "<group>"; };
 		225FE7751D839963007D15E8 /* TDChooseProductLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDChooseProductLayout.m; sourceTree = "<group>"; };
 		225FE7771D8399EB007D15E8 /* TDChooseProductCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDChooseProductCollectionViewCell.h; sourceTree = "<group>"; };
@@ -454,6 +457,8 @@
 				22AAD3A51DA788B200DFA8DF /* TDSearchGoodsTableViewCell.xib */,
 				22AAD3A81DA78A5D00DFA8DF /* TDSearchGoodHeaderView.h */,
 				22AAD3A91DA78A5D00DFA8DF /* TDSearchGoodHeaderView.m */,
+				225D5BA91DB3BAA500E13B01 /* TDInfoButton.h */,
+				225D5BAA1DB3BAA500E13B01 /* TDInfoButton.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -890,6 +895,7 @@
 				2290B1C21D61FDE50085BD49 /* TDSearchGoodViewController.m in Sources */,
 				22E0A00D1D786AA100786749 /* TDGood.m in Sources */,
 				2215B3341D6F304500616107 /* TDCountingViewController.m in Sources */,
+				225D5BAB1DB3BAA500E13B01 /* TDInfoButton.m in Sources */,
 				22D9BE991D65F13900E06184 /* TDItemsBar.m in Sources */,
 				22E0A0161D786EA600786749 /* TDParser.m in Sources */,
 				2221A8F01D64AFC900D30775 /* TDVerifyViewController.m in Sources */,

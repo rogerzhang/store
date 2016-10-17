@@ -356,6 +356,58 @@
      }];
 }
 
+- (void) chooseattr1: (NSString *)attr1Id attr2: (NSString *)attr2Id forGoods: (NSString *)goodId completionHandler: (TDCompletionHandler) completionHandler;
+{
+    NSMutableDictionary *params = [[NSMutableDictionary alloc]init];
+    [params setValue:self.userId forKey:@"userid"];
+    [params setValue:goodId forKey:@"goods_id"];
+    
+    [params setValue:attr1Id forKey:@"attr1"];
+    [params setValue:attr2Id forKey:@"attr2"];
+    
+    NSString *jsonString = [params jsonStringWithPrettyPrint: NO];
+    
+    [self.manager
+     POST:@"chooseattr"
+     parameters:@{@"code":jsonString}
+     progress:^(NSProgress *uploadProgress){}
+     success:^(NSURLSessionDataTask *task, id _Nullable responseObject){
+         TD_LOG(@"%@", responseObject);
+         NSDictionary *result = (NSDictionary *)responseObject;
+         NSString *status = [result objectForKey:@"status"];
+         if ([status isEqualToString:@"failed"])
+         {
+             NSString *errorMsg = [result objectForKey:@"error_msg"];
+             NSMutableDictionary* details = [NSMutableDictionary dictionary];
+             [details setValue:errorMsg forKey:NSLocalizedDescriptionKey];
+             NSError *error = [NSError errorWithDomain:@"error" code:106 userInfo:details];
+             
+             if (completionHandler) {
+                 completionHandler(NO, error, nil);
+             }
+         }
+         else
+         {
+             NSDictionary *goodInfo = [result objectForKey:@"goods"];
+             
+             if (goodInfo)
+             {
+                 TD_LOG(@"%@", goodInfo);
+             }
+             
+             if (completionHandler) {
+                 completionHandler(YES, nil, goodInfo);
+             }
+         }
+     }
+     failure:^(NSURLSessionDataTask * _Nullable task, NSError *error){
+         TD_LOG(@"%@", error);
+         if (completionHandler) {
+             completionHandler(NO, error, nil);
+         }
+     }];
+}
+
 - (void) getGoodInfo: (NSString *)goodId withCompletionHandler: (TDCompletionHandler) completionHandler;
 {
     NSMutableDictionary *params = [[NSMutableDictionary alloc]init];
