@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface TDOrderDetailTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *label0;
 @property (weak, nonatomic) IBOutlet UILabel *label1;
 @property (weak, nonatomic) IBOutlet UILabel *label2;
 @property (weak, nonatomic) IBOutlet UILabel *label3;

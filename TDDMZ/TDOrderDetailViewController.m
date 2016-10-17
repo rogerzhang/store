@@ -50,7 +50,7 @@ static NSString * const headerdentifer = @"orderheader";
     TDOrderDetailTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: cellIdentifer];
     
     NSDictionary *dict = self.datasource[indexPath.row];
-    
+    cell.label0.text = [NSString stringWithFormat:@"%ld", indexPath.row];
     cell.label1.text = dict[@"goods_sn"];
     cell.label2.text = dict[@"goods_name"];
     cell.label3.text = dict[@"goods_attr"];
@@ -62,21 +62,17 @@ static NSString * const headerdentifer = @"orderheader";
 
 - (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section;
 {
+    TDOrderHeaderView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:headerdentifer];
+    
+    if (!headerView)
     {
-        TDOrderHeaderView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:headerdentifer];
-        
-        headerView.backgroundColor = [UIColor redColor];
-        
-        if (!headerView)
-        {
-            headerView = [[TDOrderHeaderView alloc] initWithReuseIdentifier: headerdentifer];
-        }
-        
-        NSArray *attrs = @[@"商品编码", @"商品名称", @"规格", @"单价", @"数量"];
-        [headerView setAttributes:attrs];
-        
-        return headerView;
+        headerView = [[TDOrderHeaderView alloc] initWithReuseIdentifier: headerdentifer];
     }
+    
+    NSArray *attrs = @[@"商品编码", @"商品名称", @"规格", @"单价", @"数量"];
+    [headerView setAttributes:attrs];
+    
+    return headerView;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
