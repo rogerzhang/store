@@ -23,7 +23,7 @@ static NSString * const headerdentifer = @"orderheader";
     
     UINib *cellNib = [UINib nibWithNibName:@"TDOrderDetailTableViewCell" bundle:nil];
     [self.tableView registerNib:cellNib forCellReuseIdentifier:cellIdentifer];
-    [self.tableView registerClass:[TDSearchGoodHeaderView class] forHeaderFooterViewReuseIdentifier:headerdentifer];
+    [self.tableView registerClass:[TDOrderHeaderView class] forHeaderFooterViewReuseIdentifier:headerdentifer];
 }
 
 - (void) viewDidLayoutSubviews;
@@ -62,7 +62,6 @@ static NSString * const headerdentifer = @"orderheader";
 
 - (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section;
 {
-//    if (self.datasource.count)
     {
         TDOrderHeaderView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:headerdentifer];
         
@@ -77,10 +76,6 @@ static NSString * const headerdentifer = @"orderheader";
         [headerView setAttributes:attrs];
         
         return headerView;
-    }
-//    else
-    {
-        return nil;
     }
 }
 
