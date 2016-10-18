@@ -50,12 +50,14 @@ static NSString * const headerdentifer = @"orderheader";
     TDOrderDetailTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: cellIdentifer];
     
     NSDictionary *dict = self.datasource[indexPath.row];
-    cell.label0.text = [NSString stringWithFormat:@"%ld", indexPath.row];
+    cell.label0.text = [NSString stringWithFormat:@"%ld", (indexPath.row + 1)];
     cell.label1.text = dict[@"goods_sn"];
     cell.label2.text = dict[@"goods_name"];
     cell.label3.text = dict[@"goods_attr"];
     cell.label4.text = dict[@"shop_price"];
-    cell.label5.text = dict[@"goods_number"];
+
+    NSNumber *goodNumber = dict[@"goods_number"];
+    cell.label5.text = [goodNumber stringValue];
     
     return cell;
 }

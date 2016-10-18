@@ -18,4 +18,13 @@
 }
 */
 
+- (void) layoutSubviews;
+{
+    [super layoutSubviews];
+    
+    self.layer.borderWidth = 1;
+    self.layer.borderColor = [[UIColor lightGrayColor] CGColor];
+    self.layer.cornerRadius = 3;
+}
+
 @end

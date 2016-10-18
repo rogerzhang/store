@@ -42,6 +42,7 @@
 - (void) attr1ButtonClicked: (id)sender;
 {
     TDInfoButton *btn = (TDInfoButton*)sender;
+    btn.selected = YES;
     self.attr1Id = btn.userInfo[@"attr_id"];
     
     [self chooseattrAction];
@@ -145,6 +146,7 @@
                         [btn setTitle:attr forState:UIControlStateNormal];
                         [self.view addSubview:btn];
                         [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+                        [btn setTitleColor:[UIColor redColor] forState:UIControlStateSelected];
                         btn.userInfo = attr1Values[i];
                         
                         CGFloat w = 60;
@@ -172,6 +174,7 @@
                             [btn2 addTarget:self action:@selector(attr2ButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
                             [btn2 setTitle:attr forState:UIControlStateNormal];
                             [btn2 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+                            [btn2 setTitleColor:[UIColor redColor] forState:UIControlStateSelected];
                             [self.view addSubview:btn2];
                             btn2.userInfo = attr2Values[i];
                             

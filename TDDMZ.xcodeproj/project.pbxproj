@@ -107,6 +107,10 @@
 		22FCF12C1DB509AA00589D56 /* TDOrderHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FCF12B1DB509AA00589D56 /* TDOrderHeaderView.m */; };
 		22FCF1301DB50A9D00589D56 /* TDOrderDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FCF12E1DB50A9D00589D56 /* TDOrderDetailTableViewCell.m */; };
 		22FCF1311DB50A9D00589D56 /* TDOrderDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22FCF12F1DB50A9D00589D56 /* TDOrderDetailTableViewCell.xib */; };
+		22FCF1351DB51A2F00589D56 /* TDCheckDeliverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FCF1331DB51A2F00589D56 /* TDCheckDeliverViewController.m */; };
+		22FCF1361DB51A2F00589D56 /* TDCheckDeliverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22FCF1341DB51A2F00589D56 /* TDCheckDeliverViewController.xib */; };
+		22FCF13A1DB51B8600589D56 /* TDSearchDeliverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FCF1381DB51B8600589D56 /* TDSearchDeliverViewController.m */; };
+		22FCF13B1DB51B8600589D56 /* TDSearchDeliverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22FCF1391DB51B8600589D56 /* TDSearchDeliverViewController.xib */; };
 		A689D7F43E1E6ED534C201C3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DF8B3C16C4047201BCCC8DA /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -292,6 +296,12 @@
 		22FCF12D1DB50A9D00589D56 /* TDOrderDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDOrderDetailTableViewCell.h; sourceTree = "<group>"; };
 		22FCF12E1DB50A9D00589D56 /* TDOrderDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDOrderDetailTableViewCell.m; sourceTree = "<group>"; };
 		22FCF12F1DB50A9D00589D56 /* TDOrderDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDOrderDetailTableViewCell.xib; sourceTree = "<group>"; };
+		22FCF1321DB51A2F00589D56 /* TDCheckDeliverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDCheckDeliverViewController.h; sourceTree = "<group>"; };
+		22FCF1331DB51A2F00589D56 /* TDCheckDeliverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDCheckDeliverViewController.m; sourceTree = "<group>"; };
+		22FCF1341DB51A2F00589D56 /* TDCheckDeliverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDCheckDeliverViewController.xib; sourceTree = "<group>"; };
+		22FCF1371DB51B8600589D56 /* TDSearchDeliverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDSearchDeliverViewController.h; sourceTree = "<group>"; };
+		22FCF1381DB51B8600589D56 /* TDSearchDeliverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDSearchDeliverViewController.m; sourceTree = "<group>"; };
+		22FCF1391DB51B8600589D56 /* TDSearchDeliverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDSearchDeliverViewController.xib; sourceTree = "<group>"; };
 		8DF8B3C16C4047201BCCC8DA /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C495F91967DBD12A9BE3E16A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C701B8FF8DB232AA352E17A9 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -366,6 +376,12 @@
 				22013D1E1D7F158D001AD2E0 /* TDSotreListTableViewController.h */,
 				22013D1F1D7F158D001AD2E0 /* TDSotreListTableViewController.m */,
 				22013D201D7F158D001AD2E0 /* TDSotreListTableViewController.xib */,
+				22FCF1321DB51A2F00589D56 /* TDCheckDeliverViewController.h */,
+				22FCF1331DB51A2F00589D56 /* TDCheckDeliverViewController.m */,
+				22FCF1341DB51A2F00589D56 /* TDCheckDeliverViewController.xib */,
+				22FCF1371DB51B8600589D56 /* TDSearchDeliverViewController.h */,
+				22FCF1381DB51B8600589D56 /* TDSearchDeliverViewController.m */,
+				22FCF1391DB51B8600589D56 /* TDSearchDeliverViewController.xib */,
 			);
 			name = Delivering;
 			sourceTree = "<group>";
@@ -766,6 +782,7 @@
 			files = (
 				22CC03CB1D726C580081AB16 /* TDCountHeader.xib in Resources */,
 				22CC04281D727BE50081AB16 /* TDOrderCollectionViewCell.xib in Resources */,
+				22FCF1361DB51A2F00589D56 /* TDCheckDeliverViewController.xib in Resources */,
 				22FCF1311DB50A9D00589D56 /* TDOrderDetailTableViewCell.xib in Resources */,
 				2215B3511D6F394B00616107 /* TDOptionsBanner.xib in Resources */,
 				22CC04231D727AE50081AB16 /* TDOrderCollectionViewController.xib in Resources */,
@@ -773,6 +790,7 @@
 				22AAD3A71DA788B200DFA8DF /* TDSearchGoodsTableViewCell.xib in Resources */,
 				22FCF1291DB506BA00589D56 /* TDOrderDetailViewController.xib in Resources */,
 				22013D1D1D7F0CCE001AD2E0 /* TDCustomerSettlementViewController.xib in Resources */,
+				22FCF13B1DB51B8600589D56 /* TDSearchDeliverViewController.xib in Resources */,
 				2215B0F01D6C9C6800616107 /* TDSaveBanner.xib in Resources */,
 				2221A8F11D64AFC900D30775 /* TDVerifyViewController.xib in Resources */,
 				22409DC01D745EC2004FF14C /* TDCashierScanViewController.xib in Resources */,
@@ -875,6 +893,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22FCF1351DB51A2F00589D56 /* TDCheckDeliverViewController.m in Sources */,
 				22DCDDB51D4EF0010068983C /* ViewController.m in Sources */,
 				22013D1C1D7F0CCE001AD2E0 /* TDCustomerSettlementViewController.mm in Sources */,
 				22CC04271D727BE50081AB16 /* TDOrderCollectionViewCell.m in Sources */,
@@ -892,6 +911,7 @@
 				22CC03B91D719E310081AB16 /* TDInfoView.m in Sources */,
 				22E0A0101D786AB200786749 /* TDStore.m in Sources */,
 				22CC042B1D727D600081AB16 /* TDOrderLayout.m in Sources */,
+				22FCF13A1DB51B8600589D56 /* TDSearchDeliverViewController.m in Sources */,
 				22CC03BF1D719FC60081AB16 /* TDHelper.m in Sources */,
 				22E0A0131D786B6800786749 /* TDCategory.m in Sources */,
 				22FCF1301DB50A9D00589D56 /* TDOrderDetailTableViewCell.m in Sources */,

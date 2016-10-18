@@ -42,7 +42,10 @@
 }
 
 - (void) rightButtonAction;
-{}
+{
+    TDCheckDeliverViewController *checkDeliverVC = [[TDCheckDeliverViewController alloc] initWithNibName:@"TDCheckDeliverViewController" bundle:nil];
+    [self.navigationController pushViewController:checkDeliverVC animated:YES];
+}
 
 - (void)viewWillAppear:(BOOL)animated;
 {
@@ -111,7 +114,15 @@
         [[TDClient sharedInstance] deliverToStoreId: toStore.store_id goods:[self goodsInfoList] completionHandler:^(BOOL success, NSError *error, id userInfo){
             TD_LOG(@"%@",userInfo);
             
-            [scanVC clean];
+            if (success)
+            {
+                [self showMessage: @"调拨单保存成功"];
+                [scanVC clean];
+            }
+            else
+            {
+                [self showMessage: error.description];
+            }
         }];
     }
     else
@@ -119,6 +130,12 @@
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"请选择店名" message:nil delegate:nil cancelButtonTitle:@"确认" otherButtonTitles:nil, nil];
         [alertView show];
     }
+}
+
+- (void) showMessage: (NSString *)message;
+{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:message delegate:nil cancelButtonTitle:@"确认" otherButtonTitles:nil, nil];
+    [alertView show];
 }
 
 - (void)didReceiveMemoryWarning

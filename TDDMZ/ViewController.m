@@ -21,6 +21,8 @@
 - (void) viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.registerLabel.hidden = YES;
 }
 
 - (void) didReceiveMemoryWarning
