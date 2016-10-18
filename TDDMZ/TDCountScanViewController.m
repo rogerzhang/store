@@ -63,7 +63,7 @@
     
     TDGood *good = self.datasource[indexPath.row];
     cell.label2.text = good.goods_name;
-    cell.label1.text = [NSString stringWithFormat:@"%ld", (long)[indexPath row]];
+    cell.label1.text = [NSString stringWithFormat:@"%ld", (long)[indexPath row] + 1];
     
     return cell;
 }

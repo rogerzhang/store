@@ -7,6 +7,11 @@
 //
 
 #import "TDUnCountingViewController.h"
+#import "TDUnCountingHeader.h"
+#import "TDUncountTableViewCell.h"
+
+static NSString * const cellIdentifer = @"uncountcell";
+static NSString * const headerdentifer = @"uncountheader";
 
 @interface TDUnCountingViewController ()<UIActionSheetDelegate, UIPopoverControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *beginLabel;
@@ -16,6 +21,7 @@
 @property (nonatomic, strong) NSDate *beginDate;
 @property (nonatomic, strong) NSDate *endDate;
 @property (nonatomic, strong) NSString *status;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @end
 
 @implementation TDUnCountingViewController
@@ -24,6 +30,10 @@
 {
     [super viewDidLoad];
     self.title = @"盘点未审核";
+    
+    UINib *cellNib = [UINib nibWithNibName:@"TDUncountTableViewCell" bundle:nil];
+    [self.tableView registerNib:cellNib forCellReuseIdentifier:cellIdentifer];
+    [self.tableView registerClass:[TDUnCountingHeader class] forHeaderFooterViewReuseIdentifier:headerdentifer];
 }
 
 - (void)viewWillAppear:(BOOL)animated;
@@ -36,6 +46,17 @@
     self.navigationController.navigationBar.titleTextAttributes = dict;
     
     self.navigationItem.leftBarButtonItem = [self backButton];
+}
+
+- (void) viewWillLayoutSubviews;
+{
+    [super viewWillLayoutSubviews];
+    
+    CGFloat x = 0;
+    CGFloat y = CGRectGetMaxY(self.beginLabel.frame) + 10;
+    CGFloat w = self.view.frame.size.width;
+    CGFloat h = self.view.frame.size.height - y;
+    self.tableView.frame = CGRectMake(x, y, w, h);
 }
 
 - (void)didReceiveMemoryWarning
@@ -54,6 +75,49 @@
 - (void) backAction
 {
     [self.navigationController popViewControllerAnimated: YES];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
+{
+    return 1;
+}
+
+- (__kindof UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
+{
+    TDUncountTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: cellIdentifer];
+    
+    return cell;
+}
+
+- (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section;
+{
+    TDUnCountingHeader *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:headerdentifer];
+    
+    if (!headerView)
+    {
+        headerView = [[TDUnCountingHeader alloc] initWithReuseIdentifier: headerdentifer];
+    }
+    
+    NSArray *attrs = @[@"商品编码", @"商品名称", @"规格", @"单价", @"数量"];
+    [headerView setAttributes:attrs];
+    
+    return headerView;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
+{
+    return 44;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section;
+{
+    return 44;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
+{
+    TDCDTableViewController *detailVC = [[TDCDTableViewController alloc] init];
+    [self.navigationController pushViewController:detailVC animated:YES];
 }
 
 - (IBAction)searchAction:(id)sender
