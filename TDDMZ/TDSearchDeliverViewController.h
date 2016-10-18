@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface TDSearchDeliverViewController : TDUnCountingViewController
-
+@property (nonatomic, assign) BOOL isDeliverOut;
 @end

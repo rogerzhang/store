@@ -7,31 +7,112 @@
 //
 
 #import "TDSearchDeliverViewController.h"
+#import "TDSearchDeliverTableViewCell.h"
 
-@interface TDSearchDeliverViewController ()
+static NSString * const cellIdentifer = @"searchdevlivercell";
+static NSString * const headerdentifer = @"searchdevliverheader";
+
+@interface TDSearchDeliverViewController ()<TDSearchDeliverTableViewCellDelegate>
 
 @end
 
 @implementation TDSearchDeliverViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    UINib *cellNib = [UINib nibWithNibName:@"TDSearchDeliverTableViewCell" bundle:nil];
+    [self.tableView registerNib:cellNib forCellReuseIdentifier:cellIdentifer];
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)searchAction:(id)sender;
+{
+    [super searchAction:sender];
+    
+    NSString *type = self.isDeliverOut ? @"1" : @"2";
+    [[TDClient sharedInstance] searchdborderFormDate:self.beginDate to:self.endDate type:type status:self.status withCompletionHandler:^(BOOL success, NSError *error, id userInfo){
+        if (success)
+        {
+            self.datasource = userInfo;
+            
+            [self.tableView reloadData];
+        }
+        else
+        {
+            [self showErrorMessage:error.description title:nil];
+        }
+    }];
 }
-*/
 
+- (NSArray *)attrs;
+{
+    return @[@"单号", @"调人仓库", @"数量合计", @"调拨总额", @"开单日期", @"开单人员", @"操作"];
+}
+
+- (__kindof UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
+{
+    TDSearchDeliverTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: cellIdentifer];
+    
+    NSDictionary *dict = self.datasource[indexPath.row];
+    
+    cell.label0.text = [NSString stringWithFormat:@"%ld", indexPath.row];
+    cell.label1.text = dict[@"order_code"];
+    cell.label2.text = dict[@"towarehouse"];
+    cell.label3.text = [NSString stringWithString:dict[@"goods_count"]];
+    NSNumber *money = dict[@"order_money"];
+    cell.label4.text = [money stringValue];
+    cell.label5.text = dict[@"order_date"];
+    cell.label6.text = dict[@"create_user"];
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
+{
+    TDCDTableViewController *detailVC = [[TDCDTableViewController alloc] init];
+    [self.navigationController pushViewController:detailVC animated:YES];
+}
+
+- (void)button1Action:(TDSearchDeliverTableViewCell *)cell;
+{
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    
+    NSDictionary *dic = self.datasource[indexPath.row];
+    
+    NSString *orderId = dic[@"order_id"];
+    [[TDClient sharedInstance] checkpdorder:orderId withCompletionHandler:^(BOOL success, NSError *error, id userInfo){
+        if (success) {
+            [self showErrorMessage:@"审核成功" title:nil];
+        }
+        else
+        {
+            [self showErrorMessage:error.description title:nil];
+        }
+    }];
+}
+
+- (void)button2Action:(TDSearchDeliverTableViewCell *)cell;
+{
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    
+    NSDictionary *dic = self.datasource[indexPath.row];
+    
+    NSString *orderId = dic[@"order_id"];
+    
+    [[TDClient sharedInstance] canceldborderbillWithId:orderId completionHandler:^(BOOL success, NSError *error, id userInfo){
+        if (success) {
+            [self showErrorMessage:@"操作成功" title:nil];
+        }
+        else
+        {
+            [self showErrorMessage:error.description title:nil];
+        }
+    }];
+}
 @end

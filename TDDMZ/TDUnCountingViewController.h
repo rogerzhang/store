@@ -9,5 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @interface TDUnCountingViewController : UIViewController
+@property(nonatomic, copy) NSArray *datasource;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) NSDate *beginDate;
+@property (nonatomic, strong) NSDate *endDate;
+@property (nonatomic, strong) NSString *status;
 
+- (IBAction)searchAction:(id)sender;
+- (NSArray *)attrs;
+- (void) showErrorMessage: (NSString *)message title: (NSString *)title;
 @end

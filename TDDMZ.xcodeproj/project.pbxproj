@@ -40,6 +40,9 @@
 		2229EFF31DB64E58009F3305 /* TDCDHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2229EFF21DB64E58009F3305 /* TDCDHeader.m */; };
 		2229EFF71DB64E95009F3305 /* TDCDTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2229EFF51DB64E95009F3305 /* TDCDTableViewCell.m */; };
 		2229EFF81DB64E95009F3305 /* TDCDTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2229EFF61DB64E95009F3305 /* TDCDTableViewCell.xib */; };
+		2229EFFC1DB6541D009F3305 /* TDSearchDeliverTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2229EFFA1DB6541D009F3305 /* TDSearchDeliverTableViewCell.m */; };
+		2229EFFD1DB6541D009F3305 /* TDSearchDeliverTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2229EFFB1DB6541D009F3305 /* TDSearchDeliverTableViewCell.xib */; };
+		2229F0001DB670E5009F3305 /* TDSearchDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2229EFFF1DB670E5009F3305 /* TDSearchDetailViewController.m */; };
 		22409DBA1D745EA1004FF14C /* TDCashierViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22409DB81D745EA1004FF14C /* TDCashierViewController.m */; };
 		22409DBB1D745EA1004FF14C /* TDCashierViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22409DB91D745EA1004FF14C /* TDCashierViewController.xib */; };
 		22409DBF1D745EC2004FF14C /* TDCashierScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22409DBD1D745EC2004FF14C /* TDCashierScanViewController.m */; };
@@ -191,6 +194,11 @@
 		2229EFF41DB64E95009F3305 /* TDCDTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDCDTableViewCell.h; sourceTree = "<group>"; };
 		2229EFF51DB64E95009F3305 /* TDCDTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDCDTableViewCell.m; sourceTree = "<group>"; };
 		2229EFF61DB64E95009F3305 /* TDCDTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDCDTableViewCell.xib; sourceTree = "<group>"; };
+		2229EFF91DB6541D009F3305 /* TDSearchDeliverTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDSearchDeliverTableViewCell.h; sourceTree = "<group>"; };
+		2229EFFA1DB6541D009F3305 /* TDSearchDeliverTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDSearchDeliverTableViewCell.m; sourceTree = "<group>"; };
+		2229EFFB1DB6541D009F3305 /* TDSearchDeliverTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDSearchDeliverTableViewCell.xib; sourceTree = "<group>"; };
+		2229EFFE1DB670E5009F3305 /* TDSearchDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDSearchDetailViewController.h; sourceTree = "<group>"; };
+		2229EFFF1DB670E5009F3305 /* TDSearchDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDSearchDetailViewController.m; sourceTree = "<group>"; };
 		22409DB71D745EA1004FF14C /* TDCashierViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDCashierViewController.h; sourceTree = "<group>"; };
 		22409DB81D745EA1004FF14C /* TDCashierViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDCashierViewController.m; sourceTree = "<group>"; };
 		22409DB91D745EA1004FF14C /* TDCashierViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDCashierViewController.xib; sourceTree = "<group>"; };
@@ -413,6 +421,11 @@
 				22FCF1371DB51B8600589D56 /* TDSearchDeliverViewController.h */,
 				22FCF1381DB51B8600589D56 /* TDSearchDeliverViewController.m */,
 				22FCF1391DB51B8600589D56 /* TDSearchDeliverViewController.xib */,
+				2229EFF91DB6541D009F3305 /* TDSearchDeliverTableViewCell.h */,
+				2229EFFA1DB6541D009F3305 /* TDSearchDeliverTableViewCell.m */,
+				2229EFFB1DB6541D009F3305 /* TDSearchDeliverTableViewCell.xib */,
+				2229EFFE1DB670E5009F3305 /* TDSearchDetailViewController.h */,
+				2229EFFF1DB670E5009F3305 /* TDSearchDetailViewController.m */,
 			);
 			name = Delivering;
 			sourceTree = "<group>";
@@ -837,6 +850,7 @@
 				2290B1C81D6200540085BD49 /* TDScanView.xib in Resources */,
 				22CC03BB1D719E400081AB16 /* TDInfoView.xib in Resources */,
 				22409DBB1D745EA1004FF14C /* TDCashierViewController.xib in Resources */,
+				2229EFFD1DB6541D009F3305 /* TDSearchDeliverTableViewCell.xib in Resources */,
 				22CC03B61D719DDC0081AB16 /* TDCountChooseViewController.xib in Resources */,
 				22CC043B1D72907D0081AB16 /* TDGetOrderCollectionViewController.xib in Resources */,
 				22CC03C61D726BA00081AB16 /* TDCountPreviewTableViewCell.xib in Resources */,
@@ -943,6 +957,7 @@
 				22A1E0CD1D7BE4B2007A6905 /* RADataObject.m in Sources */,
 				2215B3421D6F30E700616107 /* TDBaseViewController.m in Sources */,
 				2229EFF31DB64E58009F3305 /* TDCDHeader.m in Sources */,
+				2229EFFC1DB6541D009F3305 /* TDSearchDeliverTableViewCell.m in Sources */,
 				22CC03B91D719E310081AB16 /* TDInfoView.m in Sources */,
 				22E0A0101D786AB200786749 /* TDStore.m in Sources */,
 				2229EFE81DB647B3009F3305 /* TDUnCountingHeader.m in Sources */,
@@ -983,6 +998,7 @@
 				22D9BE991D65F13900E06184 /* TDItemsBar.m in Sources */,
 				22E0A0161D786EA600786749 /* TDParser.m in Sources */,
 				2221A8F01D64AFC900D30775 /* TDVerifyViewController.m in Sources */,
+				2229F0001DB670E5009F3305 /* TDSearchDetailViewController.m in Sources */,
 				22AAD3AA1DA78A5D00DFA8DF /* TDSearchGoodHeaderView.m in Sources */,
 				225FE77A1D8399EB007D15E8 /* TDChooseProductCollectionViewCell.m in Sources */,
 				22013D211D7F158D001AD2E0 /* TDSotreListTableViewController.m in Sources */,

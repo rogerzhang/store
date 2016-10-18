@@ -20,8 +20,13 @@
     
     self.title = @"调拨单审核";
     
+    TDSearchDeliverViewController *deliverOut = [[TDSearchDeliverViewController alloc] initWithNibName:@"TDUnCountingViewController" bundle:nil];
+
+    deliverOut.isDeliverOut = YES;
+    
+    self.chooseViewController = deliverOut;
+    
     self.scanViewController = [[TDSearchDeliverViewController alloc] initWithNibName:@"TDUnCountingViewController" bundle:nil];
-    self.chooseViewController = [[TDSearchDeliverViewController alloc] initWithNibName:@"TDUnCountingViewController" bundle:nil];
 }
 
 - (void) viewWillAppear:(BOOL)animated;

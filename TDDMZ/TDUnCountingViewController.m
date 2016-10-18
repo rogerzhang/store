@@ -18,10 +18,7 @@ static NSString * const headerdentifer = @"uncountheader";
 @property (weak, nonatomic) IBOutlet UITextField *endLabel;
 @property (weak, nonatomic) IBOutlet UITextField *statusLabel;
 @property (nonatomic, strong) UIDatePicker *datePicker;
-@property (nonatomic, strong) NSDate *beginDate;
-@property (nonatomic, strong) NSDate *endDate;
-@property (nonatomic, strong) NSString *status;
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
 @end
 
 @implementation TDUnCountingViewController
@@ -79,7 +76,7 @@ static NSString * const headerdentifer = @"uncountheader";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
 {
-    return 1;
+    return self.datasource.count;
 }
 
 - (__kindof UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
@@ -98,10 +95,15 @@ static NSString * const headerdentifer = @"uncountheader";
         headerView = [[TDUnCountingHeader alloc] initWithReuseIdentifier: headerdentifer];
     }
     
-    NSArray *attrs = @[@"商品编码", @"商品名称", @"规格", @"单价", @"数量"];
+    NSArray *attrs = [self attrs];
     [headerView setAttributes:attrs];
     
     return headerView;
+}
+
+- (NSArray *)attrs;
+{
+    return @[@"商品编码", @"商品名称", @"规格", @"单价", @"数量"];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;

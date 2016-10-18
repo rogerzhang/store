@@ -843,6 +843,7 @@
 
 - (void) searchdborderFormDate: (NSDate *)fromDate to: (NSDate *)toDate type: (NSString *)type status: (NSString *)status withCompletionHandler: (TDCompletionHandler)completionHandler;
 {
+    status = [status isEqualToString:@"未审核"] ? @"0" : @"1";
     NSMutableDictionary *params = [[NSMutableDictionary alloc]init];
     [params setValue:self.userId forKey:@"userid"];
     
@@ -1431,6 +1432,7 @@
 
 - (void) searchpdorderFormDate: (NSDate *)fromDate to: (NSDate *)toDate status: (NSString *)status withCompletionHandler: (TDCompletionHandler)completionHandler;
 {
+    status = [status isEqualToString:@"未审核"] ? @"0" : @"1";
     NSString *from = [[TDHelper sharedInstance] date:fromDate formatedWithString:TDFormatDateString];
     NSString *to = [[TDHelper sharedInstance] date:toDate formatedWithString:TDFormatDateString];
     NSMutableDictionary *params = [[NSMutableDictionary alloc]init];
