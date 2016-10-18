@@ -44,7 +44,7 @@
         
         CGFloat w = 50;
         CGFloat h = 44;
-        CGFloat x = 443 + [self gap] + i * ([self gap] + w);
+        CGFloat x = 318 + [self gap] + i * ([self gap] + w);
         CGFloat y = 0;
         
         label.frame = CGRectMake(x, y, w, h);
