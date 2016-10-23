@@ -170,6 +170,19 @@ static NSString * const headerdentifer = @"uncountheader";
         [self showErrorMessage:@"请选择状态" title:nil];
         return;
     }
+    
+    [[TDClient sharedInstance] searchpdorderFormDate:self.beginDate to:self.endDate status:self.status withCompletionHandler:^(BOOL success, NSError *error, id userInfo){
+        if (success)
+        {
+            self.datasource = userInfo;
+            
+            [self.tableView reloadData];
+        }
+        else
+        {
+            [self showErrorMessage:error.description title:nil];
+        }
+    }];
 }
 
 - (void)button1Action:(TDUncountTableViewCell *)cell;

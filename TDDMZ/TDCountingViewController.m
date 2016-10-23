@@ -11,7 +11,7 @@
 #import "TDCountChooseViewController.h"
 
 @interface TDCountingViewController ()<TDSaveBannerDelegate>
-
+@property (nonatomic, strong) NSTimer *timer;
 @end
 
 @implementation TDCountingViewController
@@ -26,6 +26,11 @@
     chooseViewController.delegate = self;
     self.chooseViewController = chooseViewController;
     
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateLabel) userInfo:nil repeats:YES];
+    self.saveBanner.key1Label.text = @"总件数：";
+    self.saveBanner.key2Label.text = @"总金额：";
+    self.saveBanner.value1Label.text = @"";
+    self.saveBanner.value2Label.text = @"";
     self.saveBanner.delegate = self;
 }
 
@@ -49,12 +54,93 @@
     self.navigationItem.rightBarButtonItem = [self rightButtoItem];
 }
 
+- (void) updateLabel;
+{
+    self.saveBanner.value1Label.text = [self totaCount];
+    self.saveBanner.value2Label.text = [NSString stringWithFormat:@"￥%@",[self totalMoney]];
+}
+
+- (NSString *)totalMoney;
+{
+    NSString *money = nil;
+    TDCountScanViewController *scanVC = (TDCountScanViewController *)self.scanViewController;
+    NSArray *goods = scanVC.datasource;
+    
+    NSInteger count = 0;
+    for (TDGood *good in goods) {
+        count += good.goods_number * [good.shop_price integerValue];
+    }
+    
+    money = [NSString stringWithFormat:@"%ld",(long)count];
+    
+    return money;
+}
+
+- (NSString *)totaCount;
+{
+    NSString *money = nil;
+    TDCountScanViewController *scanVC = (TDCountScanViewController *)self.scanViewController;
+    NSArray *goods = scanVC.datasource;
+    
+    NSInteger count = 0;
+    for (TDGood *good in goods) {
+        count += good.goods_number;
+    }
+    
+    money = [NSString stringWithFormat:@"%ld",(long)count];
+    
+    return money;
+}
+
+- (NSArray *)goodsInfoList;
+{
+    TDCountScanViewController *scanVC = (TDCountScanViewController *)self.scanViewController;
+    NSArray *goods = scanVC.datasource;
+    NSMutableArray *goodList = [NSMutableArray array];
+    
+    for (TDGood *good in goods) {
+        NSDictionary *dic = [[TDParser sharedInstance] submitionDictionaryWithGood: good];
+        
+        [dic setValue:@"" forKey:@"barcode"];
+        [dic setValue:good.goods_id forKey:@"goods_id"];
+        [dic setValue:good.goods_attr forKey:@"attr_id1"];
+        [dic setValue:good.goods_attr forKey:@"attr_id2"];
+        [dic setValue:@(good.goods_number) forKey:@"number"];
+        [dic setValue:good.kucun forKey:@"kucun"];
+        
+        [goodList addObject: dic];
+    }
+    return goodList;
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
 }
 
 - (void) saveActionWithSaveBanner: (TDSaveBanner *)banner;
-{}
+{
+    TDCountScanViewController *scanVC = (TDCountScanViewController *)self.scanViewController;
+    
+    [[TDClient sharedInstance] addPdorderWithListData: [self goodsInfoList] completionHandler:^(BOOL success, NSError *error, id userInfo){
+        TD_LOG(@"%@",userInfo);
+        
+        if (success)
+        {
+            [self showMessage: @"保存成功"];
+            [scanVC clean];
+        }
+        else
+        {
+            [self showMessage: error.description];
+        }
+    }];
+}
+
+- (void) showMessage: (NSString *)message;
+{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:message delegate:nil cancelButtonTitle:@"确认" otherButtonTitles:nil, nil];
+    [alertView show];
+}
 
 @end
