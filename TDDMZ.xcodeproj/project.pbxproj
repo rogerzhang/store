@@ -96,7 +96,6 @@
 		22CC043E1D7294A70081AB16 /* TDClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC043D1D7294A70081AB16 /* TDClient.m */; };
 		22CC04441D73B7130081AB16 /* NSDictionary+TDConvertToJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC04431D73B7130081AB16 /* NSDictionary+TDConvertToJson.m */; };
 		22D0A1271D54826800D27A6A /* TDZbarReaderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D0A1261D54826800D27A6A /* TDZbarReaderManager.m */; };
-		22D62F681DB38898002B2453 /* libqrencoder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22D62F671DB38898002B2453 /* libqrencoder.a */; };
 		22D9BE991D65F13900E06184 /* TDItemsBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D9BE981D65F13900E06184 /* TDItemsBar.m */; };
 		22DCDDAF1D4EF0010068983C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DCDDAE1D4EF0010068983C /* main.m */; };
 		22DCDDB21D4EF0010068983C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DCDDB11D4EF0010068983C /* AppDelegate.m */; };
@@ -284,7 +283,6 @@
 		22D0A1251D54826800D27A6A /* TDZbarReaderManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDZbarReaderManager.h; sourceTree = "<group>"; };
 		22D0A1261D54826800D27A6A /* TDZbarReaderManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = TDZbarReaderManager.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		22D0A1281D548B1200D27A6A /* TDDMZ-prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "TDDMZ-prefix.pch"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		22D62F671DB38898002B2453 /* libqrencoder.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libqrencoder.a; sourceTree = "<group>"; };
 		22D9BE971D65F13900E06184 /* TDItemsBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDItemsBar.h; sourceTree = "<group>"; };
 		22D9BE981D65F13900E06184 /* TDItemsBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDItemsBar.m; sourceTree = "<group>"; };
 		22DCDDAA1D4EF0010068983C /* TDDMZ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TDDMZ.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -340,7 +338,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A689D7F43E1E6ED534C201C3 /* libPods.a in Frameworks */,
-				22D62F681DB38898002B2453 /* libqrencoder.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -617,7 +614,6 @@
 		22DCDDA11D4EF0010068983C = {
 			isa = PBXGroup;
 			children = (
-				22D62F671DB38898002B2453 /* libqrencoder.a */,
 				22DCDDAC1D4EF0010068983C /* TDDMZ */,
 				22DCDDC61D4EF0010068983C /* TDDMZTests */,
 				22DCDDD11D4EF0010068983C /* TDDMZUITests */,
@@ -787,7 +783,8 @@
 				TargetAttributes = {
 					22DCDDA91D4EF0010068983C = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = M932RC5J66;
+						DevelopmentTeam = H9JM9BG79D;
+						ProvisioningStyle = Manual;
 					};
 					22DCDDC21D4EF0010068983C = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -1156,6 +1153,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = H9JM9BG79D;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "${SRCROOT}/TDDMZ/TDDMZ-prefix.pch";
@@ -1166,9 +1164,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ringcentral.TDDMZ;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.dmuzhi.www.smartcashier;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "db2e8e4d-3ead-4eb3-b536-3e3be3f52add";
+				PROVISIONING_PROFILE_SPECIFIER = SmartCashier;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
@@ -1180,6 +1179,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "${SRCROOT}/TDDMZ/TDDMZ-prefix.pch";
@@ -1190,7 +1190,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ringcentral.TDDMZ;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.dmuzhi.www.smartcashier;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 2;
