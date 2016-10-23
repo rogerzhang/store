@@ -27,17 +27,25 @@ static NSString * const headerdentifer = @"CDheader";
     UINib *cellNib = [UINib nibWithNibName:@"TDCDTableViewCell" bundle:nil];
     [self.tableView registerNib:cellNib forCellReuseIdentifier:cellIdentifer];
     [self.tableView registerClass:[TDCDHeader class] forHeaderFooterViewReuseIdentifier:headerdentifer];
+    [self refreshData];
+}
+
+- (void) refreshData;
+{
+    [[TDClient sharedInstance] getRkorderinfoWithId:self.orderId withCompletionHander:^(BOOL success, NSError *error, id userInfo){
+        self.dataSource = userInfo;
+        [self.tableView reloadData];
+    }];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (NSArray *)attrs;
 {
-    return @[@"商品编码", @"商品名称", @"规格", @"单价", @"数量"];
+    return @[@"商品编码", @"商品名称", @"规格", @"单位", @"系统数量", @"盘到数量", @"盈亏数量", @"单价", @"金额"];
 }
 
 #pragma mark - Table view data source
@@ -50,7 +58,17 @@ static NSString * const headerdentifer = @"CDheader";
 - (__kindof UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 {
     TDCDTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: cellIdentifer];
-    
+    NSDictionary *dict = self.dataSource[indexPath.row];
+    cell.label0.text = [NSString stringWithFormat:@"%ld",(indexPath.row + 1)];
+    cell.label1.text = dict[@"goods_sn"];
+    cell.label2.text = dict[@"goods_name"];
+    cell.label3.text = dict[@"goods_attr"];
+    cell.label4.text = dict[@"good_type"];
+    cell.label5.text = [dict[@"system_count"] stringValue];
+    cell.label6.text = [dict[@"goods_count"] stringValue];
+    cell.label7.text = [dict[@"difference"] stringValue];
+    cell.label8.text = dict[@"goods_pice"];
+    cell.label9.text = dict[@"goods_total"];
     return cell;
 }
 

@@ -12,4 +12,5 @@
 @property (nonnull, nonatomic, strong) NSString *orderId;
 @property (nullable,nonatomic, copy) NSArray *dataSource;
 - (nonnull NSArray *)attrs;
+- (void) refreshData;
 @end

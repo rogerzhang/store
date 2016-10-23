@@ -13,7 +13,7 @@
 static NSString * const cellIdentifer = @"uncountcell";
 static NSString * const headerdentifer = @"uncountheader";
 
-@interface TDUnCountingViewController ()<UIActionSheetDelegate, UIPopoverControllerDelegate>
+@interface TDUnCountingViewController ()<UIActionSheetDelegate, UIPopoverControllerDelegate, TDUncountTableViewCellDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *beginLabel;
 @property (weak, nonatomic) IBOutlet UITextField *endLabel;
 @property (weak, nonatomic) IBOutlet UITextField *statusLabel;
@@ -31,6 +31,24 @@ static NSString * const headerdentifer = @"uncountheader";
     UINib *cellNib = [UINib nibWithNibName:@"TDUncountTableViewCell" bundle:nil];
     [self.tableView registerNib:cellNib forCellReuseIdentifier:cellIdentifer];
     [self.tableView registerClass:[TDUnCountingHeader class] forHeaderFooterViewReuseIdentifier:headerdentifer];
+    
+    [self refreshPendingOrders];
+}
+
+- (void) refreshPendingOrders;
+{
+    [[TDClient sharedInstance] getPendingpdorderWithCompletionHandler:^(BOOL success, NSError *error, id userInfo){
+        if (success)
+        {
+            self.datasource = userInfo;
+            
+            [self.tableView reloadData];
+        }
+        else
+        {
+            [self showErrorMessage:error.description title:nil];
+        }
+    }];
 }
 
 - (void)viewWillAppear:(BOOL)animated;
@@ -83,6 +101,18 @@ static NSString * const headerdentifer = @"uncountheader";
 {
     TDUncountTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: cellIdentifer];
     
+    NSDictionary *dict = self.datasource[indexPath.row];
+    
+    cell.delegate = self;
+    cell.label0.text = [NSString stringWithFormat:@"%ld", indexPath.row + 1];
+    cell.label1.text = dict[@"order_code"];
+    cell.label2.text = dict[@"order_date"];
+    cell.label3.text = dict[@"warehouse"];
+    cell.label4.text = dict[@"create_user"];
+    cell.label5.text = dict[@"system_count"];
+    cell.labe16.text = dict[@"pd_count"];
+    cell.label7.text = dict[@"difference"];
+    
     return cell;
 }
 
@@ -103,7 +133,7 @@ static NSString * const headerdentifer = @"uncountheader";
 
 - (NSArray *)attrs;
 {
-    return @[@"商品编码", @"商品名称", @"规格", @"单价", @"数量"];
+    return @[@"单号", @"开单时间", @"盘点仓库", @"开单人员", @"系统数量",@"盘到数量", @"盈亏数量", @"操作"];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
@@ -118,7 +148,9 @@ static NSString * const headerdentifer = @"uncountheader";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
 {
+    NSDictionary *dict = self.datasource[indexPath.row];
     TDCDTableViewController *detailVC = [[TDCDTableViewController alloc] init];
+    detailVC.orderId = dict[@"order_id"];
     [self.navigationController pushViewController:detailVC animated:YES];
 }
 
@@ -138,6 +170,46 @@ static NSString * const headerdentifer = @"uncountheader";
         [self showErrorMessage:@"请选择状态" title:nil];
         return;
     }
+}
+
+- (void)button1Action:(TDUncountTableViewCell *)cell;
+{
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    
+    NSDictionary *dic = self.datasource[indexPath.row];
+    
+    NSString *orderId = dic[@"order_id"];
+    [[TDClient sharedInstance] checkpdorder:orderId withCompletionHandler:^(BOOL success, NSError *error, id userInfo){
+        if (success) {
+            [self showErrorMessage:@"审核成功" title:nil];
+        }
+        else
+        {
+            [self showErrorMessage:error.description title:nil];
+        }
+    }];
+}
+
+- (void)button2Action:(TDUncountTableViewCell *)cell;
+{
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    
+    NSDictionary *dic = self.datasource[indexPath.row];
+    
+    NSString *orderId = dic[@"order_id"];
+    
+    [[TDClient sharedInstance] recheckpdorderWithId:orderId withCompletionHandler:^(BOOL success, NSError *error, id userInfo){
+        if (success)
+        {
+            [self showErrorMessage:@"操作成功" title:nil];
+            
+            [self refreshPendingOrders];
+        }
+        else
+        {
+            [self showErrorMessage:error.description title:nil];
+        }
+    }];
 }
 
 - (void) showErrorMessage: (NSString *)message title: (NSString *)title;

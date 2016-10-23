@@ -10,7 +10,7 @@
 #import "TDCountScanViewController.h"
 #import "TDCountChooseViewController.h"
 
-@interface TDCountingViewController ()
+@interface TDCountingViewController ()<TDSaveBannerDelegate>
 
 @end
 
@@ -25,6 +25,8 @@
     TDCountChooseViewController *chooseViewController = [[TDCountChooseViewController alloc] initWithNibName: @"TDCountChooseViewController" bundle: nil];
     chooseViewController.delegate = self;
     self.chooseViewController = chooseViewController;
+    
+    self.saveBanner.delegate = self;
 }
 
 
@@ -51,5 +53,8 @@
 {
     [super didReceiveMemoryWarning];
 }
+
+- (void) saveActionWithSaveBanner: (TDSaveBanner *)banner;
+{}
 
 @end

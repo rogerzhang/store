@@ -26,7 +26,7 @@ static NSString * const headerdentifer = @"searchdevliverheader";
     UINib *cellNib = [UINib nibWithNibName:@"TDSearchDeliverTableViewCell" bundle:nil];
     [self.tableView registerNib:cellNib forCellReuseIdentifier:cellIdentifer];
     
-    [self refreshPendingDB];
+    [self refreshPendingOrders];
 }
 
 - (void)didReceiveMemoryWarning
@@ -67,6 +67,7 @@ static NSString * const headerdentifer = @"searchdevliverheader";
     cell.label0.text = [NSString stringWithFormat:@"%ld", indexPath.row];
     cell.label1.text = dict[@"order_code"];
     cell.label2.text = dict[@"towarehouse"];
+    
     cell.label3.text = [NSString stringWithString:dict[@"goods_count"]];
     NSNumber *money = dict[@"order_money"];
     cell.label4.text = [money stringValue];
@@ -93,7 +94,7 @@ static NSString * const headerdentifer = @"searchdevliverheader";
     NSDictionary *dic = self.datasource[indexPath.row];
     
     NSString *orderId = dic[@"order_id"];
-    [[TDClient sharedInstance] checkpdorder:orderId withCompletionHandler:^(BOOL success, NSError *error, id userInfo){
+    [[TDClient sharedInstance] checkdborderWithId:orderId completionHandler:^(BOOL success, NSError *error, id userInfo){
         if (success) {
             [self showErrorMessage:@"审核成功" title:nil];
         }
@@ -117,7 +118,7 @@ static NSString * const headerdentifer = @"searchdevliverheader";
         {
             [self showErrorMessage:@"操作成功" title:nil];
             
-            [self refreshPendingDB];
+            [self refreshPendingOrders];
         }
         else
         {
@@ -126,7 +127,7 @@ static NSString * const headerdentifer = @"searchdevliverheader";
     }];
 }
 
-- (void) refreshPendingDB;
+- (void) refreshPendingOrders;
 {
     if (self.isDeliverOut)
     {

@@ -8,6 +8,8 @@
 
 #import "TDDBDetailViewController.h"
 
+static NSString *const cellIdentifer = @"dbcelld";
+
 @interface TDDBDetailViewController ()
 
 @end
@@ -17,7 +19,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    UINib *cellNib = [UINib nibWithNibName:@"TDCDTableViewCell" bundle:nil];
+    [self.tableView registerNib:cellNib forCellReuseIdentifier:cellIdentifer];
+    [self refreshData];
+}
+
+- (void) refreshData;
+{
     if (self.isDeliverOut)
     {
         [[TDClient sharedInstance] getDborderinfoWithId:self.orderId withCompletionHander:^(BOOL success, NSError *error, id userInfo){
@@ -41,7 +49,7 @@
 
 - (__kindof UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 {
-    TDCDTableViewCell *cell = (TDCDTableViewCell *)[super tableView:tableView cellForRowAtIndexPath:indexPath];
+    TDCDTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: cellIdentifer];
     
     NSDictionary *dict = self.dataSource[indexPath.row];
     cell.label0.text = [NSString stringWithFormat:@"%ld",indexPath.row];
