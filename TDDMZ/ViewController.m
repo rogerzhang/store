@@ -35,10 +35,19 @@
     NSString *account = [self.userTextField.text stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
     NSString *password = [self.psTextField.text stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
     
-    TD_LOG(@"%@  %@", account, password);
+    if (!account || account.length < 1) {
+        [self showMessage: @"请输入账号"];
+        return;
+    }
     
+    if (!password || password.length < 1) {
+        [self showMessage: @"请输入密码"];
+        return;
+    }
+    
+    //13606057867 123456
     TDClient *client = [TDClient sharedInstance];
-    [client loginWithAccount: @"13606057867" password:@"123456" completionHandler:^(BOOL success, NSError *error, id userInfo){
+    [client loginWithAccount: account password:password completionHandler:^(BOOL success, NSError *error, id userInfo){
         if (success) {
             TDMainViewController *mv = [[TDMainViewController alloc] initWithNibName: @"TDMainViewController" bundle: nil];
             UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController: mv];
@@ -52,6 +61,12 @@
             [alertView show];
         }
     }];
+}
+
+- (void) showMessage: (NSString *)message;
+{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:message delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    [alertView show];
 }
 
 @end
