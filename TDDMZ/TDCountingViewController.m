@@ -99,16 +99,17 @@
     NSMutableArray *goodList = [NSMutableArray array];
     
     for (TDGood *good in goods) {
-        NSDictionary *dic = [[TDParser sharedInstance] submitionDictionaryWithGood: good];
+       // NSDictionary *dic = [[TDParser sharedInstance] submitionDictionaryWithGood: good];
         
-        [dic setValue:@"" forKey:@"barcode"];
-        [dic setValue:good.goods_id forKey:@"goods_id"];
-        [dic setValue:good.goods_attr forKey:@"attr_id1"];
-        [dic setValue:good.goods_attr forKey:@"attr_id2"];
-        [dic setValue:@(good.goods_number) forKey:@"number"];
-        [dic setValue:good.kucun forKey:@"kucun"];
+        NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+        [dict setValue:@"" forKey:@"barcode"];
+        [dict setValue:good.goods_id forKey:@"goods_id"];
+        [dict setValue:good.goods_attr forKey:@"attr_id1"];
+        [dict setValue:good.goods_attr forKey:@"attr_id2"];
+        [dict setValue:@(good.goods_number) forKey:@"number"];
+        [dict setValue:good.kucun forKey:@"kucun"];
         
-        [goodList addObject: dic];
+        [goodList addObject: dict];
     }
     return goodList;
 }
