@@ -8,6 +8,7 @@
 
 #import "TDSearchDeliverViewController.h"
 #import "TDSearchDeliverTableViewCell.h"
+#import "TDDBDetailViewController.h"
 
 static NSString * const cellIdentifer = @"searchdevlivercell";
 static NSString * const headerdentifer = @"searchdevliverheader";
@@ -24,6 +25,8 @@ static NSString * const headerdentifer = @"searchdevliverheader";
     
     UINib *cellNib = [UINib nibWithNibName:@"TDSearchDeliverTableViewCell" bundle:nil];
     [self.tableView registerNib:cellNib forCellReuseIdentifier:cellIdentifer];
+    
+    [self refreshPendingDB];
 }
 
 - (void)didReceiveMemoryWarning
@@ -69,13 +72,17 @@ static NSString * const headerdentifer = @"searchdevliverheader";
     cell.label4.text = [money stringValue];
     cell.label5.text = dict[@"order_date"];
     cell.label6.text = dict[@"create_user"];
+    cell.delegate = self;
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
 {
-    TDCDTableViewController *detailVC = [[TDCDTableViewController alloc] init];
+    NSDictionary *dic = self.datasource[indexPath.row];
+    TDDBDetailViewController *detailVC = [[TDDBDetailViewController alloc] init];
+    detailVC.isDeliverOut = self.isDeliverOut;
+    detailVC.orderId = dic[@"order_id"];
     [self.navigationController pushViewController:detailVC animated:YES];
 }
 
@@ -106,8 +113,11 @@ static NSString * const headerdentifer = @"searchdevliverheader";
     NSString *orderId = dic[@"order_id"];
     
     [[TDClient sharedInstance] canceldborderbillWithId:orderId completionHandler:^(BOOL success, NSError *error, id userInfo){
-        if (success) {
+        if (success)
+        {
             [self showErrorMessage:@"操作成功" title:nil];
+            
+            [self refreshPendingDB];
         }
         else
         {
@@ -115,4 +125,39 @@ static NSString * const headerdentifer = @"searchdevliverheader";
         }
     }];
 }
+
+- (void) refreshPendingDB;
+{
+    if (self.isDeliverOut)
+    {
+        [[TDClient sharedInstance] getPendingdborderWithCompletionHandler:^(BOOL success, NSError *error, id userInfo){
+            if (success)
+            {
+                self.datasource = userInfo;
+                
+                [self.tableView reloadData];
+            }
+            else
+            {
+                [self showErrorMessage:error.description title:nil];
+            }
+        }];
+    }
+    else
+    {
+        [[TDClient sharedInstance] getPendingrkorderWithCompletionHandler:^(BOOL success, NSError *error, id userInfo){
+            if (success)
+            {
+                self.datasource = userInfo;
+                
+                [self.tableView reloadData];
+            }
+            else
+            {
+                [self showErrorMessage:error.description title:nil];
+            }
+        }];
+    }
+}
+
 @end

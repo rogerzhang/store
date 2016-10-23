@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface TDCDTableViewController : UITableViewController
-
+@property (nonnull, nonatomic, strong) NSString *orderId;
+@property (nullable,nonatomic, copy) NSArray *dataSource;
+- (nonnull NSArray *)attrs;
 @end

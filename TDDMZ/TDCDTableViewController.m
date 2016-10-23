@@ -12,6 +12,7 @@
 
 static NSString * const cellIdentifer = @"CDcell";
 static NSString * const headerdentifer = @"CDheader";
+
 @interface TDCDTableViewController ()
 
 @end
@@ -34,11 +35,16 @@ static NSString * const headerdentifer = @"CDheader";
     // Dispose of any resources that can be recreated.
 }
 
+- (NSArray *)attrs;
+{
+    return @[@"商品编码", @"商品名称", @"规格", @"单价", @"数量"];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
 {
-    return 1;
+    return self.dataSource.count;
 }
 
 - (__kindof UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
@@ -57,7 +63,7 @@ static NSString * const headerdentifer = @"CDheader";
         headerView = [[TDCDHeader alloc] initWithReuseIdentifier: headerdentifer];
     }
     
-    NSArray *attrs = @[@"商品编码", @"商品名称", @"规格", @"单价", @"数量"];
+    NSArray *attrs = [self attrs];
     [headerView setAttributes:attrs];
     
     return headerView;

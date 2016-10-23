@@ -65,6 +65,7 @@
 		22A1E0C91D7BE437007A6905 /* RATableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A1E0C71D7BE437007A6905 /* RATableViewCell.m */; };
 		22A1E0CA1D7BE437007A6905 /* RATableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22A1E0C81D7BE437007A6905 /* RATableViewCell.xib */; };
 		22A1E0CD1D7BE4B2007A6905 /* RADataObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A1E0CC1D7BE4B2007A6905 /* RADataObject.m */; };
+		22A268651DBC5F2F008A1972 /* TDDBDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A268641DBC5F2F008A1972 /* TDDBDetailViewController.m */; };
 		22AAD3991DA4A4DC00DFA8DF /* TDProductDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AAD3971DA4A4DC00DFA8DF /* TDProductDetailViewController.m */; };
 		22AAD39A1DA4A4DC00DFA8DF /* TDProductDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22AAD3981DA4A4DC00DFA8DF /* TDProductDetailViewController.xib */; };
 		22AAD39E1DA5000500DFA8DF /* TDUnCountingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AAD39C1DA5000500DFA8DF /* TDUnCountingViewController.m */; };
@@ -232,6 +233,8 @@
 		22A1E0C81D7BE437007A6905 /* RATableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RATableViewCell.xib; sourceTree = "<group>"; };
 		22A1E0CB1D7BE4B2007A6905 /* RADataObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RADataObject.h; sourceTree = "<group>"; };
 		22A1E0CC1D7BE4B2007A6905 /* RADataObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RADataObject.m; sourceTree = "<group>"; };
+		22A268631DBC5F2E008A1972 /* TDDBDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDDBDetailViewController.h; sourceTree = "<group>"; };
+		22A268641DBC5F2F008A1972 /* TDDBDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDDBDetailViewController.m; sourceTree = "<group>"; };
 		22AAD3961DA4A4DC00DFA8DF /* TDProductDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDProductDetailViewController.h; sourceTree = "<group>"; };
 		22AAD3971DA4A4DC00DFA8DF /* TDProductDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDProductDetailViewController.m; sourceTree = "<group>"; };
 		22AAD3981DA4A4DC00DFA8DF /* TDProductDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDProductDetailViewController.xib; sourceTree = "<group>"; };
@@ -423,6 +426,8 @@
 				2229EFFB1DB6541D009F3305 /* TDSearchDeliverTableViewCell.xib */,
 				2229EFFE1DB670E5009F3305 /* TDSearchDetailViewController.h */,
 				2229EFFF1DB670E5009F3305 /* TDSearchDetailViewController.m */,
+				22A268631DBC5F2E008A1972 /* TDDBDetailViewController.h */,
+				22A268641DBC5F2F008A1972 /* TDDBDetailViewController.m */,
 			);
 			name = Delivering;
 			sourceTree = "<group>";
@@ -958,6 +963,7 @@
 				22CC03B91D719E310081AB16 /* TDInfoView.m in Sources */,
 				22E0A0101D786AB200786749 /* TDStore.m in Sources */,
 				2229EFE81DB647B3009F3305 /* TDUnCountingHeader.m in Sources */,
+				22A268651DBC5F2F008A1972 /* TDDBDetailViewController.m in Sources */,
 				22CC042B1D727D600081AB16 /* TDOrderLayout.m in Sources */,
 				22FCF13A1DB51B8600589D56 /* TDSearchDeliverViewController.m in Sources */,
 				22CC03BF1D719FC60081AB16 /* TDHelper.m in Sources */,
