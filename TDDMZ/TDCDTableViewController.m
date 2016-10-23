@@ -59,7 +59,7 @@ static NSString * const headerdentifer = @"CDheader";
 {
     TDCDTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: cellIdentifer];
     NSDictionary *dict = self.dataSource[indexPath.row];
-    cell.label0.text = [NSString stringWithFormat:@"%ld",(indexPath.row + 1)];
+    cell.label0.text = [NSString stringWithFormat:@"%ld",(long)(indexPath.row + 1)];
     cell.label1.text = dict[@"goods_sn"];
     cell.label2.text = dict[@"goods_name"];
     cell.label3.text = dict[@"goods_attr"];

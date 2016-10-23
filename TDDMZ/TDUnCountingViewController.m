@@ -104,7 +104,7 @@ static NSString * const headerdentifer = @"uncountheader";
     NSDictionary *dict = self.datasource[indexPath.row];
     
     cell.delegate = self;
-    cell.label0.text = [NSString stringWithFormat:@"%ld", indexPath.row + 1];
+    cell.label0.text = [NSString stringWithFormat:@"%ld", (long)indexPath.row + 1];
     cell.label1.text = dict[@"order_code"];
     cell.label2.text = dict[@"order_date"];
     cell.label3.text = dict[@"warehouse"];

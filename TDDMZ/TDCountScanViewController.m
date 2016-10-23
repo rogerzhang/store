@@ -65,7 +65,7 @@
     cell.label1.text = [NSString stringWithFormat:@"%ld", (long)[indexPath row] + 1];
     cell.label2.text = good.goods_sn;
     cell.label3.text = good.goods_name;
-    cell.label4.text = [NSString stringWithFormat:@"%ld", good.goods_number];
+    cell.label4.text = [NSString stringWithFormat:@"%ld", (long)good.goods_number];
     cell.label5.text = good.shop_price;
     
     return cell;

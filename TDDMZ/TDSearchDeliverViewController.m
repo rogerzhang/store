@@ -64,7 +64,7 @@ static NSString * const headerdentifer = @"searchdevliverheader";
     
     NSDictionary *dict = self.datasource[indexPath.row];
     
-    cell.label0.text = [NSString stringWithFormat:@"%ld", indexPath.row];
+    cell.label0.text = [NSString stringWithFormat:@"%ld", (long)indexPath.row];
     cell.label1.text = dict[@"order_code"];
     cell.label2.text = dict[@"towarehouse"];
     

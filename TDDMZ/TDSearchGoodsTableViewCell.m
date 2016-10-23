@@ -51,7 +51,7 @@
     for (NSString *key in allkeys) {
         UILabel *label = [UILabel new];
         NSNumber *number = attrs[key];
-        NSString *text = [NSString stringWithFormat:@"%ld", [number integerValue]];
+        NSString *text = [NSString stringWithFormat:@"%ld", (long)[number integerValue]];
         label.text = text;
         label.textAlignment = NSTextAlignmentCenter;
         [self addSubview:label];
