@@ -68,7 +68,16 @@ static NSString * const headerdentifer = @"searchdevliverheader";
     cell.label1.text = dict[@"order_code"];
     cell.label2.text = dict[@"towarehouse"];
     
-    cell.label3.text = [NSString stringWithString:dict[@"goods_count"]];
+    id count = dict[@"goods_count"];
+    
+    if ([count isKindOfClass:[NSNumber class]])
+    {
+        cell.label3.text = [count stringValue];
+    }
+    else
+    {
+        cell.label3.text = [NSString stringWithString:dict[@"goods_count"]];
+    }
     NSNumber *money = dict[@"order_money"];
     cell.label4.text = [money stringValue];
     cell.label5.text = dict[@"order_date"];

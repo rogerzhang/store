@@ -91,6 +91,12 @@
     [alertView show];
 }
 
+- (void) viewWillAppear:(BOOL)animated;
+{
+    [super viewWillAppear:animated];
+    [self refresh];
+}
+
 - (void) viewWillLayoutSubviews;
 {
     [super viewWillLayoutSubviews];
@@ -99,8 +105,6 @@
     CGFloat height = TDBANNER_HEIGHT;
     CGRect frame = CGRectMake(0, bounds.size.height - height, bounds.size.width, height);
     self.saveBanner.frame = frame;
-    
-    [self refresh];
 }
 
 - (void) refresh;
