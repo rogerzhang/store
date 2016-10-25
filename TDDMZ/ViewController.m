@@ -29,14 +29,22 @@
 {
     [super didReceiveMemoryWarning];
 }
+- (IBAction)forgetPassword:(id)sender {
+    [self showMessage:@"请联系公司管理员"];
+}
+
+- (IBAction)registerAction:(id)sender {
+    NSURL *URL = [NSURL URLWithString:@"http://www.dmuzhi.cn/regist"];
+    [[UIApplication sharedApplication] openURL:URL];
+}
 
 - (IBAction)loginAction:(id)sender
 {
     NSString *account = [self.userTextField.text stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
     NSString *password = [self.psTextField.text stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
     
-    password = @"123456";
-    account = @"13606057867";
+    //password = @"123456";
+    //account = @"13606057867";
     if (!account || account.length < 1) {
         [self showMessage: @"请输入账号"];
         return;
