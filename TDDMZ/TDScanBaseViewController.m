@@ -102,7 +102,16 @@
 {
     NSString *goodId = [self.scanView.textView.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     //goodId = @"100118000003";
+    if (!goodId || goodId.length < 1) {
+        [self showMessage: @"请输入商品条码"];
+    }
     [self searchGoodsWithBarId: goodId];
+}
+
+- (void) showMessage: (NSString *)message;
+{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:message delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    [alertView show];
 }
 
 - (void) searchGoodsWithBarId: (NSString *)barId;
