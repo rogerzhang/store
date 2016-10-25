@@ -86,9 +86,23 @@
 
 - (IBAction)logoutAction:(id)sender
 {
-    [[TDClient sharedInstance] logoutWithCompletionHandler: ^(BOOL success, NSError *error, id userInfo){
-        [self dismissViewControllerAnimated: YES completion: NULL];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"是否确定退出" message:@"" preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *unverifiedAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+        
+        [[TDClient sharedInstance] logoutWithCompletionHandler: ^(BOOL success, NSError *error, id userInfo){
+            [self dismissViewControllerAnimated: YES completion: NULL];
+        }];
+        [alertController dismissViewControllerAnimated:YES completion:NULL];
     }];
+    
+    UIAlertAction *verifiedAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action){
+        [alertController dismissViewControllerAnimated:YES completion:NULL];
+    }];
+    
+    [alertController addAction:unverifiedAction];
+    [alertController addAction:verifiedAction];
+    [self presentViewController:alertController animated:YES completion:NULL];
 }
 
 - (IBAction)getListAction:(id)sender

@@ -71,8 +71,26 @@
     self.cashierBanner.label.text = [NSString stringWithFormat:@"总金额: ￥%@",[self totalMoney]];
 }
 
+- (NSInteger) goodsCount;
+{
+    TDCashierScanViewController *scanVC = (TDCashierScanViewController *)self.scanViewController;
+    NSArray *goods = scanVC.datasource;
+    
+    NSInteger count = 0;
+    for (TDGood *good in goods)
+    {
+        count += good.goods_number;
+    }
+    return count;
+}
+
 - (void) holdListAction:(TDCashierBanner *)cashierBanner;
 {
+    if ([self goodsCount] < 1) {
+        [self showMessage:@"请选择商品"];
+        return;
+    }
+    
     TDCashierScanViewController *scanVC = (TDCashierScanViewController *)self.scanViewController;
     NSArray *goods = scanVC.datasource;
     
@@ -113,6 +131,11 @@
 
 - (void) customerSettlementAction:(TDCashierBanner *)cashierBanner;
 {
+    if ([self goodsCount] < 1) {
+        [self showMessage:@"请选择商品"];
+        return;
+    }
+    
     [[TDClient sharedInstance] submitorderGoods: [self goodsInfoList] orderMoney: [self totalMoney] withCompletionHandler:^(BOOL success, NSError *error, id userInfo){
         TD_LOG(@"%@", userInfo);
         
@@ -190,7 +213,12 @@
 }
 
 - (void) userSettlementAction:(TDCashierBanner *)cashierBanner;
-{    
+{
+    if ([self goodsCount] < 1) {
+        [self showMessage:@"请选择商品"];
+        return;
+    }
+    
     self.settlementViewController.totalMoney = [self totalMoney];
     self.settlementViewController.goodList = [self goodsInfoList];
     
