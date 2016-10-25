@@ -101,7 +101,7 @@
 - (void) okAction: (TDScanView *)scanView;
 {
     NSString *goodId = [self.scanView.textView.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-    //goodId = @"100118000003";
+    goodId = @"100118000003";
     [self searchGoodsWithBarId: goodId];
 }
 

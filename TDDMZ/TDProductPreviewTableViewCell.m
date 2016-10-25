@@ -48,7 +48,7 @@
 
 - (IBAction)reduceAction:(id)sender
 {
-    if (self.count < 1) {
+    if (self.count < 2) {
         return;
     }
     self.count--;

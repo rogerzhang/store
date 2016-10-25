@@ -59,7 +59,7 @@
 - (IBAction)okButtonAction:(id)sender
 {
     if (!self.ticketId) {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle: @"ticket 为空" message: @"请输入ticket id 并确认" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle: @"券号为空" message: @"请输入券号并确认" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
         [alertView show];
         return;
     }

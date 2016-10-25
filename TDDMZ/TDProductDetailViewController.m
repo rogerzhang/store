@@ -41,6 +41,11 @@
 
 - (void) attr1ButtonClicked: (id)sender;
 {
+    for (UIButton *btn in self.view.subviews) {
+        if (btn.tag > 110 && btn.tag < 200) {
+            btn.selected = NO;
+        }
+    }
     TDInfoButton *btn = (TDInfoButton*)sender;
     btn.selected = YES;
     self.attr1Id = btn.userInfo[@"attr_id"];
@@ -50,7 +55,14 @@
 
 - (void) attr2ButtonClicked: (id)sender;
 {
+    for (UIButton *btn in self.view.subviews) {
+        if (btn.tag > 220 && btn.tag < 300) {
+            btn.selected = NO;
+        }
+    }
     TDInfoButton *btn = (TDInfoButton*)sender;
+    btn.selected = YES;
+    
     self.attr2Id = btn.userInfo[@"attr_id"];
     
     [self chooseattrAction];
@@ -76,7 +88,11 @@
         {
             self.goods = [[TDParser sharedInstance] goodWithDictionary:userInfo];
             
-            [self refresh];
+            if (!self.goods.goods_number) {
+                self.goods.goods_number = 1;
+            }
+            
+            self.priceLabel.text = userInfo[@"shop_price"];
         }
         else
         {
@@ -148,9 +164,15 @@
                         TDInfoButton *btn = [TDInfoButton buttonWithType:UIButtonTypeCustom];
                         [btn addTarget:self action:@selector(attr1ButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
                         [btn setTitle:attr forState:UIControlStateNormal];
+                        [btn setTitleColor: [UIColor grayColor] forState:UIControlStateNormal];
+                        [btn setTitleColor: [UIColor whiteColor] forState:UIControlStateSelected];
                         [self.view addSubview:btn];
-                        [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-                        [btn setTitleColor:[UIColor redColor] forState:UIControlStateSelected];
+                        
+                        UIImage *normalImage = [UIImage imageNamed:@"商品详情框1"];
+                        UIImage *selectedImage = [UIImage imageNamed:@"商品详情框2"];
+                        
+                        [btn setBackgroundImage:normalImage forState:UIControlStateNormal];
+                        [btn setBackgroundImage:selectedImage forState:UIControlStateSelected];
                         btn.userInfo = attr1Values[i];
                         
                         CGFloat w = 60;
@@ -177,8 +199,13 @@
                             TDInfoButton *btn2 = [TDInfoButton buttonWithType:UIButtonTypeCustom];
                             [btn2 addTarget:self action:@selector(attr2ButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
                             [btn2 setTitle:attr forState:UIControlStateNormal];
-                            [btn2 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-                            [btn2 setTitleColor:[UIColor redColor] forState:UIControlStateSelected];
+                            [btn2 setTitleColor: [UIColor grayColor] forState:UIControlStateNormal];
+                            [btn2 setTitleColor: [UIColor whiteColor] forState:UIControlStateSelected];
+                            UIImage *normalImage = [UIImage imageNamed:@"商品详情框1"];
+                            UIImage *selectedImage = [UIImage imageNamed:@"商品详情框2"];
+                            
+                            [btn2 setBackgroundImage:normalImage forState:UIControlStateNormal];
+                            [btn2 setBackgroundImage:selectedImage forState:UIControlStateSelected];
                             [self.view addSubview:btn2];
                             btn2.userInfo = attr2Values[i];
                             
@@ -217,6 +244,12 @@
 
 - (void) saveActionWithSaveBanner: (TDSaveBanner *)banner;
 {
+    if (!self.attr1Id || !self.attr2Id)
+    {
+        [self showMessage:@"请选择规格"];
+        return;
+    }
+    
     if ([self.delegate respondsToSelector:@selector(saveActionWithDetailViewController:)]) {
         [self.delegate saveActionWithDetailViewController:self];
     }

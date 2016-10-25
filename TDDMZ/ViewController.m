@@ -35,6 +35,8 @@
     NSString *account = [self.userTextField.text stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
     NSString *password = [self.psTextField.text stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
     
+    password = @"123456";
+    account = @"13606057867";
     if (!account || account.length < 1) {
         [self showMessage: @"请输入账号"];
         return;

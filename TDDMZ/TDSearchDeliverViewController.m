@@ -55,7 +55,17 @@ static NSString * const headerdentifer = @"searchdevliverheader";
 
 - (NSArray *)attrs;
 {
-    return @[@"单号", @"调人仓库", @"数量合计", @"调拨总额", @"开单日期", @"开单人员", @"操作"];
+    NSArray *array = nil;
+    
+    if (self.isDeliverOut)
+    {
+        array = @[@"单号", @"调入仓库", @"数量合计", @"调拨总额", @"开单日期", @"开单人员", @"操作"];
+    }
+    else
+    {
+        array = @[@"单号", @"调出仓库", @"数量合计", @"调拨总额", @"开单日期", @"开单人员", @"操作"];
+    }
+    return array;
 }
 
 - (__kindof UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
