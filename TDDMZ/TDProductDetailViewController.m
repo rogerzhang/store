@@ -22,6 +22,8 @@
     [super viewDidLoad];
     
     self.title = @"商品详情";
+    self.nameLabel.text = nil;
+    self.priceLabel.text = nil;
     
     self.saveBanner = [[[NSBundle mainBundle] loadNibNamed:@"TDSaveBanner" owner:self options:nil] objectAtIndex:0];
     [self.view addSubview: self.saveBanner];
