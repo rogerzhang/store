@@ -147,6 +147,7 @@
 
             TDCashierScanViewController *scanVC = (TDCashierScanViewController *)self.scanViewController;
             self.customerSettlementViewController.urlString = qrcode;
+            self.customerSettlementViewController.orderId = orderId;
             [scanVC clean];
             [self.navigationController pushViewController:self.customerSettlementViewController animated:YES];
         }

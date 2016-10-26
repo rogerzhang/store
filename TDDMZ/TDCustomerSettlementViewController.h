@@ -11,4 +11,5 @@
 @interface TDCustomerSettlementViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (nonatomic, strong) NSString *urlString;
+@property (nonnull, copy) NSString *orderId;
 @end

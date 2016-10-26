@@ -11,7 +11,7 @@
 #import "DataMatrix.h"
 
 @interface TDCustomerSettlementViewController ()
-
+@property (nonatomic, strong) NSTimer *timer;
 @end
 
 @implementation TDCustomerSettlementViewController
@@ -25,6 +25,8 @@
     NSDictionary * dict=[NSDictionary dictionaryWithObject:color forKey:NSForegroundColorAttributeName];
     self.navigationController.navigationBar.titleTextAttributes = dict;
     self.navigationItem.leftBarButtonItem = [self backButton];
+    
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(beginScan) userInfo:nil repeats:YES];
 }
 
 - (void) viewWillAppear:(BOOL)animated;
@@ -41,6 +43,27 @@
         
         self.imageView.image = qrcodeImage;
     }
+}
+
+- (void) beginScan;
+{
+    NSString *orderId = self.orderId;
+    [[TDClient sharedInstance] lspaystatus: orderId withCompletionHandler:^(BOOL success, NSError *error, id userInfo){
+        if (success) {
+            [self showMessage:@"亲，支付成功！"];
+            [self.navigationController popViewControllerAnimated: YES];
+        }
+        else
+        {
+            [self showMessage:error.description];
+        }
+    }];
+}
+
+- (void) showMessage: (NSString *)message;
+{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:message delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    [alertView show];
 }
 
 - (UIBarButtonItem *)backButton;
