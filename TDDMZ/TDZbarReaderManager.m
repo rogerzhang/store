@@ -26,8 +26,7 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedInstance = [TDZbarReaderManager new];
-        sharedInstance.reader = [ZBarReaderViewController new];
-        sharedInstance.reader.readerDelegate = sharedInstance;
+
     });
     
     return sharedInstance;
@@ -38,6 +37,9 @@
     self.presentingViewController = presentingViewController;
     self.completionHandler = completionHandler;
     
+    self.reader = [ZBarReaderViewController new];
+    self.reader.readerDelegate = self;
+    
     ZBarImageScanner *scanner = self.reader.scanner;
     
     [scanner setSymbology: ZBAR_I25
@@ -46,11 +48,24 @@
      
                        to: 0];
     
-    self.reader.readerView.frame = CGRectMake(0, 0, 200, 200);
+    self.reader.readerView.frame = CGRectMake(55, 150, 200, 200);
 
+    for (UIView *view in self.reader.view.subviews) {
+        if ([view isKindOfClass:[UIView class]]) {
+            for (UIView *vw in view.subviews) {
+                if ([vw isKindOfClass:[UIToolbar class]]) {
+                    for (UIView *v in vw.subviews) {
+                        if ([v isKindOfClass:[UIButton class]]) {
+                            [v removeFromSuperview];
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
     [self.presentingViewController presentViewController: self.reader animated: YES completion: ^{
-        CGRect bounds = self.presentingViewController.view.bounds;
-        self.reader.readerView.center = CGPointMake(CGRectGetWidth(bounds) / 2.0f, CGRectGetHeight(bounds) / 2.0f);
+
     }];
 }
 
