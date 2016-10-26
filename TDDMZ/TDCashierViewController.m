@@ -52,7 +52,6 @@
 {
     [super viewWillLayoutSubviews];
     
-    self.chooseViewController.view.frame = self.view.frame;
     self.cashierBanner.frame = self.saveBanner.frame;
 }
 
