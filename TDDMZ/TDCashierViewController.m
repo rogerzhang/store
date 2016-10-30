@@ -145,7 +145,7 @@
             
             [self checkOrderId: orderId];
 
-            TDCashierScanViewController *scanVC = (TDCashierScanViewController *)self.scanViewController;
+            //TDCashierScanViewController *scanVC = (TDCashierScanViewController *)self.scanViewController;
             self.customerSettlementViewController.urlString = qrcode;
             self.customerSettlementViewController.orderId = orderId;
             //[scanVC clean];
