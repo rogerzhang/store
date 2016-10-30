@@ -157,6 +157,14 @@
     
     self.cashierBanner.hidden = itemsBar.chooseGoodButton.isSelected;
     self.saveBanner.hidden = itemsBar.chooseGoodButton.isSelected;
+    
+    if (itemsBar.chooseGoodButton.isSelected) {
+        self.navigationItem.rightBarButtonItem = nil;
+    }
+    else
+    {
+        self.navigationItem.rightBarButtonItem = [self rightButtoItem];
+    }
 }
 
 - (void) customerSettlementAction:(TDCashierBanner *)cashierBanner;
