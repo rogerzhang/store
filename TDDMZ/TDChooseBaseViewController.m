@@ -136,6 +136,7 @@ static NSString * const reuseIdentifier = @"Cell";
     [cell setAdditionButtonHidden:YES animated:YES];
 }
 
+/*
 - (void)treeView:(RATreeView *)treeView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowForItem:(id)item
 {
     if (editingStyle != UITableViewCellEditingStyleDelete) {
@@ -160,7 +161,7 @@ static NSString * const reuseIdentifier = @"Cell";
     if (parent) {
         [self.treeView reloadRowsForItems:@[parent] withRowAnimation:RATreeViewRowAnimationNone];
     }
-}
+}*/
 
 #pragma mark TreeView Data Source
 

@@ -105,6 +105,12 @@
 
 - (void) saveActionWithSaveBanner: (TDSaveBanner *)banner;
 {
+    if ([self goodsInfoList].count < 1)
+    {
+        [self showMessage: @"请选择调拨商品"];
+        return;
+    }
+    
     TDDeliverScanViewController *scanVC = (TDDeliverScanViewController *)self.scanViewController;
     
     TDStore *toStore = [scanVC toStore];
