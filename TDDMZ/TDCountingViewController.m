@@ -37,7 +37,8 @@
 
 - (UIBarButtonItem *)rightButtoItem;
 {
-    UIBarButtonItem *rightButtoItem = [[UIBarButtonItem alloc] initWithTitle:@"未审核" style:UIBarButtonItemStylePlain target:self action:@selector(rightButtonAction)];
+    NSString *title = [NSString stringWithFormat:@"未审核%@", [TDClient sharedInstance].unreadCountOfPD];
+    UIBarButtonItem *rightButtoItem = [[UIBarButtonItem alloc] initWithTitle:title style:UIBarButtonItemStylePlain target:self action:@selector(rightButtonAction)];
     
     return rightButtoItem;
 }
@@ -121,6 +122,12 @@
 
 - (void) saveActionWithSaveBanner: (TDSaveBanner *)banner;
 {
+    if ([self goodsInfoList].count < 1)
+    {
+        [self showMessage: @"请选择盘点商品"];
+        return;
+    }
+    
     TDCountScanViewController *scanVC = (TDCountScanViewController *)self.scanViewController;
     
     [[TDClient sharedInstance] addPdorderWithListData: [self goodsInfoList] completionHandler:^(BOOL success, NSError *error, id userInfo){

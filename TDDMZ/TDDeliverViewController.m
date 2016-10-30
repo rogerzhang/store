@@ -36,7 +36,8 @@
 
 - (UIBarButtonItem *)rightButtoItem;
 {
-    UIBarButtonItem *rightButtoItem = [[UIBarButtonItem alloc] initWithTitle:@"未审核" style:UIBarButtonItemStylePlain target:self action:@selector(rightButtonAction)];
+    NSString *title = [NSString stringWithFormat:@"未审核%@", [TDClient sharedInstance].unreadCountOfDB];
+    UIBarButtonItem *rightButtoItem = [[UIBarButtonItem alloc] initWithTitle:title style:UIBarButtonItemStylePlain target:self action:@selector(rightButtonAction)];
     
     return rightButtoItem;
 }

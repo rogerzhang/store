@@ -121,7 +121,7 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (BOOL)treeView:(RATreeView *)treeView canEditRowForItem:(id)item
 {
-    return YES;
+    return NO;
 }
 
 - (void)treeView:(RATreeView *)treeView willExpandRowForItem:(id)item

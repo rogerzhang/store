@@ -24,6 +24,10 @@ typedef void (^TDCompletionHandler) (BOOL success, NSError *error, id userInfo);
 @property (nonatomic, readonly, strong) NSMutableArray *list;
 @property (nonatomic, readonly, strong) AFHTTPSessionManager *httpSessionManager;
 
+@property (nonatomic, strong) NSString *unreadCountOfOrder;
+@property (nonatomic, strong) NSString *unreadCountOfDB;
+@property (nonatomic, strong) NSString *unreadCountOfPD;
+
 + (instancetype) sharedInstance;
 
 - (void) addOrder: (NSDictionary *)dict;

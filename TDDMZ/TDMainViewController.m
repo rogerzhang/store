@@ -74,12 +74,20 @@
 
 - (void) refreshUnreadCount;
 {
-    [[TDClient sharedInstance] getIndexNumWithCompletionHandler:^(BOOL success, NSError *error, id userInfo){
+    TDClient *client = [TDClient sharedInstance];
+    
+    [client getIndexNumWithCompletionHandler:^(BOOL success, NSError *error, id userInfo){
         if (userInfo) {
             NSDictionary *result = userInfo;
-            self.orderCountLabel.text = [[result objectForKey:@"order"] integerValue] ? [[result objectForKey:@"order"] stringValue] : nil;
-            self.deliverCountLabel.text = [[result objectForKey:@"db"] integerValue] ? [[result objectForKey:@"db"] stringValue] : nil;
-            self.pdCountLabel.text = [[result objectForKey:@"pd"] integerValue] ? [[result objectForKey:@"pd"] stringValue] : nil;
+            
+            client.unreadCountOfOrder = [[result objectForKey:@"order"] integerValue] ? [[result objectForKey:@"order"] stringValue] : nil;
+            self.orderCountLabel.text = client.unreadCountOfOrder;
+            
+            client.unreadCountOfDB = [[result objectForKey:@"db"] integerValue] ? [[result objectForKey:@"db"] stringValue] : nil;
+            self.deliverCountLabel.text = client.unreadCountOfDB;
+            
+            client.unreadCountOfPD = [[result objectForKey:@"pd"] integerValue] ? [[result objectForKey:@"pd"] stringValue] : nil;
+            self.pdCountLabel.text = client.unreadCountOfPD;
         }
     }];
 }
