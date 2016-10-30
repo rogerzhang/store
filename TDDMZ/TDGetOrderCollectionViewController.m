@@ -102,17 +102,15 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath;
 {
-    [self.navigationController popViewControllerAnimated: NO];
-    TDCashierViewController *cashVC = [[TDCashierViewController alloc] initWithNibName:@"TDCashierViewController" bundle:nil];
+    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    TDCashierViewController *cashVC = appDelegate.mainVC.cashierViewController;
     
     NSArray *list = [[TDClient sharedInstance] list];
     NSDictionary *dic = list[indexPath.row];
     [[[TDClient sharedInstance] list] removeObject:dic];
     NSArray *goods = dic[@"goods"];
     [cashVC setDatasource:goods];
-    
-    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    [appDelegate.mainVC.navigationController pushViewController:cashVC animated:YES];
+    [self.navigationController popViewControllerAnimated: YES];
 }
 
 @end

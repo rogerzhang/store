@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TDCashierViewController.h"
 
 @interface TDMainViewController : UIViewController
-
+@property (nonatomic, strong) TDCashierViewController *cashierViewController;
 @end

@@ -11,6 +11,7 @@
 #import "TDCashierChooseViewController.h"
 #import "TDSettlementViewController.h"
 #import "TDCustomerSettlementViewController.h"
+#import "TDGetOrderCollectionViewController.h"
 
 @interface TDCashierViewController ()<TDCashierBannerDelegate>
 @property (nonatomic, strong) TDSettlementViewController *settlementViewController;
@@ -48,6 +49,27 @@
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateLabel) userInfo:nil repeats:YES];
 }
 
+- (UIBarButtonItem *)rightButtoItem;
+{
+    NSString *title = [NSString stringWithFormat:@"挂单提取"];
+    UIBarButtonItem *rightButtoItem = [[UIBarButtonItem alloc] initWithTitle:title style:UIBarButtonItemStylePlain target:self action:@selector(rightButtonAction)];
+    
+    return rightButtoItem;
+}
+
+- (void) rightButtonAction;
+{
+    TDOrderLayout *flowLayout = [[TDOrderLayout alloc] init];
+    TDGetOrderCollectionViewController *vc = [[TDGetOrderCollectionViewController alloc] initWithCollectionViewLayout:flowLayout];
+    [self.navigationController pushViewController:vc animated: YES];
+}
+
+- (void)viewWillAppear:(BOOL)animated;
+{
+    [super viewWillAppear:animated];
+    self.navigationItem.rightBarButtonItem = [self rightButtoItem];
+}
+
 - (void) viewWillLayoutSubviews;
 {
     [super viewWillLayoutSubviews];
@@ -63,6 +85,15 @@
 - (void) setDatasource: (NSArray *)datasource;
 {
     _datasouce = datasource;
+    [self refresh];
+}
+
+- (void) refresh;
+{
+    TDCashierScanViewController *scanVC = (TDCashierScanViewController *)self.scanViewController;
+    NSMutableArray *data = [NSMutableArray arrayWithArray:_datasouce];
+    [scanVC setDatasource:data];
+    [scanVC.tableView reloadData];
 }
 
 - (void) updateLabel;

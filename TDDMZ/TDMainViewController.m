@@ -31,7 +31,6 @@
 @property (nonatomic, strong) TDDeliverViewController *deliverViewController;
 @property (nonatomic, strong) TDOrderCollectionViewController *orderViewController;
 @property (nonatomic, strong) TDGetOrderCollectionViewController *getOrderViewController;
-@property (nonatomic, strong) TDCashierViewController *cashierViewController;
 
 @end
 
