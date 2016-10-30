@@ -148,7 +148,7 @@
             TDCashierScanViewController *scanVC = (TDCashierScanViewController *)self.scanViewController;
             self.customerSettlementViewController.urlString = qrcode;
             self.customerSettlementViewController.orderId = orderId;
-            [scanVC clean];
+            //[scanVC clean];
             [self.navigationController pushViewController:self.customerSettlementViewController animated:YES];
         }
         else
@@ -222,8 +222,8 @@
     self.settlementViewController.totalMoney = [self totalMoney];
     self.settlementViewController.goodList = [self goodsInfoList];
     
-    TDCashierScanViewController *scanVC = (TDCashierScanViewController *)self.scanViewController;
-    [scanVC clean];
+    //TDCashierScanViewController *scanVC = (TDCashierScanViewController *)self.scanViewController;
+    //[scanVC clean];
     
     [self.navigationController pushViewController:self.settlementViewController animated:YES];
 }
