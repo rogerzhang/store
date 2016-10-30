@@ -13,6 +13,7 @@
 
 @property (strong, nonatomic) UIWindow *window;
 @property (nonatomic, strong) TDMainViewController *mainVC;
-
+- (void) showProgressBar;
+- (void) hideProgressBar;
 @end
 

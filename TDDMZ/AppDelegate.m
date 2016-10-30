@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 
 @interface AppDelegate ()
-
+@property (nonatomic, strong) MBProgressHUD *progressHUD;
 @end
 
 @implementation AppDelegate
@@ -72,6 +72,25 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void) showProgressBar;
+{
+    if (self.progressHUD)
+    {
+        [self.progressHUD hide: NO];
+    }
+    
+    UIView *view = self.window;
+    MBProgressHUD *progressHUD = [MBProgressHUD showHUDAddedTo: view animated: YES];
+    progressHUD.labelText = NSLocalizedString (@"加载信息中...", nil);
+    self.progressHUD = progressHUD;
+    [self.progressHUD show: YES];
+}
+
+- (void) hideProgressBar;
+{
+    [self.progressHUD hide: YES];
 }
 
 @end

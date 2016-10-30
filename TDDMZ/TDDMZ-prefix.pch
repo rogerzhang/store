@@ -32,6 +32,8 @@
 #import "TDOrderPreviewCell.h"
 #import "RATreeView.h"
 #import "RADataObject.h"
+#import "MBProgressHUD.h"
+#import "AppDelegate.h"
 #import "RATableViewCell.h"
 #import "AFNetworking.h"
 #import "TDClient.h"

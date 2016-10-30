@@ -85,6 +85,10 @@
         return;
     }
     
+    AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    
+    [delegate showProgressBar];
+    
     [[TDClient sharedInstance] chooseattr1:self.attr1Id attr2:self.attr2Id forGoods:self.goods.goods_id completionHandler:^(BOOL success, NSError *error, id userInfo){
         if (success)
         {
@@ -100,6 +104,8 @@
         {
             [self showMessage: error.description];
         }
+        
+        [delegate hideProgressBar];
     }];
 }
 
