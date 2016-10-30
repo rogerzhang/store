@@ -148,8 +148,19 @@
 - (void) okAction: (TDScanView *)scanView;
 {
     NSString *ticketId = [self.scanView.textView.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-    ticketId = @"45348271";
+    
+    if (ticketId.length < 1) {
+        [self showMessage: @"劵号为空"];
+        return;
+    }
+    
     [self searchTicket: ticketId];
+}
+
+- (void) showMessage: (NSString *)message;
+{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:message delegate:nil cancelButtonTitle:@"确认" otherButtonTitles:nil, nil];
+    [alertView show];
 }
 
 - (void)didReceiveMemoryWarning
