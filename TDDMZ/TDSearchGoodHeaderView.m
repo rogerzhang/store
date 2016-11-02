@@ -49,6 +49,7 @@
         
         label.frame = CGRectMake(x, y, w, h);
         [self addSubview:label];
+        [self.labels addObject:label];
     }
 }
 
