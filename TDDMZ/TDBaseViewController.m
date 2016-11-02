@@ -151,4 +151,12 @@
     [scanViewController addGoods:good];
 }
 
+- (void) choseGood: (TDGood *)good;
+{
+    [self selectedScanViewController];
+    
+    TDScanBaseViewController *scanViewController = (TDScanBaseViewController *)self.scanViewController;
+    [scanViewController addGoods:good];
+}
+
 @end

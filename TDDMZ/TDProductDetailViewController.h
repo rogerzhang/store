@@ -13,6 +13,7 @@
 @protocol TDProductDetailViewControllerDelegate <NSObject>
 
 - (void) saveActionWithDetailViewController: (TDProductDetailViewController *)detailViewController;
+- (void) choseGood: (TDGood *)good;
 
 @end
 

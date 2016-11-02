@@ -10,5 +10,6 @@
 #import "TDProductDetailViewController.h"
 
 @interface TDChooseBaseViewController : UIViewController
+@property (strong, nonatomic,readonly) NSArray *goodList;
 @property (nonatomic, weak) NSObject<TDProductDetailViewControllerDelegate> *delegate;
 @end

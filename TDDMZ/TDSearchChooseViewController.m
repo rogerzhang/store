@@ -24,6 +24,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath;
+{
+    TDGood *good = self.goodList[indexPath.row];
+    
+    if ([self.delegate respondsToSelector:@selector(choseGood:)]) {
+        [self.delegate choseGood:good];
+    }
+}
+
 /*
 #pragma mark - Navigation
 
