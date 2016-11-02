@@ -36,7 +36,7 @@
 
 - (UIBarButtonItem *)rightButtoItem;
 {
-    NSString *title = [NSString stringWithFormat:@"未审核%@", [TDClient sharedInstance].unreadCountOfDB];
+    NSString *title = [NSString stringWithFormat:@"未审核%@", [TDClient sharedInstance].unreadCountOfDB ? [TDClient sharedInstance].unreadCountOfDB : @""];
     UIBarButtonItem *rightButtoItem = [[UIBarButtonItem alloc] initWithTitle:title style:UIBarButtonItemStylePlain target:self action:@selector(rightButtonAction)];
     
     return rightButtoItem;
@@ -51,6 +51,14 @@
 - (void)viewWillAppear:(BOOL)animated;
 {
     [super viewWillAppear:animated];
+    
+    [self refreshNavigationItems];
+}
+
+- (void) refreshNavigationItems;
+{
+    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    [appDelegate.mainVC refreshUnreadCount];
     self.navigationItem.rightBarButtonItem = [self rightButtoItem];
 }
 
@@ -125,6 +133,8 @@
             {
                 [self showMessage: @"调拨单保存成功"];
                 [scanVC clean];
+                
+                [self refreshNavigationItems];
             }
             else
             {

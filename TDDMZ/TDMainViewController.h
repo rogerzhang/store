@@ -11,4 +11,5 @@
 
 @interface TDMainViewController : UIViewController
 @property (nonatomic, strong) TDCashierViewController *cashierViewController;
+- (void) refreshUnreadCount;
 @end

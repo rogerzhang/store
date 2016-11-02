@@ -52,6 +52,14 @@
 - (void)viewWillAppear:(BOOL)animated;
 {
     [super viewWillAppear:animated];
+    
+    [self refreshNavigationItems];
+}
+
+- (void) refreshNavigationItems;
+{
+    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    [appDelegate.mainVC refreshUnreadCount];
     self.navigationItem.rightBarButtonItem = [self rightButtoItem];
 }
 
@@ -137,6 +145,8 @@
         {
             [self showMessage: @"保存成功"];
             [scanVC clean];
+            
+            [self refreshNavigationItems];
         }
         else
         {
