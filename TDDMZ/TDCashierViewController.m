@@ -98,7 +98,7 @@
 
 - (void) updateLabel;
 {
-    self.cashierBanner.label.text = [NSString stringWithFormat:@"总金额: ￥%@",[self totalMoney]];
+    self.cashierBanner.label.text = [NSString stringWithFormat:@"总数量：%ld,  总金额: ￥%@", [self count], [self totalMoney]];
 }
 
 - (NSInteger) goodsCount;
@@ -216,6 +216,19 @@
             [self showMessage:@"网络错误"];
         }
     }];
+}
+
+- (NSInteger) count;
+{
+    TDCashierScanViewController *scanVC = (TDCashierScanViewController *)self.scanViewController;
+    NSArray *goods = scanVC.datasource;
+    
+    NSInteger count = 0;
+    for (TDGood *good in goods) {
+        count += good.goods_number;
+    }
+    
+    return count;
 }
 
 - (NSString *)totalMoney;
