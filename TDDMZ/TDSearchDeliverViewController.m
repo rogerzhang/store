@@ -121,6 +121,8 @@ static NSString * const headerdentifer = @"searchdevliverheader";
         {
             [self showErrorMessage:error.description title:nil];
         }
+        
+        [self refreshPendingOrders];
     }];
 }
 

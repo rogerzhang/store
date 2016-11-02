@@ -37,7 +37,7 @@
 
 - (UIBarButtonItem *)rightButtoItem;
 {
-    NSString *title = [NSString stringWithFormat:@"未审核%@", [TDClient sharedInstance].unreadCountOfPD];
+    NSString *title = [NSString stringWithFormat:@"未审核%@", [TDClient sharedInstance].unreadCountOfPD ? [TDClient sharedInstance].unreadCountOfPD : @""];
     UIBarButtonItem *rightButtoItem = [[UIBarButtonItem alloc] initWithTitle:title style:UIBarButtonItemStylePlain target:self action:@selector(rightButtonAction)];
     
     return rightButtoItem;

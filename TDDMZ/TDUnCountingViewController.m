@@ -187,42 +187,74 @@ static NSString * const headerdentifer = @"uncountheader";
 
 - (void)button1Action:(TDUncountTableViewCell *)cell;
 {
-    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"是否确定审核" message:@"" preferredStyle:UIAlertControllerStyleAlert];
     
-    NSDictionary *dic = self.datasource[indexPath.row];
-    
-    NSString *orderId = dic[@"order_id"];
-    [[TDClient sharedInstance] checkpdorder:orderId withCompletionHandler:^(BOOL success, NSError *error, id userInfo){
-        if (success) {
-            [self showErrorMessage:@"审核成功" title:nil];
-        }
-        else
-        {
-            [self showErrorMessage:error.description title:nil];
-        }
+    UIAlertAction *unverifiedAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+        
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+        
+        NSDictionary *dic = self.datasource[indexPath.row];
+        
+        NSString *orderId = dic[@"order_id"];
+        [[TDClient sharedInstance] checkpdorder:orderId withCompletionHandler:^(BOOL success, NSError *error, id userInfo){
+            if (success) {
+                [self showErrorMessage:@"审核成功" title:nil];
+            }
+            else
+            {
+                [self showErrorMessage:error.description title:nil];
+            }
+            
+            [self refreshPendingOrders];
+        }];
+        
+        [alertController dismissViewControllerAnimated:YES completion:NULL];
     }];
+    
+    UIAlertAction *verifiedAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action){
+        [alertController dismissViewControllerAnimated:YES completion:NULL];
+    }];
+    
+    [alertController addAction:unverifiedAction];
+    [alertController addAction:verifiedAction];
+    [self presentViewController:alertController animated:YES completion:NULL];
 }
 
 - (void)button2Action:(TDUncountTableViewCell *)cell;
 {
-    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"是否确定作废" message:@"" preferredStyle:UIAlertControllerStyleAlert];
     
-    NSDictionary *dic = self.datasource[indexPath.row];
-    
-    NSString *orderId = dic[@"order_id"];
-    
-    [[TDClient sharedInstance] recheckpdorderWithId:orderId withCompletionHandler:^(BOOL success, NSError *error, id userInfo){
-        if (success)
-        {
-            [self showErrorMessage:@"操作成功" title:nil];
-            
-            [self refreshPendingOrders];
-        }
-        else
-        {
-            [self showErrorMessage:error.description title:nil];
-        }
+    UIAlertAction *unverifiedAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+        
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+        
+        NSDictionary *dic = self.datasource[indexPath.row];
+        
+        NSString *orderId = dic[@"order_id"];
+        
+        [[TDClient sharedInstance] recheckpdorderWithId:orderId withCompletionHandler:^(BOOL success, NSError *error, id userInfo){
+            if (success)
+            {
+                [self showErrorMessage:@"操作成功" title:nil];
+                
+                [self refreshPendingOrders];
+            }
+            else
+            {
+                [self showErrorMessage:error.description title:nil];
+            }
+        }];
+        
+        [alertController dismissViewControllerAnimated:YES completion:NULL];
     }];
+    
+    UIAlertAction *verifiedAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action){
+        [alertController dismissViewControllerAnimated:YES completion:NULL];
+    }];
+    
+    [alertController addAction:unverifiedAction];
+    [alertController addAction:verifiedAction];
+    [self presentViewController:alertController animated:YES completion:NULL];
 }
 
 - (void) showErrorMessage: (NSString *)message title: (NSString *)title;
