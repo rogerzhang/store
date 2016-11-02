@@ -67,7 +67,7 @@
         }
         else
         {
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle: @"登录失败" message:error.localizedDescription delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle: @"登录失败" message:@"请检查你的网络，重新登录" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
             [alertView show];
         }
     }];

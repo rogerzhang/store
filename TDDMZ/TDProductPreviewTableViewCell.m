@@ -13,6 +13,7 @@
 - (void)prepareForReuse;
 {
     [super prepareForReuse];
+    self.delegate = nil;
     self.count = 1;
 }
 
