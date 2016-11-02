@@ -184,11 +184,12 @@
             
             [self checkOrderId: orderId];
 
-            //TDCashierScanViewController *scanVC = (TDCashierScanViewController *)self.scanViewController;
-            self.customerSettlementViewController.urlString = qrcode;
-            self.customerSettlementViewController.orderId = orderId;
-            //[scanVC clean];
-            [self.navigationController pushViewController:self.customerSettlementViewController animated:YES];
+            TDCashierScanViewController *scanVC = (TDCashierScanViewController *)self.scanViewController;
+            TDCustomerSettlementViewController *customVC = [[TDCustomerSettlementViewController alloc] initWithNibName:@"TDCustomerSettlementViewController" bundle:nil];
+            customVC.urlString = qrcode;
+            customVC.orderId = orderId;
+            customVC.scanVC = scanVC;
+            [self.navigationController pushViewController:customVC animated:YES];
         }
         else
         {

@@ -52,6 +52,7 @@
         if (success) {
             if ([userInfo isEqualToString:@"1"])
             {
+                [self.scanVC clean];
                 [self showMessage:@"亲，支付成功！"];
                 [self.navigationController popViewControllerAnimated: YES];
                 [self.timer invalidate];
@@ -81,6 +82,7 @@
 - (void) backAction
 {
     [self.timer invalidate];
+    self.timer = nil;
     [self.navigationController popViewControllerAnimated: YES];
 }
 
