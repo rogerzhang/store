@@ -14,7 +14,6 @@
 #import "TDGetOrderCollectionViewController.h"
 
 @interface TDCashierViewController ()<TDCashierBannerDelegate>
-@property (nonatomic, strong) TDSettlementViewController *settlementViewController;
 @property (nonatomic, strong) TDCustomerSettlementViewController *customerSettlementViewController;
 @property (nonatomic, strong) NSTimer *timer;
 @property (nonatomic, strong) NSArray *datasouce;
@@ -35,7 +34,6 @@
 
     self.scanViewController = [[TDCashierScanViewController alloc] initWithNibName: @"TDCashierScanViewController" bundle: nil];
     TDCashierChooseViewController *chooseVC = [[TDCashierChooseViewController alloc] initWithNibName: @"TDCashierChooseViewController" bundle: nil];
-    self.settlementViewController = [[TDSettlementViewController alloc] initWithNibName:@"TDSettlementViewController" bundle:nil];
     self.customerSettlementViewController = [[TDCustomerSettlementViewController alloc] initWithNibName:@"TDCustomerSettlementViewController" bundle:nil];
     chooseVC.delegate = self;
     self.chooseViewController = chooseVC;
@@ -98,7 +96,7 @@
 
 - (void) updateLabel;
 {
-    self.cashierBanner.label.text = [NSString stringWithFormat:@"总数量：%ld,  总金额: ￥%@", [self count], [self totalMoney]];
+    self.cashierBanner.label.text = [NSString stringWithFormat:@"总数量：%ld,  总金额: ￥%@", (long)[self count], [self totalMoney]];
 }
 
 - (NSInteger) goodsCount;
@@ -272,13 +270,13 @@
         return;
     }
     
-    self.settlementViewController.totalMoney = [self totalMoney];
-    self.settlementViewController.goodList = [self goodsInfoList];
+    TDCashierScanViewController *scanVC = (TDCashierScanViewController *)self.scanViewController;
+    TDSettlementViewController *settlementViewController = [[TDSettlementViewController alloc] initWithNibName:@"TDSettlementViewController" bundle:nil];
+    settlementViewController.totalMoney = [self totalMoney];
+    settlementViewController.goodList = [self goodsInfoList];
+    settlementViewController.scanVC = scanVC;
     
-    //TDCashierScanViewController *scanVC = (TDCashierScanViewController *)self.scanViewController;
-    //[scanVC clean];
-    
-    [self.navigationController pushViewController:self.settlementViewController animated:YES];
+    [self.navigationController pushViewController:settlementViewController animated:YES];
 }
 
 - (void) saveActionWithDetailViewController: (TDProductDetailViewController *)detailViewController;

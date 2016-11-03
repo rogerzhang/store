@@ -27,6 +27,12 @@
     self.navigationItem.leftBarButtonItem = [self backButton];
 }
 
+- (void) viewWillDisappear:(BOOL)animated;
+{
+    [super viewWillDisappear:animated];
+    [self resign];
+}
+
 - (UIBarButtonItem *)backButton;
 {
     UIImage *image = [UIImage imageNamed:@"arrow"];
@@ -46,25 +52,43 @@
     [alertView show];
 }
 
+- (void)textFieldDidBeginEditing:(UITextField *)textField;
+{
+    if (textField == self.textField1) {
+        self.textField2.text = nil;
+    }
+    else
+    {
+        self.textField1.text = nil;
+    }
+}
+
+- (void) resign;
+{
+    [self.textField1 resignFirstResponder];
+    [self.textField2 resignFirstResponder];
+}
+
 - (IBAction)okAction:(id)sender
 {
-    NSString *string = self.textField1.text ? self.textField1.text : self.textField2.text;
-    NSString *payTye = self.textField1.text ? @"现金" : @"刷卡";
+    NSString *string = self.textField1.text.length > 0 ? self.textField1.text : self.textField2.text;
+    NSString *payTye = self.textField1.text.length > 0 ? @"现金" : @"刷卡";
     
     if (string && [string integerValue])
     {
         [[TDClient sharedInstance] saveOrderWithOrderMomeny:[self totalMoney] payMomney:string payType:payTye goods:self.goodList completionHandler:^(BOOL success, NSError *error, id userInfo){
-            if (userInfo) {
-                TD_LOG(@"%@", userInfo);
-                if (success) {
-                    [self showMessage: @"支付成功！"];
-                    
-                    [self.scanVC clean];
-                }
-                else
-                {
-                    [self showMessage:error.description];
-                }
+            TD_LOG(@"%@", userInfo);
+            if (success) {
+                [self resign];
+                [self showMessage: @"支付成功！"];
+                
+                [self.scanVC clean];
+                
+                [self.navigationController popViewControllerAnimated: YES];
+            }
+            else
+            {
+                [self showMessage:error.description];
             }
         }];
     }

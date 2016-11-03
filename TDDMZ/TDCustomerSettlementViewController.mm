@@ -49,6 +49,10 @@
 {
     NSString *orderId = self.orderId;
     [[TDClient sharedInstance] lspaystatus: orderId withCompletionHandler:^(BOOL success, NSError *error, id userInfo){
+        if (!self.timer.valid) {
+            return;
+        }
+        
         if (success) {
             if ([userInfo isEqualToString:@"1"])
             {
@@ -56,6 +60,7 @@
                 [self showMessage:@"亲，支付成功！"];
                 [self.navigationController popViewControllerAnimated: YES];
                 [self.timer invalidate];
+                self.timer = nil;
             }
         }
         else
