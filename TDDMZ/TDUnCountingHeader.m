@@ -10,8 +10,6 @@
 
 @interface TDUnCountingHeader ()
 
-@property (nonatomic, strong) NSMutableArray *labels;
-
 @end
 
 @implementation TDUnCountingHeader

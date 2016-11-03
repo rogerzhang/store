@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface TDUnCountingHeader : UITableViewHeaderFooterView
+@property (nonatomic, strong) NSMutableArray *labels;
 - (void) setAttributes: (NSArray *)attrs;
 @end

@@ -32,7 +32,7 @@ static NSString * const headerdentifer = @"CDheader";
 
 - (void) refreshData;
 {
-    [[TDClient sharedInstance] getRkorderinfoWithId:self.orderId withCompletionHander:^(BOOL success, NSError *error, id userInfo){
+    [[TDClient sharedInstance] getPdorderinfoWithId:self.orderId WithCompletionHandler:^(BOOL success, NSError *error, id userInfo){
         self.dataSource = userInfo;
         [self.tableView reloadData];
     }];
@@ -67,8 +67,11 @@ static NSString * const headerdentifer = @"CDheader";
     cell.label5.text = [dict[@"system_count"] stringValue];
     cell.label6.text = [dict[@"goods_count"] stringValue];
     cell.label7.text = [dict[@"difference"] stringValue];
-    cell.label8.text = dict[@"goods_pice"];
-    cell.label9.text = dict[@"goods_total"];
+    
+    id bo = dict[@"goods_pice"];
+    cell.label8.text = [bo isKindOfClass:[NSNull class]] ? @"" : dict[@"goods_pice"];
+    
+    cell.label9.text = [dict[@"goods_total"] stringValue];
     return cell;
 }
 
