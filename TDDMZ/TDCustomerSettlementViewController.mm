@@ -26,7 +26,7 @@
     self.navigationController.navigationBar.titleTextAttributes = dict;
     self.navigationItem.leftBarButtonItem = [self backButton];
     
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(beginScan) userInfo:nil repeats:YES];
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(beginScan) userInfo:nil repeats:YES];
 }
 
 - (void) viewWillAppear:(BOOL)animated;
