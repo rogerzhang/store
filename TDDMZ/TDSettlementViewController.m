@@ -95,7 +95,7 @@
             }
             else
             {
-                self.promotLabel.text = [NSString stringWithFormat:@"需找零 ￥ %ld", (inputNumber - actualNumber)];;
+                self.promotLabel.text = [NSString stringWithFormat:@"需找零 ￥ %ld", (long)(inputNumber - actualNumber)];;
                 self.promotLabel.textColor = [UIColor grayColor];
                 self.promotLabel.hidden = NO;
             }
@@ -126,7 +126,7 @@
         }
         else
         {
-            self.promotLabel.text = [NSString stringWithFormat:@"需找零 ￥ %ld", (inputNumber - actualNumber)];;
+            self.promotLabel.text = [NSString stringWithFormat:@"需找零 ￥ %ld", (long)(inputNumber - actualNumber)];;
             self.promotLabel.textColor = [UIColor grayColor];
             self.promotLabel.hidden = NO;
         }
