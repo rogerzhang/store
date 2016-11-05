@@ -10,8 +10,32 @@
 
 @interface TDSearchGoodHeaderView()
 @property (nonatomic, strong) NSMutableArray *labels;
+@property (nonatomic,strong) UIScrollView *scrollView;
 @end;
 @implementation TDSearchGoodHeaderView
+
+- (instancetype)initWithReuseIdentifier:(nullable NSString *)reuseIdentifier
+{
+    self = [super initWithReuseIdentifier: reuseIdentifier];
+    
+    if (self)
+    {
+        CGRect frame = self.bounds;
+        self.scrollView = [[UIScrollView alloc] initWithFrame:frame];
+        self.scrollView.alwaysBounceHorizontal = YES;
+        [self.contentView addSubview: self.scrollView];
+    }
+    
+    return self;
+}
+
+- (void) layoutSubviews;
+{
+    [super layoutSubviews];
+    
+    CGRect frame = self.bounds;
+    self.scrollView.frame = frame;
+}
 
 - (void) prepareForReuse;
 {
@@ -48,9 +72,13 @@
         CGFloat y = 0;
         
         label.frame = CGRectMake(x, y, w, h);
-        [self addSubview:label];
+        [self.scrollView addSubview:label];
         [self.labels addObject:label];
     }
+    
+    CGFloat w = 50;
+    CGFloat cw = 318 + [self gap] + attrs.count * ([self gap] + w);
+    self.scrollView.contentSize = CGSizeMake(cw, 44);
 }
 
 - (CGFloat) gap;

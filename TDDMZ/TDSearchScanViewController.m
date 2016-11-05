@@ -73,6 +73,10 @@
     return 44;
 }
 
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return NO;
+}
+
 - (__kindof UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 {
     TDSearchGoodsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: PreviewCellIdentifier];

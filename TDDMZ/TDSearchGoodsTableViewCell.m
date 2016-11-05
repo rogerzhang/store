@@ -9,6 +9,7 @@
 #import "TDSearchGoodsTableViewCell.h"
 @interface TDSearchGoodsTableViewCell()
 @property (nonatomic, strong) NSMutableArray *labels;
+@property (nonatomic, strong) UIScrollView *scrollView;
 @end
 
 @implementation TDSearchGoodsTableViewCell
@@ -16,6 +17,8 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    self.scrollView = [[UIScrollView alloc] init];
+    [self.contentView addSubview:self.scrollView];
 }
 
 - (void) prepareForReuse;
@@ -46,6 +49,11 @@
         [label removeFromSuperview];
     }
     
+    CGRect frame = self.contentView.bounds;
+    frame.origin.x = CGRectGetMaxX(self.attr1Label.frame);
+    frame.size.width = frame.size.width - frame.origin.x;
+    self.scrollView.frame = frame;
+    
     [self.labels removeAllObjects];
     
     for (NSString *key in allkeys) {
@@ -54,19 +62,24 @@
         NSString *text = [NSString stringWithFormat:@"%ld", (long)[number integerValue]];
         label.text = text;
         label.textAlignment = NSTextAlignmentCenter;
-        [self addSubview:label];
+        
+        [self.scrollView addSubview:label];
         
         CGFloat index = [allkeys indexOfObject:key];
         
         CGFloat w = 50;
         CGFloat h = self.frame.size.height;
-        CGFloat x = CGRectGetMaxX(self.attr1Label.frame) + [self gap] + index * ([self gap] + w);
+        CGFloat x = [self gap] + index * ([self gap] + w);
         CGFloat y = 0;
 
         label.frame = CGRectMake(x, y, w, h);
         
         [self.labels addObject:label];
     }
+    
+    CGFloat w = 50;
+    CGFloat cw = [self gap] + allkeys.count * ([self gap] + w);
+    self.scrollView.contentSize = CGSizeMake(cw, frame.size.height);
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
