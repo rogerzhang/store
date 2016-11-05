@@ -10,13 +10,14 @@
 #import "TDChooseProductLayout.h"
 #import "TDChooseProductCollectionViewCell.h"
 
-@interface TDChooseBaseViewController ()<RATreeViewDelegate, RATreeViewDataSource,UICollectionViewDelegate, UICollectionViewDataSource>
+@interface TDChooseBaseViewController ()<RATreeViewDelegate, RATreeViewDataSource,UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate>
 @property (weak, nonatomic) RATreeView *treeView;
 @property (strong, nonatomic) NSArray *data;
 @property (strong, nonatomic) NSArray *goodList;
 @property (strong, nonatomic) id expanded;
 @property (strong, nonatomic) UIBarButtonItem *editButton;
 @property (strong, nonatomic) UICollectionView *collectionView;
+@property (strong, nonatomic) UISearchBar *searchBar;
 @end
 
 static NSString * const reuseIdentifier = @"Cell";
@@ -65,6 +66,12 @@ static NSString * const reuseIdentifier = @"Cell";
     self.collectionView.backgroundColor = [UIColor whiteColor];
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
+    
+    self.searchBar = [[UISearchBar alloc] init];
+    self.searchBar.keyboardType =  UIKeyboardTypeWebSearch;
+    self.searchBar.placeholder=@"搜索";
+    self.searchBar.delegate = self;
+    [self.view addSubview:self.searchBar];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -86,6 +93,12 @@ static NSString * const reuseIdentifier = @"Cell";
     
     tRect.origin.x = CGRectGetMaxX(self.treeView.frame);
     tRect.size.width = bounds.size.width - CGRectGetWidth(self.treeView.frame);
+    
+    tRect.size.height = 44;
+    self.searchBar.frame = tRect;
+    
+    tRect.origin.y = CGRectGetMaxY(self.searchBar.frame);
+    tRect.size.height = bounds.size.height - CGRectGetHeight(self.searchBar.frame);
     self.collectionView.frame = tRect;
 }
 
@@ -232,6 +245,9 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (void)treeView:(RATreeView *)treeView didSelectRowForItem:(id)item;
 {
+    self.searchBar.text = nil;
+    [self.searchBar resignFirstResponder];
+    
     RADataObject *adata = item;
     
     if (adata)
@@ -354,9 +370,84 @@ static NSString * const reuseIdentifier = @"Cell";
     TD_LOG(@"indexPath is %ld", (long)[indexPath row]);
 }
 
+#pragma mark- <UISearchBarDelegate>
+
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar;
+{
+    searchBar.showsCancelButton = YES;
+    
+    for (UIView *subview in [[searchBar.subviews lastObject] subviews]) {
+        
+        if ([subview isKindOfClass:[UIButton class]]) {
+            
+            UIButton *cancelButton = (UIButton*)subview;
+            [cancelButton setTitle:@"取消" forState:UIControlStateNormal];
+            [cancelButton setTitle:@"取消" forState:UIControlStateHighlighted];
+            [cancelButton setTitle:@"取消" forState:UIControlStateSelected];
+            break;
+        }
+    }
+}
+
+- (BOOL)searchBarShouldEndEditing:(UISearchBar *)searchBar;
+{
+    return YES;
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
+{
+    [searchBar resignFirstResponder];
+    searchBar.showsCancelButton = NO;
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar;
+{
+    TD_LOG(@"searchBarSearchButtonClicked");
+    
+    NSString *keyword = searchBar.text;
+    [searchBar resignFirstResponder];
+    searchBar.showsCancelButton = NO;
+    
+    [self searchKeyword:keyword];
+}
+
+- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar;
+{
+    TD_LOG(@"searchBarTextDidEndEditing");
+    searchBar.showsCancelButton = NO;
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+}
+
+- (void)searchKeyword: (NSString *)keyword;
+{
+    NSString *key = [keyword stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
+    
+    if (key.length)
+    {
+        [[TDClient sharedInstance] searchGoodsWithKeyword:key completionHandler:^(BOOL success, NSError *error, id userInfo){
+            if (success) {
+                if (userInfo)
+                {
+                    NSArray *res = userInfo;
+                    NSMutableArray *goodList = [NSMutableArray array];
+                    for (NSDictionary *dic in res)
+                    {
+                        TDGood *cat = [TDGood new];
+                        [cat setValuesForKeysWithDictionary:dic];
+                        [goodList addObject: cat];
+                    }
+                    if (goodList.count) {
+                        self.goodList = goodList;
+                        [self.collectionView reloadData];
+                    }
+                }
+            }
+        }];
+    }
 }
 
 @end
