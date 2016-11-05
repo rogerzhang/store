@@ -17,7 +17,7 @@
 
 @end
 
-@interface TDScanView : UIView
+@interface TDScanView : UIView<UITextViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *scanButton;
 @property (weak, nonatomic) IBOutlet UITextView *textView;
