@@ -11,6 +11,8 @@
 @interface TDSettlementViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *textField1;
 @property (weak, nonatomic) IBOutlet UITextField *textField2;
+@property (weak, nonatomic) IBOutlet UILabel *infoLabel;
+@property (weak, nonatomic) IBOutlet UILabel *promotLabel;
 
 @end
 
@@ -25,6 +27,13 @@
     NSDictionary * dict=[NSDictionary dictionaryWithObject:color forKey:NSForegroundColorAttributeName];
     self.navigationController.navigationBar.titleTextAttributes = dict;
     self.navigationItem.leftBarButtonItem = [self backButton];
+    
+    NSString *info = [NSString stringWithFormat:@"需支付金额 ￥ %@", self.totalMoney];
+    self.infoLabel.text = info;
+    self.promotLabel.text = @"";
+    self.promotLabel.hidden = YES;
+    [self.textField1 setRightView:self.promotLabel];
+    [self.textField1 setRightViewMode:UITextFieldViewModeAlways];
 }
 
 - (void) viewWillDisappear:(BOOL)animated;
@@ -60,7 +69,39 @@
     else
     {
         self.textField1.text = nil;
+        self.promotLabel.hidden = YES;
     }
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string;
+{
+    if (textField == self.textField1)
+    {
+        NSString *stringAfter = [textField.text stringByReplacingCharactersInRange: range withString: string];
+        
+        NSString *trimmedStr = [stringAfter stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+        
+        if (stringAfter != textField.text && trimmedStr.length >= 1)
+        {
+            NSString *string = trimmedStr;
+            NSInteger inputNumber = [string integerValue];
+            NSInteger actualNumber = [self.totalMoney integerValue];
+            
+            if (inputNumber < actualNumber)
+            {
+                self.promotLabel.text = @"支付金额不足！";
+                self.promotLabel.textColor = [UIColor redColor];
+                self.promotLabel.hidden = NO;
+            }
+            else
+            {
+                self.promotLabel.text = [NSString stringWithFormat:@"需找零 ￥ %ld", (inputNumber - actualNumber)];;
+                self.promotLabel.textColor = [UIColor grayColor];
+                self.promotLabel.hidden = NO;
+            }
+        }
+    }
+    return YES;
 }
 
 - (void) resign;
@@ -69,10 +110,44 @@
     [self.textField2 resignFirstResponder];
 }
 
+- (void) checkInputMoney: (UITextField *)textField;
+{
+    if (textField == self.textField1 && self.textField1.text.length) {
+        NSString *string = self.textField1.text;
+        NSInteger inputNumber = [string integerValue];
+        NSInteger actualNumber = [self.totalMoney integerValue];
+        
+        if (inputNumber < actualNumber)
+        {
+            self.promotLabel.text = @"支付金额不足！";
+            self.promotLabel.textColor = [UIColor redColor];
+            self.promotLabel.hidden = NO;
+            return;
+        }
+        else
+        {
+            self.promotLabel.text = [NSString stringWithFormat:@"需找零 ￥ %ld", (inputNumber - actualNumber)];;
+            self.promotLabel.textColor = [UIColor grayColor];
+            self.promotLabel.hidden = NO;
+        }
+    }
+}
+
 - (IBAction)okAction:(id)sender
 {
-    NSString *string = self.textField1.text.length > 0 ? self.textField1.text : self.textField2.text;
-    NSString *payTye = self.textField1.text.length > 0 ? @"现金" : @"刷卡";
+    BOOL isCash = self.textField1.text.length > 0;
+    
+    NSString *string = isCash ? self.textField1.text : self.textField2.text;
+    NSString *payTye = isCash ? @"现金" : @"刷卡";
+    
+    NSInteger inputNumber = [string integerValue];
+    NSInteger actualNumber = [self.totalMoney integerValue];
+    
+    if (inputNumber < actualNumber)
+    {
+        [self showMessage: @"支付金额不足！"];
+        return;
+    }
     
     if (string && [string integerValue])
     {
