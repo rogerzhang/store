@@ -124,6 +124,23 @@ static NSString * const reuseIdentifier = @"Cell";
     cell.label5.text = [NSString stringWithFormat:@"昵称：%@", nickname];
     cell.label6.text = [NSString stringWithFormat:@"状态：%@", status];
     
+    if ([status isEqualToString:@"未付款"])
+    {
+        cell.button2.enabled = NO;
+    }
+    else if ([status isEqualToString:@"已确认"])
+    {
+        cell.button2.enabled = NO;
+    }
+    else if ([status isEqualToString:@"未确认"])
+    {
+        cell.button2.enabled = YES;
+    }
+    else if ([status isEqualToString:@"已取消"])
+    {
+        cell.button2.enabled = NO;
+    }
+    
     return cell;
 }
 
