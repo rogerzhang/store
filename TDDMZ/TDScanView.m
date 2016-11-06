@@ -35,7 +35,7 @@
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
     
     if ([text isEqualToString:@"\n"]) {
-        [textView resignFirstResponder];
+//        [textView resignFirstResponder];
         if ([self.delegate respondsToSelector: @selector(okAction:)]) {
             [self.delegate okAction: self];
         }

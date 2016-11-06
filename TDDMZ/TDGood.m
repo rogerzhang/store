@@ -10,4 +10,8 @@
 
 @implementation TDGood
 
+- (BOOL) isEqualGoods: (TDGood *)goods;
+{
+    return ([self.goods_id integerValue] == [goods.goods_id integerValue]) && [self.goodattr_id isEqualToString:self.goodattr_id];
+}
 @end

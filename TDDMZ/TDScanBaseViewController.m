@@ -127,6 +127,7 @@
         [self showMessage: @"请输入商品条码"];
     }
     [self searchGoodsWithBarId: goodId];
+    self.scanView.textView.text = nil;
 }
 
 - (void) showMessage: (NSString *)message;
@@ -156,7 +157,23 @@
 
 - (void) addGoods: (TDGood *)good;
 {
-    [self.datasource addObject:good];
+    BOOL isExist = NO;
+    
+    for (TDGood *goods in self.datasource)
+    {
+        if ([goods isEqualGoods:good])
+        {
+            goods.goods_number += good.goods_number;
+            
+            isExist = YES;
+        }
+    }
+    
+    if (!isExist)
+    {
+        [self.datasource addObject:good];
+    }
+    
     [self.tableView reloadData];
 }
 

@@ -18,4 +18,5 @@
 @property (nonatomic, strong) NSString *goods_attr;
 @property (nonatomic, strong) NSString *kucun;
 @property (nonatomic, assign) NSInteger goods_number;
+- (BOOL) isEqualGoods: (TDGood *)goods;
 @end
