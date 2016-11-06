@@ -16,6 +16,7 @@
     
     self.layer.borderWidth = 1;
     self.layer.borderColor = [[UIColor lightGrayColor] CGColor];
+    self.label7.text = nil;
 }
 
 - (IBAction)orderDetail:(id)sender

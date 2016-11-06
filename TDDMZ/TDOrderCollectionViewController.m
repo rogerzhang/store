@@ -115,14 +115,14 @@ static NSString * const reuseIdentifier = @"Cell";
     NSString *money = dic[@"order_money"];
     NSString *count = dic[@"order_number"];
     NSString *nickname = dic[@"nickname"];
-//    NSString *status = dic[@"pay_status"];
+    NSString *status = dic[@"pay_status"];
     
     cell.label1.text = [NSString stringWithFormat:@"日期：%@", date];
     cell.label2.text = [NSString stringWithFormat:@"订单号：%@", orderId];
     cell.label3.text = [NSString stringWithFormat:@"金额：%@", money];
     cell.label4.text = [NSString stringWithFormat:@"件数：%@", count];
     cell.label5.text = [NSString stringWithFormat:@"昵称：%@", nickname];
-    cell.label6.text = [NSString stringWithFormat:@"状态：未支付"];
+    cell.label6.text = [NSString stringWithFormat:@"状态：%@", status];
     
     return cell;
 }
