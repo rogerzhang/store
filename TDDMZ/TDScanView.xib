@@ -15,7 +15,7 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="pK0-Xi-V6n">
                     <frame key="frameInset" minY="95" width="90" height="40.5" maxX="182"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="确认" backgroundImage="flexible">
+                    <state key="normal" title="确认" backgroundImage="按钮">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <connections>
@@ -68,7 +68,7 @@
     </objects>
     <resources>
         <image name="9" width="65" height="65"/>
-        <image name="flexible" width="83" height="32"/>
+        <image name="按钮" width="111" height="60"/>
         <image name="条形码" width="364" height="20"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

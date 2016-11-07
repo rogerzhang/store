@@ -11,7 +11,7 @@ static NSString * const TDFormatDateString = @"yyyy-MM-dd";
 #if NDEBUG
 #define BASEURL [NSURL URLWithString:@"http://dev.dmuzhi.cn/CashierService"]
 #else
-#define BASEURL [NSURL URLWithString:@"http://dev.dmuzhi.cn/CashierService"]
+#define BASEURL [NSURL URLWithString:@"http://www.dmuzhi.cn"]
 #endif
 
 typedef void (^TDCompletionHandler) (BOOL success, NSError *error, id userInfo);

@@ -33,4 +33,26 @@
     }
 }
 
+- (void) layoutSubviews;
+{
+    [super layoutSubviews];
+    
+    CGRect bounds = self.bounds;
+    
+    CGRect frame = self.button1.frame;
+    
+    if (self.button2.hidden)
+    {
+        frame.size.width = bounds.size.width;
+        self.button1.frame = frame;
+    }
+    else
+    {
+        frame.size.width = bounds.size.width / 2.0f;
+        self.button1.frame = frame;
+        frame.origin.x = CGRectGetMaxX(self.button1.frame);
+        self.button2.frame = frame;
+    }
+}
+
 @end

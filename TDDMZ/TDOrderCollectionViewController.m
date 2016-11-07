@@ -115,31 +115,51 @@ static NSString * const reuseIdentifier = @"Cell";
     NSString *money = dic[@"order_money"];
     NSString *count = dic[@"order_number"];
     NSString *nickname = dic[@"nickname"];
-    NSString *status = dic[@"pay_status"];
+    NSString *status = [dic[@"pay_status"] stringValue];
     
     cell.label1.text = [NSString stringWithFormat:@"日期：%@", date];
     cell.label2.text = [NSString stringWithFormat:@"订单号：%@", orderId];
     cell.label3.text = [NSString stringWithFormat:@"金额：%@", money];
     cell.label4.text = [NSString stringWithFormat:@"件数：%@", count];
     cell.label5.text = [NSString stringWithFormat:@"昵称：%@", nickname];
-    cell.label6.text = [NSString stringWithFormat:@"状态：%@", status];
     
-    if ([status isEqualToString:@"未付款"])
+    NSString *ss = nil;
+    UIImage *image = nil;
+    NSString *title = nil;
+    
+    if ([status isEqualToString:@"0"])
     {
-        cell.button2.enabled = NO;
+        ss = @"未付款";
+        cell.button2.enabled = YES;
+        cell.button2.hidden = NO;
+        image = [UIImage imageNamed:@"订单确认2"];
+        title = @"订单取消";
     }
-    else if ([status isEqualToString:@"已确认"])
-    {
-        cell.button2.enabled = NO;
-    }
-    else if ([status isEqualToString:@"未确认"])
+    else if ([status isEqualToString:@"1"])
     {
         cell.button2.enabled = YES;
+        image = [UIImage imageNamed:@"订单确认2"];
+        ss = @"已付款";
+        title = @"订单已确认";
     }
-    else if ([status isEqualToString:@"已取消"])
+    else if ([status isEqualToString:@"2"])
     {
-        cell.button2.enabled = NO;
+        cell.button2.hidden = YES;
+        image = [UIImage imageNamed:@"订单已确认状态"];
+        ss = @"已确认";
     }
+    else if ([status isEqualToString:@"3"])
+    {
+        cell.button2.hidden = YES;
+        image = [UIImage imageNamed:@"订单已取消状态"];
+        ss = @"已取消";
+    }
+    
+    [cell.button2 setBackgroundImage:image forState:UIControlStateNormal];
+    [cell.button2 setBackgroundImage:image forState:UIControlStateNormal];
+    [cell.button2 setTitle:title forState:UIControlStateNormal];
+    
+    cell.label6.text = [NSString stringWithFormat:@"状态：%@", ss];
     
     return cell;
 }
