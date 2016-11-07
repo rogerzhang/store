@@ -789,7 +789,7 @@
 					22DCDDA91D4EF0010068983C = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = H9JM9BG79D;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 					22DCDDC21D4EF0010068983C = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -1172,8 +1172,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cn.dmuzhi.www.smartcashier;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "db2e8e4d-3ead-4eb3-b536-3e3be3f52add";
-				PROVISIONING_PROFILE_SPECIFIER = SmartCashier;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
@@ -1185,7 +1185,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = H9JM9BG79D;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "${SRCROOT}/TDDMZ/TDDMZ-prefix.pch";
