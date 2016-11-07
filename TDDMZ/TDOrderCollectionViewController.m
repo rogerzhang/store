@@ -140,24 +140,27 @@ static NSString * const reuseIdentifier = @"Cell";
         cell.button2.enabled = YES;
         image = [UIImage imageNamed:@"订单确认2"];
         ss = @"已付款";
-        title = @"订单已确认";
+        title = @"订单确认";
     }
     else if ([status isEqualToString:@"2"])
     {
-        cell.button2.hidden = YES;
+        cell.button2.enabled = NO;
         image = [UIImage imageNamed:@"订单已确认状态"];
         ss = @"已确认";
+        title = @"订单已确认";
     }
     else if ([status isEqualToString:@"3"])
     {
-        cell.button2.hidden = YES;
+        cell.button2.enabled = NO;
         image = [UIImage imageNamed:@"订单已取消状态"];
         ss = @"已取消";
+        title = @"订单已取消";
     }
     
     [cell.button2 setBackgroundImage:image forState:UIControlStateNormal];
-    [cell.button2 setBackgroundImage:image forState:UIControlStateNormal];
+    [cell.button2 setBackgroundImage:image forState:UIControlStateDisabled];
     [cell.button2 setTitle:title forState:UIControlStateNormal];
+    [cell.button2 setTitle:title forState:UIControlStateDisabled];
     
     cell.label6.text = [NSString stringWithFormat:@"状态：%@", ss];
     
