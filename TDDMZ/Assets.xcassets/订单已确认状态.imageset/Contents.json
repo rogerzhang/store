@@ -2,11 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "订单已确认状态.png",
+      "filename" : "已确认状态-标清.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "订单已确认状态.png",
       "scale" : "2x"
     },
     {
