@@ -196,23 +196,53 @@ static NSString * const reuseIdentifier = @"Cell";
 - (void) orderOKAction: (TDOrderCollectionViewCell*)cell;
 {
     NSIndexPath *indexPath = [self.collectionView indexPathForCell: cell];
-    
     NSDictionary *dic = self.datasource[indexPath.row];
-    
     NSString *orderId = dic[@"order_id"];
-    NSString *status = dic[@"pay_status"];
+    NSString *status = [dic[@"pay_status"] stringValue];
     
-    [[TDClient sharedInstance] checkorderWithId:orderId status:status completionHandler:^(BOOL success, NSError *error, id userInfo){
-        if (success)
-        {
-            [self showMessage:@"订单确认成功"];
-            [self refresh];
-        }
-        else
-        {
-            [self showMessage:error.description];
-        }
-    }];
+    if ([status isEqualToString:@"0"])
+    {
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"是否确定退出" message:@"" preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *unverifiedAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+            
+            [[TDClient sharedInstance] checkorderWithId:orderId status:status completionHandler:^(BOOL success, NSError *error, id userInfo){
+                if (success)
+                {
+                    [self showMessage:@"操作成功"];
+                    [self refresh];
+                }
+                else
+                {
+                    [self showMessage:error.description];
+                }
+            }];
+            
+            [alertController dismissViewControllerAnimated:YES completion:NULL];
+        }];
+        
+        UIAlertAction *verifiedAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action){
+            [alertController dismissViewControllerAnimated:YES completion:NULL];
+        }];
+        
+        [alertController addAction:unverifiedAction];
+        [alertController addAction:verifiedAction];
+        [self presentViewController:alertController animated:YES completion:NULL];
+    }
+    else
+    {
+        [[TDClient sharedInstance] checkorderWithId:orderId status:status completionHandler:^(BOOL success, NSError *error, id userInfo){
+            if (success)
+            {
+                [self showMessage:@"操作成功"];
+                [self refresh];
+            }
+            else
+            {
+                [self showMessage:error.description];
+            }
+        }];
+    }
     
     TD_LOG(@"indexPath is %ld", (long)[indexPath row]);
 }
