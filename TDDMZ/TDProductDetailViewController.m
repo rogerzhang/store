@@ -226,6 +226,13 @@
                     }
                 }
                 
+                if (self.attr1List.count < 1 && self.attr2List.count < 1) {
+                    self.goods = [[TDParser sharedInstance] goodWithDictionary:userInfo];
+                    if (!self.goods.goods_number) {
+                        self.goods.goods_number = 1;
+                    }
+                }
+                
                 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                     NSData* data = [[NSData alloc] initWithContentsOfURL:url];
                     UIImage *image = [UIImage imageWithData:data];

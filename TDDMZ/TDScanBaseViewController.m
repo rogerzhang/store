@@ -48,7 +48,7 @@
     TDGood *good = self.datasource[indexPath.row];
     NSString *name = [NSString stringWithFormat:@"名称：%@", good.goods_name];
     NSString *type = [NSString stringWithFormat:@"编码：%@", good.goods_sn];
-    NSString *attr = [NSString stringWithFormat:@"规格：%@", good.goods_attr];
+    NSString *attr = [NSString stringWithFormat:@"规格：%@", good.goods_attr?:@""];
     NSString *price = [NSString stringWithFormat:@"单价：￥%@", good.shop_price];
     
     cell.count = good.goods_number;
