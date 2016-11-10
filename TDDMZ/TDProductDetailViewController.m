@@ -252,8 +252,12 @@
 
 - (void) saveActionWithSaveBanner: (TDSaveBanner *)banner;
 {
-    if (!self.attr1Id || !self.attr2Id)
-    {
+    if (self.attr1List.count && !self.attr1Id) {
+        [self showMessage:@"请选择规格"];
+        return;
+    }
+    
+    if (self.attr2List.count && !self.attr2Id) {
         [self showMessage:@"请选择规格"];
         return;
     }

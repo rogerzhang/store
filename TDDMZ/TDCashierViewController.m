@@ -235,12 +235,12 @@
     TDCashierScanViewController *scanVC = (TDCashierScanViewController *)self.scanViewController;
     NSArray *goods = scanVC.datasource;
     
-    NSInteger count = 0;
+    CGFloat count = 0;
     for (TDGood *good in goods) {
-        count += good.goods_number * [good.shop_price integerValue];
+        count += good.goods_number * [good.shop_price floatValue];
     }
     
-    money = [NSString stringWithFormat:@"%ld",(long)count];
+    money = [NSString stringWithFormat:@"%.2f",count];
     
     return money;
 }

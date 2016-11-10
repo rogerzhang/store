@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *textField2;
 @property (weak, nonatomic) IBOutlet UILabel *infoLabel;
 @property (weak, nonatomic) IBOutlet UILabel *promotLabel;
+@property (weak, nonatomic) IBOutlet UILabel *label;
 
 @end
 
@@ -28,12 +29,16 @@
     self.navigationController.navigationBar.titleTextAttributes = dict;
     self.navigationItem.leftBarButtonItem = [self backButton];
     
-    NSString *info = [NSString stringWithFormat:@"需支付金额 ￥ %@", self.totalMoney];
+    NSString *info = [NSString stringWithFormat:@"￥ %@", self.totalMoney];
     self.infoLabel.text = info;
+    self.label.hidden = self.infoLabel.hidden;
     self.promotLabel.text = @"";
     self.promotLabel.hidden = YES;
     [self.textField1 setRightView:self.promotLabel];
     [self.textField1 setRightViewMode:UITextFieldViewModeAlways];
+    self.label.textColor = UIColorFromRGB(0x888888);
+    self.infoLabel.textColor = UIColorFromRGB(0x444444);
+    self.promotLabel.textColor = UIColorFromRGB(0x3f91e3);
 }
 
 - (void) viewWillDisappear:(BOOL)animated;
@@ -96,7 +101,7 @@
             else
             {
                 self.promotLabel.text = [NSString stringWithFormat:@"需找零 ￥ %ld", (long)(inputNumber - actualNumber)];;
-                self.promotLabel.textColor = [UIColor grayColor];
+                self.promotLabel.textColor = UIColorFromRGB(0x3f91e3);
                 self.promotLabel.hidden = NO;
             }
         }
